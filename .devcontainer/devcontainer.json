@@ -1,7 +1,8 @@
 // Devcontainer for local development
 // See https://github.com/key4hep/key4hep-images/ for available images
-// Requires the host to have cvmfs mounted, i.e.
-// sudo mount -t cvmfs sw.hsf.org /cvmfs/sw.hsf.org
+// Requires the host have
+// a) CernVM-FS installed (see https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html for instructions)
+// b) The necessary repositories mounted on the host machine; sudo mount -t cvmfs sw.hsf.org /cvmfs/sw.hsf.org
 {
   "name": "Key4HEP Dev",
   "image": "ghcr.io/key4hep/key4hep-images/ubuntu22-cvmfs:latest",
@@ -18,7 +19,7 @@
     "-c",
     "echo 'source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2024-11-28' >> ~/.bashrc"
   ],
-  // Activate vs code extensions and set cmake path
+  // Install and activate vs code extensions for environment
   "customizations": {
     "vscode": {
       "extensions": [
