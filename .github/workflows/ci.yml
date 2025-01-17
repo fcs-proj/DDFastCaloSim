@@ -42,12 +42,9 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: '1.23'
-      - name: Install diff-root
-        run: |
-          go install go-hep.org/x/hep/groot/cmd/root-diff@latest
-          export PATH="$(go env GOPATH)/bin:$PATH"
       - name: Test simulation output
         run: |
+          go install go-hep.org/x/hep/groot/cmd/root-diff@latest
           if ! diff-root -t tests/refs/ODD_sim.root tests/run/ODD_sim.root; then
             echo "Output differs from reference!" >&2
             exit 1
