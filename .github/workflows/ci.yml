@@ -34,16 +34,18 @@ jobs:
             echo "::group::Run simulation"
             chmod +x tests/run_ODD_sim.sh
             ./tests/run_ODD_sim.sh
-
   test:
     runs-on: ubuntu-24.04
     needs: run
     steps:
-
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
       - name: Install diff-root
         run: |
           go get -u go-hep.org/x/hep/groot/cmd/root-diff
-
+          echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
       - name: Test simulation output
         run: |
           if ! diff-root -t tests/refs/ODD_sim.root tests/run/ODD_sim.root; then
