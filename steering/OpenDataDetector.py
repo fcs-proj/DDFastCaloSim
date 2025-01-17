@@ -10,6 +10,7 @@ from g4units import m, mm, GeV, MeV, rad, keV,TeV
 import os
 from math import pi
 
+# See https://github.com/AIDASoft/DD4hep/blob/master/DDG4/python/DDSim/DD4hepSimulation.py
 SIM = DD4hepSimulation()
 
 ## The compact XML file
@@ -177,11 +178,11 @@ SIM.physics.rangecut =  0.1*mm
 
 ## If True, calculate random seed for each event based on eventID and runID
 ## allows reproducibility even when SkippingEvents
-SIM.random.enableEventSeed = False
+SIM.random.enableEventSeed = True
 SIM.random.file = None
 SIM.random.luxury = 1
 SIM.random.replace_gRandom = True
-SIM.random.seed = None
+SIM.random.seed = 42
 SIM.random.type = None
 
 ###############################################################################

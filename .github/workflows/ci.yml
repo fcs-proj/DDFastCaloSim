@@ -3,11 +3,11 @@ name: Pipeline
 on:
   push:
     branches:
-    - main
+      - main
 
   pull_request:
     branches:
-    - main
+      - main
 
 jobs:
   run:
@@ -21,14 +21,22 @@ jobs:
         lcg: [LCG_106]
     steps:
       - uses: actions/checkout@v4
+
       - uses: cvmfs-contrib/github-action-cvmfs@v4
+
       - uses: aidasoft/run-lcg-view@v4
         with:
           release-platform: "${{matrix.lcg}}/${{env.platform}}"
           run: |            
             echo "::group::Set-up key4hep"
-            source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2024-11-28
+            source setup.sh
 
             echo "::group::Run simulation"
             chmod +x tests/run_ODD_sim.sh
             ./tests/run_ODD_sim.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sim_output
+          path: tests/run/
+          if-no-files-found: error
+          retention-days: 7
