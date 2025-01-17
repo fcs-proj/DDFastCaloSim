@@ -35,9 +35,14 @@ jobs:
             chmod +x tests/run_ODD_sim.sh
             ./tests/run_ODD_sim.sh
   test:
-    runs-on: ubuntu-24.04
     needs: run
-    steps:
+
+    runs-on: ubuntu-24.04
+    container:
+      # Run in FCS container as we need ROOT
+      image: jbeirer/ubuntu24-fastcalosim:latest
+
+      steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
