@@ -31,16 +31,24 @@ mkdir -p "$SCRIPT_DIR/run"
 
 # Run the simulation
 (
-cd "$SCRIPT_DIR/run" || exit
-ddsim \
-  --steeringFile "$STEERING_FILE" \
-  --compactFile "$GEOMETRY_FILE" \
-  --numberOfEvents ${NUMEVENTS} \
-  --gun.particle ${PARTICLE} \
-  --gun.etaMin ${ETA_MIN} \
-  --gun.etaMax ${ETA_MAX} \
-  --gun.phiMin ${PHI_MIN} \
-  --gun.phiMax ${PHI_MAX} \
-  --gun.energy ${ENERGY}*MeV \
-  --outputFile ODD_sim.root
+  cd "$SCRIPT_DIR/run" || exit
+  if ! ddsim \
+    --steeringFile ${STEERING_FILE} \
+    --compactFile ${GEOMETRY_FILE} \
+    --numberOfEvents ${NUMEVENTS} \
+    --gun.particle ${PARTICLE} \
+    --gun.etaMin ${ETA_MIN} \
+    --gun.etaMax ${ETA_MAX} \
+    --gun.phiMin ${PHI_MIN} \
+    --gun.phiMax ${PHI_MAX} \
+    --gun.energy ${ENERGY}*MeV \
+    --outputFile ODD_sim.root; then
+    echo "Error: Simulation failed"
+    exit 1
+  fi
 )
+exit_status=$?
+if [ $exit_status -ne 0 ]; then
+  echo "Error: Subshell exited with status $exit_status"
+  exit $exit_status
+fi
