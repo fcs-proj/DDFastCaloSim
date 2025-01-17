@@ -17,7 +17,7 @@ mkdir -p run
 cd run || exit
 ddsim \
   --steeringFile ../steering/OpenDataDetector.py \
-  --compactFile ../geometry/OpenDataDetector.xml \
+  --compactFile ../geometry/OpenDataDetector/OpenDataDetector.xml \
   --numberOfEvents ${NUMEVENTS} \
   --gun.particle ${PARTICLE} \
   --gun.etaMin ${ETA_MIN} \

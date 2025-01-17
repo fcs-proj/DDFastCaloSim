@@ -1,0 +1,105 @@
+<lccdd>
+
+    <info name="Open Data Detector - HCal" title="Open Data Detector - HCal" author="anna.zaborowska@cern.ch" url="" status="alpha" version="0">
+        <comment>HCal Detector inspired by various scintillator calorimeters (HGCal of CMS, CLD, AHCAL, SiD)</comment>
+    </info>
+
+    <!--  Definition of the readout segmentation  -->
+    <define>
+        <constant name="HCal_cell_size" value="30*mm"/>
+    </define>
+
+    <readouts>
+        <readout name="HCalBarrelCollection">
+            <segmentation type="CartesianGridXY" grid_size_x="HCal_cell_size" grid_size_y="HCal_cell_size" />
+              <id>system:8,barrel:3,module:4,layer:6,slice:5,x:32:-16,y:-16</id>
+        </readout>
+
+        <readout name="HCalEndcapCollection">
+            <segmentation type="CartesianGridXY" grid_size_x="HCal_cell_size" grid_size_y="HCal_cell_size" />
+              <id>system:8,barrel:3,module:4,layer:6,slice:5,x:32:-16,y:-16</id>
+        </readout>
+
+
+    </readouts>
+
+    <!--  Definitions of visualization attributes  -->
+    <display>
+        <vis name="HCalStaveVis" alpha="1.0" r="0.0" g="0.8" b="1.0" showDaughters="true" visible="true"/>
+        <vis name="HCalLayerVis" alpha="1.0" r="0.8" g="0.8" b="0.0" showDaughters="true" visible="true"/>
+        <vis name="HCalSensitiveVis" alpha="1.0" r="0.7" g="0.3" b="0.0" showDaughters="false" visible="true"/>
+        <vis name="HCalAbsorberVis" alpha="1.0" r="0.4" g="0.4" b="0.0" showDaughters="false" visible="true"/>
+        <vis name="HCalHiddenEnvelope" alpha="0.0" r="1.0" g="1.0" b="1.0" showDaughters="true" visible="false"/>
+    </display>
+
+    <detectors>
+        <detector name="HCalBarrel" type="DD4hep_PolyhedraBarrelCalorimeter2" id="ODD_HCalBarrel_ID" readout="HCalBarrelCollection" gap="0.*cm">
+
+            <comment>Hadronic Calorimeter Barrel</comment>
+
+            <type_flags type=" DetType_CALORIMETER + DetType_HADRONIC + DetType_BARREL"/>
+
+            <envelope vis="HCalHiddenEnvelope">
+                <shape type="PolyhedraRegular" numsides="hcal_b_symmetry" rmin="hcal_b_rmin" rmax="hcal_b_rmax" dz="2.*hcal_b_hlength" material="Air"/>
+                <rotation x="0*deg" y="0*deg" z="90*deg-180*deg/hcal_b_symmetry"/>
+            </envelope>
+
+            <dimensions numsides="hcal_b_symmetry" rmin="hcal_b_rmin" z="hcal_b_hlength*2" />
+            <staves vis="HCalStaveVis" />
+            <layer repeat="36" vis="HCalLayerVis">
+                <slice material = "Steel235" thickness = "3.0*cm" vis="HCalAbsorberVis"/> <!-- Thicker than lepton experiments, thinner than HGCal-->
+                <slice material = "siPCBMix"    thickness = "1.6*cm" vis="HCalAbsorberVis"/> <!-- more like in HGCal than others -->
+                <slice material = "Polystyrene"    thickness = "0.3*cm" sensitive="yes" limits="cal_limits" vis="HCalSensitiveVis"/> <!-- as FCC-ee CLD, HGCal, AHCAL -->
+                <slice material = "Air"            thickness = "0.2*cm" vis="InvisibleNoDaughters"/> <!-- for services -->
+            </layer>
+        </detector>
+
+        <detector name="HCalEndcap" type="DD4hep_PolyhedraEndcapCalorimeter2"  reflect="true" id="ODD_HCalEndcap_ID" readout="HCalEndcapCollection">
+
+            <comment>Hadronic Calorimeter Endcap</comment>
+
+            <type_flags type=" DetType_CALORIMETER + DetType_HADRONIC + DetType_ENDCAP"/>
+
+            <envelope vis="HCalHiddenEnvelope">
+                <shape type="BooleanShape" operation="Subtraction" material="Air">
+                    <shape type="PolyhedraRegular" numsides="hcal_e_outer_symmetry" rmin="hcal_e_inner_radius-hcal_e_env_safety" rmax="hcal_e_outer_radius+ 10.0*hcal_e_env_safety" dz="2.0*hcal_e_max_z+2*hcal_e_env_safety"/>
+                    <shape type="PolyhedraRegular" numsides="hcal_e_outer_symmetry" rmin="0" rmax="hcal_e_outer_radius+ 100.0*hcal_e_env_safety" dz="2.0*hcal_e_min_z-2*hcal_e_env_safety"/>
+                </shape>
+                <rotation x="0*deg" y="0*deg" z="90*deg-180*deg/hcal_e_outer_symmetry"/>
+            </envelope>
+
+            <dimensions numsides="hcal_e_symmetry" zmin="hcal_e_min_z" rmin="hcal_e_inner_radius" rmax="hcal_e_outer_radius"/>
+
+            <layer repeat="36" vis="HCalLayerVis">
+                <slice material = "Steel235" thickness = "3.0*cm" vis="HCalAbsorberVis"/>
+                <slice material = "siPCBMix"    thickness = "1.6*cm" vis="HCalAbsorberVis"/>
+                <slice material = "Polystyrene"    thickness = "0.3*cm" sensitive="yes" limits="cal_limits" vis="HCalSensitiveVis"/>
+                <slice material = "Air"            thickness = "0.2*cm" vis="InvisibleNoDaughters"/>
+            </layer>
+
+        </detector>
+
+    </detectors>
+
+    <plugins>
+        <plugin name="DD4hep_CaloFaceBarrelSurfacePlugin">
+            <argument value="HCalBarrel"/>
+            <argument value="length=2.*hcal_b_hlength" />
+            <argument value="radius=hcal_b_rmin" />
+            <argument value="phi0=0" />
+            <argument value="symmetry=hcal_b_symmetry"/>
+            <argument value="systemID=ODD_HCalBarrel_ID"/>
+        </plugin>
+
+        <plugin name="DD4hep_CaloFaceEndcapSurfacePlugin">
+            <argument value="HCalEndcap"/>
+	        <argument value="zpos=hcal_e_min_z"    />
+	        <argument value="radius=hcal_e_outer_radius"  />
+	        <argument value="phi0=0"    />
+	        <argument value="symmetry=hcal_e_symmetry"/>
+	        <argument value="systemID=ODD_HCalEndcap_ID"/>
+	  </plugin>
+    </plugins>
+
+
+</lccdd>
