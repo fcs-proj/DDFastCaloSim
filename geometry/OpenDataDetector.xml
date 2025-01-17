@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lccdd xmlns:compact="http://www.lcsim.org/schemas/compact/1.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema" xs:noNamespaceSchemaLocation="http://www.lcsim.org/schemas/compact/1.0/compact.xsd">
+
+        <includes>
+                <gdmlFile ref="elements.xml"/>
+                <gdmlFile ref="OpenDataMaterials.xml"/>
+        </includes>
+
+        <info name="Open Data Detector" title="Open Data Detector" author="Andreas.Salzburger@cern.ch" url="" status="alpha" version="0">
+                <comment>Demonstrator Detector for algorithmic research and development</comment>
+        </info>
+
+        <!-- Envelopes -->
+        <define>
+                <!--World-->
+                <constant name="world_size" value="10.*m"/>
+                <constant name="world_x" value="world_size"/>
+                <constant name="world_y" value="world_size"/>
+                <constant name="world_z" value="world_size"/>
+
+                <!-- BField -->
+                <constant name="Field_nominal_value" value="2*tesla"/>
+                <constant name="outerField_nominal_value" value="0.5*tesla"/>
+        </define>
+        <include ref="OpenDataDetectorEnvelopes.xml"/>
+
+
+        <!-- Identifier definitions -->
+        <include ref="OpenDataDetectorIdentifiers.xml"/>
+
+        <!-- Auxiliary definitions-->
+        <include ref="OpenDataMaterialBinning.xml"/>
+        <include ref="OpenDataVisualization.xml"/>
+
+        <!-- Sub detectors / parts -->
+        <include ref="OpenDataBeamPipe.xml"/>
+        <include ref="OpenDataTracker.xml"/>
+        <include ref="OpenDataSolenoid.xml"/>
+        <include ref="OpenDataCalorimeter.xml"/>
+
+        <!-- Fields -->
+        <fields>
+                <!-- <field name="MagnetFields_Constant" type="ConstantField" field="magnetic"> -->
+                        <!-- <strength x="0" y="0" z="2.0*tesla"/> -->
+                <!-- </field> -->
+
+                <!-- Can also define solenoid field like this:  -->
+                <field type="solenoid" name="GlobalSolenoid" inner_field="Field_nominal_value"
+                        outer_field="outerField_nominal_value" zmax="sol_hlength"
+                        inner_radius="sol_rmin"
+                        outer_radius="sol_rmax" />
+        </fields>
+
+        <!-- Plugins -->
+        <plugins>
+                <plugin name="DD4hepVolumeManager"/>
+                <plugin name="InstallSurfaceManager"/>
+        </plugins>
+</lccdd>

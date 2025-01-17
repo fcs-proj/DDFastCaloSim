@@ -28,4 +28,7 @@ jobs:
           run: |            
             echo "::group::Set-up key4hep"
             source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2024-11-28
-      
+
+            echo "::group::Run simulation"
+            chmod +x tests/run_ODD_sim.sh
+            ./tests/run_ODD_sim.sh
