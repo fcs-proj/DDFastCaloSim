@@ -44,7 +44,11 @@ jobs:
           go-version: '1.23'
       - name: Test simulation output
         run: |
+          # Install diff-root via go install
           go install go-hep.org/x/hep/groot/cmd/root-diff@latest
+          export PATH=$(go env GOPATH)/bin:$PATH
+          
+          # Compare the output of the simulation with the reference
           if ! diff-root -t tests/refs/ODD_sim.root tests/run/ODD_sim.root; then
             echo "Output differs from reference!" >&2
             exit 1
