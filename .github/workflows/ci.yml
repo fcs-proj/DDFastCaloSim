@@ -43,9 +43,9 @@ jobs:
 
     - name: Test if simulation output changed
       run: |
-      if ! cmp tests/refs/ODD_sim.root tests/run/ODD_sim.root; then
-        echo "Output differs from reference!" >&2
-      exit 1
-      else
-        echo "Output matches reference."
-      fi
+        if ! cmp tests/refs/ODD_sim.root tests/run/ODD_sim.root; then
+          echo "Output differs from reference!" >&2
+        exit 1
+        else
+          echo "Output matches reference."
+        fi
