@@ -3,11 +3,11 @@ name: Pipeline
 on:
   push:
     branches:
-    - main
+      - main
 
   pull_request:
     branches:
-    - main
+      - main
 
 jobs:
   run:
@@ -21,14 +21,34 @@ jobs:
         lcg: [LCG_106]
     steps:
       - uses: actions/checkout@v4
+
       - uses: cvmfs-contrib/github-action-cvmfs@v4
+
       - uses: aidasoft/run-lcg-view@v4
         with:
           release-platform: "${{matrix.lcg}}/${{env.platform}}"
           run: |            
             echo "::group::Set-up key4hep"
-            source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2024-11-28
+            source setup.sh
 
             echo "::group::Run simulation"
             chmod +x tests/run_ODD_sim.sh
             ./tests/run_ODD_sim.sh
+
+  test:
+    runs-on: ubuntu-24.04
+    needs: run
+    steps:
+
+      - name: Install diff-root
+        run: |
+          go get -u go-hep.org/x/hep/groot/cmd/root-diff
+
+      - name: Test simulation output
+        run: |
+          if ! diff-root -t tests/refs/ODD_sim.root tests/run/ODD_sim.root; then
+            echo "Output differs from reference!" >&2
+            exit 1
+          else
+            echo "Output matches reference."
+          fi

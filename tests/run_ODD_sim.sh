@@ -9,6 +9,9 @@ ETA_MAX=0.25
 PHI_MIN=0
 PHI_MAX=6.28318530718 # 2 * pi
 
+STEERING_FILE=$(realpath ../steering/OpenDataDetector.py)
+GEOMETRY_FILE=$(realpath ../geometry/OpenDataDetector/OpenDataDetector.xml)
+
 # Output directory
 mkdir -p run
 
@@ -16,8 +19,8 @@ mkdir -p run
 (
 cd run || exit
 ddsim \
-  --steeringFile ../steering/OpenDataDetector.py \
-  --compactFile ../geometry/OpenDataDetector/OpenDataDetector.xml \
+  --steeringFile ${STEERING_FILE} \
+  --compactFile ${GEOMETRY_FILE} \
   --numberOfEvents ${NUMEVENTS} \
   --gun.particle ${PARTICLE} \
   --gun.etaMin ${ETA_MIN} \
@@ -25,5 +28,6 @@ ddsim \
   --gun.phiMin ${PHI_MIN} \
   --gun.phiMax ${PHI_MAX} \
   --gun.energy ${ENERGY}*MeV \
-  --outputFile test.root
+  --outputFile ODD_sim.root
 )
+
