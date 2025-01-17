@@ -34,14 +34,27 @@ jobs:
             echo "::group::Run simulation"
             chmod +x tests/run_ODD_sim.sh
             ./tests/run_ODD_sim.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sim_output
+          path: tests/run/
+          if-no-files-found: error
+          retention-days: 7
+
   test:
     needs: run
     runs-on: ubuntu-24.04
 
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/download-artifact@v4
+      with:
+        name: sim_output
+        path: tests/run/
+        if-no-files-found: error
+        retention-days: 7
 
-    - name: Test if simulation output changed
+    - name: Test if ODD simulation output changed
       run: |
         if ! cmp tests/refs/ODD_sim.root tests/run/ODD_sim.root; then
           echo "Output differs from reference!" >&2
