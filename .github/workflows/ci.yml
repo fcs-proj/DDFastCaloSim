@@ -49,7 +49,7 @@ jobs:
           export PATH=$(go env GOPATH)/bin:$PATH
 
           # Compare the output of the simulation with the reference
-          if ! root-diff -t tests/refs/ODD_sim.root tests/run/ODD_sim.root; then
+          if ! root-diff tests/refs/ODD_sim.root tests/run/ODD_sim.root; then
             echo "Output differs from reference!" >&2
             exit 1
           else
