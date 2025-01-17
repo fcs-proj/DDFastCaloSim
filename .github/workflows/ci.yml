@@ -45,7 +45,7 @@ jobs:
       - name: Install diff-root
         run: |
           go install go-hep.org/x/hep/groot/cmd/root-diff@latest
-          echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
+          export PATH="$(go env GOPATH)/bin:$PATH"
       - name: Test simulation output
         run: |
           if ! diff-root -t tests/refs/ODD_sim.root tests/run/ODD_sim.root; then
