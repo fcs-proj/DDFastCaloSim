@@ -30,8 +30,11 @@ jobs:
             echo "::group::Set-up key4hep"
             source setup.sh
 
-            echo "::group::Build DDFastCaloSim"
+            echo "::group::Configure DDFastCaloSim"
             mkdir -p build
+            cmake -B build -S .
+          
+            echo "::group::Build DDFastCaloSim"
             cmake --build build -j 4
             source build/thisDDFastCaloSim.sh
 
