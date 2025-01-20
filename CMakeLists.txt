@@ -1,6 +1,6 @@
 #----------------------------------------------------------------------------
 # Setup the project
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.30)
 project(DDFastCaloSim)
 
 message(STATUS "Configuring project ${PROJECT_NAME}")
@@ -23,7 +23,7 @@ dd4hep_use_python_executable()
 
 #----------------------------------------------------------------------------
 # Source and header file configuration
-file(GLOB sources source/*.cc)
+file(GLOB sources source/*.cxx)
 set(headers ${PROJECT_SOURCE_DIR}/include/DDFastCaloSim/*.h)
 
 #----------------------------------------------------------------------------
@@ -44,10 +44,3 @@ install(TARGETS ${PROJECT_NAME}
 dd4hep_instantiate_package(${PROJECT_NAME})
 
 set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
-
-dd4hep_set_version(${PROJECT_NAME} MAJOR 1 MINOR 0 PATCH 0)
-dd4hep_generate_rootmap(${PROJECT_NAME})
-
-# Installation configuration for the detector library
-install(TARGETS ${PROJECT_NAME})
-
