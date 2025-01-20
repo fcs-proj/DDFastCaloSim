@@ -5,7 +5,7 @@
 // b) The necessary repositories mounted on the host machine; sudo mount -t cvmfs sw.hsf.org /cvmfs/sw.hsf.org
 {
   "name": "Key4HEP Dev",
-  "image": "ghcr.io/key4hep/key4hep-images/ubuntu22-cvmfs:latest",
+  "image": "ghcr.io/key4hep/key4hep-images/alma9-cvmfs:latest",
 
   // Make sure CVMFS is mounted on the host (and bind-mounted):
   "mounts": [
