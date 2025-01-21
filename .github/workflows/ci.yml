@@ -33,7 +33,7 @@ jobs:
             --device /dev/fuse \
             --volume /cvmfs:/cvmfs:shared \
             --name cvmfs-service \
-            cvmfs/service:2.12.0-1
+            cvmfs/service:latest
 
       # Step 3: Verify CVMFS setup within the container
       - name: Verify CVMFS Setup in Container
