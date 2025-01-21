@@ -18,6 +18,13 @@ jobs:
     steps:
       # Checkout the repository
       - uses: actions/checkout@v4
+      - name: Mock lsb-release
+        run: |
+          echo "DISTRIB_ID=AlmaLinux" > /etc/lsb-release
+          echo "DISTRIB_RELEASE=9" >> /etc/lsb-release
+          echo "DISTRIB_CODENAME=Alma" >> /etc/lsb-release
+          echo "DISTRIB_DESCRIPTION='AlmaLinux 9'" >> /etc/lsb-release
+
       - uses: cvmfs-contrib/github-action-cvmfs@v4
 
       # Run the required setup and commands
