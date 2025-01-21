@@ -1,43 +1,65 @@
-name: Pipeline
+name: Debug and Test CVMFS
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
+    branches:
+      - '**'
+  push:
     branches:
       - main
 
 jobs:
-  run:
-    runs-on: ubuntu-24.04
-    container:
-      image: ghcr.io/key4hep/key4hep-images/alma9-cvmfs:latest
-      options: >-
-        --privileged
-        --device=/dev/fuse
-        --cap-add=SYS_ADMIN
+  test-cvmfs:
+    runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
-      - uses: actions/checkout@v4
+      - name: Check out code
+        uses: actions/checkout@v4
 
-      # Debug CVMFS configuration
-      - name: Debug CVMFS Configuration
-        run: cat /etc/cvmfs/default.local
-
-      # Check FUSE module
-      - name: Check FUSE Module
-        run: lsmod | grep fuse || echo "FUSE module not loaded"
-
-      # Ensure CVMFS Mount
-      - name: Ensure CVMFS Mount
+      - name: Log system details
         run: |
-          set -e
-          cvmfs_config probe
-          mount -t cvmfs sw.hsf.org /cvmfs/sw.hsf.org || echo "Failed to mount /cvmfs/sw.hsf.org"
-          ls /cvmfs/sw.hsf.org || echo "CVMFS content not available"
+          echo "System Information:"
+          uname -a
+          df -h
+          mount
+          lsmod | grep fuse || echo "FUSE module not loaded"
 
-      # Collect CVMFS Logs
-      - name: Collect CVMFS Logs
-        run: cat /var/log/cvmfs/* || echo "No CVMFS logs found"
+      - name: Pull and Run Container
+        run: |
+          IMAGE="ghcr.io/key4hep/key4hep-images/alma9-cvmfs:latest"
+          echo "Using Docker image: $IMAGE"
+
+          docker run --name test_container --privileged \
+            --device=/dev/fuse \
+            -v ${GITHUB_WORKSPACE}:/workspace \
+            -d $IMAGE tail -f /dev/null
+
+      - name: Test FUSE in Container
+        run: |
+          docker exec test_container lsmod | grep fuse || echo "FUSE not loaded in container"
+          docker exec test_container ls /dev/fuse || echo "/dev/fuse missing in container"
+
+      - name: Configure CVMFS
+        run: |
+          docker exec test_container sh -c "echo 'CVMFS_CONFIG_REPOSITORY=cvmfs-config.cern.ch' > /etc/cvmfs/default.local"
+          docker exec test_container sh -c "echo 'CVMFS_CLIENT_PROFILE=single' >> /etc/cvmfs/default.local"
+          docker exec test_container sh -c "echo 'CVMFS_HTTP_PROXY=DIRECT' >> /etc/cvmfs/default.local"
+
+      - name: Probe CVMFS
+        run: |
+          docker exec test_container cvmfs_config probe || echo "CVMFS probe failed"
+          docker exec test_container mount -t cvmfs sw.hsf.org /cvmfs/sw.hsf.org || echo "Failed to mount /cvmfs/sw.hsf.org"
+
+      - name: Debug CVMFS Logs
+        run: |
+          docker exec test_container sh -c "cat /var/log/cvmfs/*" || echo "No CVMFS logs found"
+
+      - name: Test Key4hep Environment
+        run: |
+          docker exec test_container sh -c "source /cvmfs/sw.hsf.org/key4hep/setup.sh && echo 'Key4hep setup successful'" || echo "Failed to source Key4hep"
+
+      - name: Clean up
+        if: always()
+        run: |
+          docker stop test_container
+          docker rm test_container
