@@ -30,6 +30,9 @@ jobs:
       - name: Show Config
         run: cvmfs_config showconfig
 
+      - name: Check setup
+        run: cvmfs_config chksetup
+
       # Generate Bug Report
       - name: Generate Bug Report
         run: |
