@@ -12,9 +12,14 @@ jobs:
   run:
     runs-on: ubuntu-24.04
     steps:
+      # Checkout the repository
       - uses: actions/checkout@v4
 
+      # Use the cvmfs-contrib action
       - uses: cvmfs-contrib/github-action-cvmfs@v4
+
+      # Run the required setup and commands
+      - name: Test
         run: |
           set -e
           echo "::group::Set-up key4hep and dev environment"
@@ -38,6 +43,7 @@ jobs:
           chmod +x tests/run_ODD_sim.sh
           ./tests/run_ODD_sim.sh
 
+      # Upload artifacts
       - uses: actions/upload-artifact@v4
         with:
           name: sim_output
