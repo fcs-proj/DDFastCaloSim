@@ -17,9 +17,6 @@ jobs:
       # Checkout the repository
       - uses: actions/checkout@v4
 
-      # Use the cvmfs-contrib action
-      - uses: cvmfs-contrib/github-action-cvmfs@v4
-
       # Run the required setup and commands
       - name: Test
         run: |
