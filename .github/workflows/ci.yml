@@ -1,30 +1,45 @@
-name: CVMFS Pipeline
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+name: Key4hep build
+description: Build and test using the Key4hep stack
 jobs:
   run:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/key4hep/key4hep-images/alma9-cvmfs
-      options: >-
-        --device /dev/fuse
-        --cap-add SYS_ADMIN
-        --privileged
 
-    steps:
-      - name: Start container
-        shell: bash
-        run: |
+  steps:
+    - shell: bash
+      run: echo "NOW=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+    - uses: actions/cache@v4
+      with:
+        path: ~/.cache/ccache
+        key: ${{ inputs.build_type }}-${{ inputs.image }}-${{ env.NOW }}
+        restore-keys: |
+          ${{ inputs.build_type }}-${{ inputs.image }}
+
+    - name: Start container
+      shell: bash
+      run: |
+        name=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]')
+          docker run --name container --privileged -v ${GITHUB_WORKSPACE}:/${name} -v ~/.cache/ccache:/root/.cache/ccache -d ghcr.io/key4hep/key4hep-images/alma9-cvmfs tail -f /dev/null
+
+    - name: Setup environment and build
+      shell: bash
+      run: |
           name=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]')
-            docker run --name container --privileged -v ${GITHUB_WORKSPACE}:/${name} -v ~/.cache/ccache:/root/.cache/ccache -d ghcr.io/key4hep/key4hep-images/alma9-cvmfs tail -f /dev/null
-      - name: test
-        shell: bash
-        run: |
-          ls /cvmfs/sw.hsf.org && echo '/cvmfs/sw.hsf.org accessible' || echo '/cvmfs/sw.hsf.org not accessible';
+
+          cat <<'EOF' > ${GITHUB_WORKSPACE}/script_container.sh
+          set -e
+
+          export CCACHE_DIR=/root/.cache/ccache
+          export CCACHE_SLOPPINESS=include_file_ctime,include_file_mtime
+          ccache --set-config=max_size=500M
+          ccache -z
+
+          name=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]')
+
+          if [ -x "$(command -v mold)" ]; then
+            rm /usr/bin/ld
+            ln -s /usr/bin/mold /usr/bin/ld
+            echo "Using the mold linker"
+          fi
+
+          ls /cvmfs/sw.hsf.org/key4hep/setup.sh
