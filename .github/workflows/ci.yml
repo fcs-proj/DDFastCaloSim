@@ -1,55 +1,70 @@
-name: Build and Test DDFastCaloSim
+name: Pipeline
 
 on:
   push:
     branches:
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   run:
     runs-on: ubuntu-24.04
     container:
       image: ghcr.io/key4hep/key4hep-images/alma9-cvmfs:latest
-      options: |
-        --device /dev/fuse
-        --cap-add SYS_ADMIN
+      options: >-
+        --device=/dev/fuse
+        --cap-add=SYS_ADMIN
+
     steps:
       # Checkout the repository
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # List files to debug presence of setup.sh
-      - name: List files
-        run: ls -la
+      # Test CVMFS
+      - name: Test CVMFS
+        run: |
+          set -e
+          echo "::group::Test CVMFS"
+          ls /cvmfs/sft.cern.ch
+          echo "::endgroup::"
 
       # Run the required setup and commands
       - name: Test
         run: |
           set -e
           echo "::group::Set-up key4hep and dev environment"
-          if [ ! -f setup.sh ]; then
-            echo "setup.sh not found!" >&2
-            exit 1
-          fi
-          source setup.sh
+          echo $SHELL
+          echo $PWD
+          ls
+          . ./setup.sh
+          echo "::endgroup::"
+
           echo "::group::Run format check"
           cmake -D FORMAT_COMMAND=clang-format -P cmake/lint.cmake
+          echo "::endgroup::"
+
           echo "::group::Run spell check"
           cmake -P cmake/spell.cmake
+          echo "::endgroup::"
+
           echo "::group::Configure DDFastCaloSim"
           mkdir -p build
           cmake -B build -S .
+          echo "::endgroup::"
+
           echo "::group::Build DDFastCaloSim"
           cmake --build build -j 4
           source build/thisDDFastCaloSim.sh
+          echo "::endgroup::"
+
           echo "::group::Run simulation"
           chmod +x tests/run_ODD_sim.sh
           ./tests/run_ODD_sim.sh
+          echo "::endgroup::"
 
       # Upload artifacts
-      - name: Upload simulation output
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: sim_output
           path: tests/run/
