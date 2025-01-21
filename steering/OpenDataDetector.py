@@ -5,9 +5,7 @@
 #
 ######################################################################
 from DDSim.DD4hepSimulation import DD4hepSimulation
-import DDG4
-from g4units import m, mm, GeV, MeV, rad, keV,TeV
-import os
+from g4units import mm, MeV, TeV
 from math import pi
 
 # See https://github.com/AIDASoft/DD4hep/blob/master/DDG4/python/DDSim/DD4hepSimulation.py
@@ -21,7 +19,7 @@ SIM.enableG4GPS = False
 SIM.enableG4Gun = False
 SIM.enableGun = True
 ## InputFiles for simulation .stdhep, .slcio, .HEPEvt, .hepevt, .hepmc, .pairs files are supported
-#SIM.inputFiles = [""]
+# SIM.inputFiles = [""]
 ## no macro file to execute for runType 'run' or 'vis'
 ## number of events to simulate, used in batch mode
 SIM.numberOfEvents = 100
@@ -36,13 +34,13 @@ SIM.physicsList = None
 SIM.printLevel = "INFO"
 ## The type of action to do in this invocation
 ## batch: just simulate some events, needs numberOfEvents, and input file or gun
-## vis: enable visualisation, run the macroFile if it is set
+## vis: enable visualization, run the macroFile if it is set
 ## run: run the macroFile and exit
 ## shell: enable interactive session
-SIM.runType = "run" # "batch"
+SIM.runType = "run"  # "batch"
 ## Skip first N events when reading a file
 SIM.skipNEvents = 0
-## Steering file to change default behaviour
+## Steering file to change default behavior
 SIM.steeringFile = None
 ## FourVector of translation for the Smearing of the Vertex position: x y z t
 SIM.vertexOffset = [0.0, 0.0, 0.0, 0.0]
@@ -50,14 +48,19 @@ SIM.vertexOffset = [0.0, 0.0, 0.0, 0.0]
 SIM.vertexSigma = [0.0, 0.0, 0.0, 0.0]
 
 ##  set the calorimeter action to the default scoring
-SIM.action.calo = ("Geant4CalorimeterAction", {'HitCreationMode': 2,})
+SIM.action.calo = (
+    "Geant4CalorimeterAction",
+    {
+        "HitCreationMode": 2,
+    },
+)
 
 ##  create a map of patterns and actions to be applied to sensitive detectors
 ##         example: SIM.action.mapActions['tpc'] = "TPCSDAction"
 SIM.action.mapActions = {}
 
 ##  set the default tracker action
-SIM.action.tracker =  ('Geant4VoidSensitiveAction')
+SIM.action.tracker = "Geant4VoidSensitiveAction"
 
 ##  default filter for calorimeter sensitive detectors; this is applied if no other filter is used for a calorimeter
 SIM.filter.calo = "edep0"
@@ -83,7 +86,7 @@ SIM.gun.direction = (0, 1, 0)
 SIM.gun.distribution = "uniform"
 
 ## Total energy for the particle gun.
-SIM.gun.energy = 65536*MeV
+SIM.gun.energy = 65536 * MeV
 
 SIM.gun.multiplicity = 1
 SIM.gun.particle = "gamma"
@@ -94,12 +97,12 @@ SIM.gun.position = (0.0, 0.0, 0.0)
 ## Minimal azimuthal angle for random distribution
 SIM.gun.phiMin = 0
 ## Maximal azimuthal angle for random distribution
-SIM.gun.phiMax = 2*pi
+SIM.gun.phiMax = 2 * pi
 
-## Minimal pseudorapidity for random distibution (overrides thetaMax)
+## Minimal pseudorapidity for random distribution (overrides thetaMax)
 SIM.gun.etaMin = 0.20
 
-## Maximal pseudorapidity for random distibution (overrides thetaMin)
+## Maximal pseudorapidity for random distribution (overrides thetaMin)
 SIM.gun.etaMax = 0.25
 
 ################################################################################
@@ -136,7 +139,7 @@ SIM.part.minDistToParentVertex = 2.2e-14
 
 ## MinimalKineticEnergy to store particles created in the tracking region
 # This setting vastly reduces the file size as only the incident particle is stored
-SIM.part.minimalKineticEnergy = 1*TeV
+SIM.part.minimalKineticEnergy = 1 * TeV
 
 ##  Printout at End of Tracking
 SIM.part.printEndTracking = False
@@ -169,7 +172,7 @@ SIM.physics.list = "FTFP_BERT"
 ##     Set printlevel to DEBUG to see a printout of all range cuts,
 ##     but this only works if range cut is not "None"
 ##
-SIM.physics.rangecut =  0.1*mm
+SIM.physics.rangecut = 0.1 * mm
 
 
 ################################################################################

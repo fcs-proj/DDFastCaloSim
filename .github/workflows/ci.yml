@@ -10,37 +10,33 @@ on:
 
 jobs:
   run:
-    env:
-      views_path: /cvmfs/sft.cern.ch/lcg/views
-      platform: x86_64-el9-gcc13-opt
     runs-on: ubuntu-24.04
-    strategy:
-      matrix:
-        lcg: [LCG_106]
     steps:
       - uses: actions/checkout@v4
 
       - uses: cvmfs-contrib/github-action-cvmfs@v4
+        run: |
+          set -e
+          echo "::group::Set-up key4hep and dev environment"
+          source setup.sh
 
-      - uses: aidasoft/run-lcg-view@v4
-        with:
-          release-platform: "${{matrix.lcg}}/${{env.platform}}"
-          run: |
-            set -e
-            echo "::group::Set-up key4hep"
-            source setup.sh
+          echo "::group::Run format check"
+          cmake -D FORMAT_COMMAND=clang-format -P cmake/lint.cmake
 
-            echo "::group::Configure DDFastCaloSim"
-            mkdir -p build
-            cmake -B build -S .
-          
-            echo "::group::Build DDFastCaloSim"
-            cmake --build build -j 4
-            source build/thisDDFastCaloSim.sh
+          echo "::group::Run spell check"
+          cmake -P cmake/spell.cmake
 
-            echo "::group::Run simulation"
-            chmod +x tests/run_ODD_sim.sh
-            ./tests/run_ODD_sim.sh
+          echo "::group::Configure DDFastCaloSim"
+          mkdir -p build
+          cmake -B build -S .
+
+          echo "::group::Build DDFastCaloSim"
+          cmake --build build -j 4
+          source build/thisDDFastCaloSim.sh
+
+          echo "::group::Run simulation"
+          chmod +x tests/run_ODD_sim.sh
+          ./tests/run_ODD_sim.sh
 
       - uses: actions/upload-artifact@v4
         with:
