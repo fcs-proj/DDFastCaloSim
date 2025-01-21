@@ -21,4 +21,4 @@ jobs:
       - name: test
         shell: bash
         run: |
-          ls /cvmfs/sft.cern.ch && echo 'sft.cern.ch accessible' || echo 'sft.cern.ch not accessible';
+          ls /cvmfs/sw.hsf.org && echo '/cvmfs/sw.hsf.org accessible' || echo '/cvmfs/sw.hsf.org not accessible';
