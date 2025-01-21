@@ -30,7 +30,8 @@ jobs:
           echo $SHELL
           echo $PWD
           ls
-          . ./setup.sh
+          ls /cvmfs/sw.hsf.org/key4hep/setup.sh
+          source setup.sh
           echo "::endgroup::"
 
           echo "::group::Run format check"
