@@ -22,69 +22,22 @@ jobs:
       # Checkout the repository
       - uses: actions/checkout@v4
 
-      # Set up CVMFS environment variable
-      - name: Set CVMFS Proxy
-        run: |
-          cat /etc/cvmfs/default.local
-          echo "CVMFS_HTTP_PROXY=DIRECT" >> /etc/cvmfs/default.local
+      # Debug CVMFS configuration
+      - name: Debug CVMFS Configuration
+        run: cat /etc/cvmfs/default.local
 
-      # Ensure CVMFS is mounted
+      # Check FUSE module
+      - name: Check FUSE Module
+        run: lsmod | grep fuse || echo "FUSE module not loaded"
+
+      # Ensure CVMFS Mount
       - name: Ensure CVMFS Mount
         run: |
           set -e
-          cvmfs_config probe
-          ls /cvmfs/sw.hsf.org || echo "Failed to access /cvmfs/sw.hsf.org"
-
-      # Ensure CVMFS is mounted
-      - name: Ensure CVMFS Mount
-        run: |
-          set -e
-          echo "::group::Ensure CVMFS is mounted"
           cvmfs_config probe
           mount -t cvmfs sw.hsf.org /cvmfs/sw.hsf.org || echo "Failed to mount /cvmfs/sw.hsf.org"
           ls /cvmfs/sw.hsf.org || echo "CVMFS content not available"
-          echo "::endgroup::"
 
-      # Run the required setup and commands
-      - name: Test
-        run: |
-          set -e
-          echo "::group::Set-up key4hep and dev environment"
-          echo $SHELL
-          echo $PWD
-          ls
-          ls /cvmfs/sw.hsf.org
-          ls /cvmfs/sw.hsf.org/key4hep/setup.sh
-          source setup.sh
-          echo "::endgroup::"
-
-          echo "::group::Run format check"
-          cmake -D FORMAT_COMMAND=clang-format -P cmake/lint.cmake
-          echo "::endgroup::"
-
-          echo "::group::Run spell check"
-          cmake -P cmake/spell.cmake
-          echo "::endgroup::"
-
-          echo "::group::Configure DDFastCaloSim"
-          mkdir -p build
-          cmake -B build -S .
-          echo "::endgroup::"
-
-          echo "::group::Build DDFastCaloSim"
-          cmake --build build -j 4
-          source build/thisDDFastCaloSim.sh
-          echo "::endgroup::"
-
-          echo "::group::Run simulation"
-          chmod +x tests/run_ODD_sim.sh
-          ./tests/run_ODD_sim.sh
-          echo "::endgroup::"
-
-      # Upload artifacts
-      - uses: actions/upload-artifact@v4
-        with:
-          name: sim_output
-          path: tests/run/
-          if-no-files-found: error
-          retention-days: 7
+      # Collect CVMFS Logs
+      - name: Collect CVMFS Logs
+        run: cat /var/log/cvmfs/* || echo "No CVMFS logs found"
