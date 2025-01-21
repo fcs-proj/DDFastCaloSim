@@ -14,6 +14,7 @@ jobs:
     container:
       image: ghcr.io/key4hep/key4hep-images/alma9-cvmfs:latest
       options: >-
+        --privileged
         --device=/dev/fuse
         --cap-add=SYS_ADMIN
 
