@@ -11,6 +11,7 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    image: ghcr.io/key4hep/key4hep-images/alma9-cvmfs
 
     steps:
       - name: Start container
