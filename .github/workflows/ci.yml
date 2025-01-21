@@ -22,7 +22,10 @@ jobs:
         run: |
           set -e
           echo "::group::Set-up key4hep and dev environment"
-          source setup.sh
+          echo $SHELL
+          echo $PWD
+          ls
+          . ./setup.sh
 
           echo "::group::Run format check"
           cmake -D FORMAT_COMMAND=clang-format -P cmake/lint.cmake
