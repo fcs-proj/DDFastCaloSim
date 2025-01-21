@@ -47,6 +47,9 @@ jobs:
           echo "New default.local"
           cat /etc/cvmfs/default.local
 
+      - name: Setup CVMFS
+        run: cvmfs_config setup
+
       - name: Check setup
         run: cvmfs_config chksetup
 
