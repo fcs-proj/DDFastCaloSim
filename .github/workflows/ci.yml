@@ -1,4 +1,4 @@
-name: CVMFS Service Setup
+name: CVMFS Pipeline
 
 on:
   push:
@@ -10,20 +10,20 @@ on:
 
 jobs:
   run:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Ensure CVMFS Service Image
+      # Step 1: Pull or load the CVMFS service container image
       - name: Pull or Load CVMFS Service Image
         run: |
           echo "Checking for CVMFS service image..."
-          if ! docker pull registry.cern.ch/cvmfs/service:latest; then
+          if ! docker pull registry.cern.ch/cvmfs/service:2.12.0-1; then
             echo "Failed to pull image. Trying to load from tarball..."
             curl -s https://ecsft.cern.ch/dist/cvmfs/cvmfs-2.12.0/cvmfs-service-2.12.0.x86_64.docker.tar.gz | docker load
           fi
 
-      # Step 2: Start CVMFS Service Container
-      - name: Start CVMFS Service
+      # Step 2: Start the CVMFS service container
+      - name: Start CVMFS Service Container
         run: |
           echo "Starting CVMFS service container..."
           docker run -d --rm \
@@ -32,27 +32,27 @@ jobs:
             --cap-add SYS_ADMIN \
             --device /dev/fuse \
             --volume /cvmfs:/cvmfs:shared \
-            registry.cern.ch/cvmfs/service:latest
+            --name cvmfs-service \
+            registry.cern.ch/cvmfs/service:2.12.0-1
 
-      # Step 3: Verify CVMFS Repositories
-      - name: Verify CVMFS Repositories
+      # Step 3: Verify CVMFS setup within the container
+      - name: Verify CVMFS Setup in Container
         run: |
-          echo "Probing CVMFS setup..."
-          cvmfs_config probe || echo "CVMFS probe failed."
-          echo "Testing repository access..."
-          ls /cvmfs/sft.cern.ch || echo "sft.cern.ch repository not mounted"
-          ls /cvmfs/sw.hsf.org || echo "sw.hsf.org repository not mounted"
+          echo "Probing CVMFS setup within container..."
+          docker exec cvmfs-service cvmfs_config probe || echo "CVMFS probe failed in container."
+          echo "Testing repository access within container..."
+          docker exec cvmfs-service ls /cvmfs/sft.cern.ch || echo "sft.cern.ch repository not mounted in container."
+          docker exec cvmfs-service ls /cvmfs/sw.hsf.org || echo "sw.hsf.org repository not mounted in container."
 
-      # Step 4: Debug Container State
-      - name: Debug Container State
+      # Step 4: Verify CVMFS mount access on host
+      - name: Verify CVMFS Access on Host
         run: |
-          echo "Debugging container environment..."
-          docker ps
-          docker inspect $(docker ps -q) || echo "No running containers to inspect."
+          echo "Checking CVMFS repositories on host..."
+          ls /cvmfs/sft.cern.ch || echo "sft.cern.ch repository not mounted on host."
+          ls /cvmfs/sw.hsf.org || echo "sw.hsf.org repository not mounted on host."
 
-      # Step 5: Stop CVMFS Service (cleanup)
-      - name: Stop CVMFS Service
-        if: always()
+      # Step 5: Stop the CVMFS service container
+      - name: Stop CVMFS Service Container
         run: |
-          echo "Stopping all CVMFS service containers..."
-          docker ps -q --filter ancestor=registry.cern.ch/cvmfs/service:latest | xargs -r docker stop
+          echo "Stopping CVMFS service container..."
+          docker stop cvmfs-service
