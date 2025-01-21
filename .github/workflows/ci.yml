@@ -30,13 +30,10 @@ jobs:
       - name: Show Config
         run: cvmfs_config showconfig
 
-      - name: Check setup
-        run: cvmfs_config chksetup
-
       - name: Fix CVMFS Configuration
         run: |
           echo 'CVMFS_CONFIG_REPOSITORY=cvmfs-config.cern.ch' > /etc/cvmfs/default.d/custom.conf
-      - name: Check setup again
+      - name: Check setup
         run: cvmfs_config chksetup
 
       # Generate Bug Report
