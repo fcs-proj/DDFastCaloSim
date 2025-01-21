@@ -33,7 +33,8 @@ jobs:
             --device /dev/fuse \
             --volume /cvmfs:/cvmfs:shared \
             --name cvmfs-service \
-            cvmfs/service:latest
+            registry.cern.ch/cvmfs/service:latest
+
 
       # Step 3: Verify CVMFS setup within the container
       - name: Verify CVMFS Setup in Container
