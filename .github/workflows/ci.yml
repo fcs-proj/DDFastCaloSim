@@ -17,7 +17,7 @@ jobs:
       - name: Pull or Load CVMFS Service Image
         run: |
           echo "Checking for CVMFS service image..."
-          if ! docker pull registry.cern.ch/cvmfs/service:2.12.0-1; then
+          if ! docker pull registry.cern.ch/cvmfs/service:latest; then
             echo "Failed to pull image. Trying to load from tarball..."
             curl -s https://ecsft.cern.ch/dist/cvmfs/cvmfs-2.12.0/cvmfs-service-2.12.0.x86_64.docker.tar.gz | docker load
           fi
