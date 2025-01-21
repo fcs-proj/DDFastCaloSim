@@ -32,7 +32,19 @@ jobs:
 
       - name: Fix CVMFS Configuration
         run: |
-          echo 'CVMFS_CONFIG_REPOSITORY=cvmfs-config.cern.ch' > /etc/cvmfs/default.d/custom.conf
+          # Check /etc/cvmfs/default.local
+          echo "Old default.local"
+          cat /etc/cvmfs/default.local
+
+          # Remove CVMFS_CONFIG_REPOSITORY from default.local if it exists
+          sed -i '/^CVMFS_CONFIG_REPOSITORY=/d' /etc/cvmfs/default.local
+
+          # Add CVMFS_CONFIG_REPOSITORY to default.conf
+          echo "CVMFS_CONFIG_REPOSITORY=cvmfs-config.cern.ch" >> /etc/cvmfs/default.conf
+
+          echo "New default.local"
+          cat /etc/cvmfs/default.local
+
       - name: Check setup
         run: cvmfs_config chksetup
 
