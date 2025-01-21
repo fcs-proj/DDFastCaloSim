@@ -22,6 +22,15 @@ jobs:
       # Checkout the repository
       - uses: actions/checkout@v4
 
+      # Ensure CVMFS is mounted
+      - name: Ensure CVMFS Mount
+        run: |
+          set -e
+          echo "::group::Ensure CVMFS is mounted"
+          cvmfs_config probe
+          mount -t cvmfs sw.hsf.org /cvmfs/sw.hsf.org || echo "Failed to mount /cvmfs/sw.hsf.org"
+          ls /cvmfs/sw.hsf.org || echo "CVMFS content not available"
+          echo "::endgroup::"
 
       # Run the required setup and commands
       - name: Test
