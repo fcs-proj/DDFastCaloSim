@@ -13,9 +13,11 @@ jobs:
     runs-on: ubuntu-24.04
     container:
       image: ghcr.io/key4hep/key4hep-images/alma9-cvmfs:latest
+      volumes: /cvmfs:/cvmfs:shared
     steps:
       # Checkout the repository
       - uses: actions/checkout@v4
+      - uses: cvmfs-contrib/github-action-cvmfs@v4
 
       # Run the required setup and commands
       - name: Test
