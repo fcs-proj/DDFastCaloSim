@@ -26,16 +26,27 @@ jobs:
       - name: Debug CVMFS Configuration
         run: cat /etc/cvmfs/default.local
 
-      # Check FUSE module
-      - name: showconfig
+      # Show CVMFS config
+      - name: Show Config
         run: cvmfs_config showconfig
 
-      # Check FUSE module
-      - name: bugreport
-        run: cvmfs_config bugreport
+      # Generate Bug Report
+      - name: Generate Bug Report
+        run: |
+          set -e
+          cvmfs_config bugreport
+          echo "Bug report generated at /tmp/cvmfs-bugreport.*/*.tar.gz"
+
+      # Upload Bug Report
+      - name: Upload Bug Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: cvmfs-bugreport
+          path: /tmp/cvmfs-bugreport.*/*.tar.gz
 
       - name: probe
         run: |
           set -e
           cvmfs_config probe
           ls /cvmfs/sw.hsf.org || echo "CVMFS content not available"
+          ls /cvmfs/sw.hsf.org/key4hep/setup.sh || echo "key4hep content not available"
