@@ -42,11 +42,16 @@ jobs:
           # Add CVMFS_CONFIG_REPOSITORY to default.conf
           echo "CVMFS_CONFIG_REPOSITORY=cvmfs-config.cern.ch" >> /etc/cvmfs/default.conf
 
+          echo "CVMFS_REPOSITORIES=sft.cern.ch,sw.hsf.org" >> /etc/cvmfs/default.local
+
           echo "New default.local"
           cat /etc/cvmfs/default.local
 
       - name: Check setup
         run: cvmfs_config chksetup
+
+      - name: Manual mount
+        run: mount -t cvmfs sw.hsf.org /cvmfs/sw.hsf.org
 
       # Generate Bug Report
       - name: Generate Bug Report
