@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-24.04
     container:
       image: ghcr.io/key4hep/key4hep-images/alma9-cvmfs:latest
-      volumes:
-        - /cvmfs:/cvmfs:shared
       options: >-
         --device=/dev/fuse
         --cap-add=SYS_ADMIN
