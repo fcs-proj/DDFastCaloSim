@@ -22,6 +22,19 @@ jobs:
       # Checkout the repository
       - uses: actions/checkout@v4
 
+      # Set up CVMFS environment variable
+      - name: Set CVMFS Proxy
+        run: |
+          cat /etc/cvmfs/default.local
+          echo "CVMFS_HTTP_PROXY=DIRECT" >> /etc/cvmfs/default.local
+
+      # Ensure CVMFS is mounted
+      - name: Ensure CVMFS Mount
+        run: |
+          set -e
+          cvmfs_config probe
+          ls /cvmfs/sw.hsf.org || echo "Failed to access /cvmfs/sw.hsf.org"
+
       # Ensure CVMFS is mounted
       - name: Ensure CVMFS Mount
         run: |
