@@ -26,6 +26,7 @@ jobs:
         run: |
           set -e
           echo "::group::Test CVMFS"
+          ls /cvmfs/sw.hsf.org
           ls /cvmfs/sft.cern.ch
           echo "::endgroup::"
 
