@@ -1,4 +1,4 @@
-name: Pipeline
+name: CVMFS Setup with Service Container
 
 on:
   push:
@@ -12,67 +12,37 @@ jobs:
   run:
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/key4hep/key4hep-images/alma9-cvmfs:latest
+      image: registry.cern.ch/cvmfs/service:latest
       options: >-
-        --privileged
-        --device=/dev/fuse
         --cap-add=SYS_ADMIN
-
+        --device=/dev/fuse
+        --volume=/cvmfs:/cvmfs:shared
     steps:
-      # Checkout the repository
-      - uses: actions/checkout@v4
-
-      # Debug CVMFS configuration
-      - name: Debug CVMFS Configuration
-        run: cat /etc/cvmfs/default.local
-
-      # Show CVMFS config
-      - name: Show Config
-        run: cvmfs_config showconfig
-
-      - name: Fix CVMFS Configuration
+      # Step 1: Verify CVMFS configuration
+      - name: Verify CVMFS Configuration
         run: |
-          # Check /etc/cvmfs/default.local
-          echo "Old default.local"
-          cat /etc/cvmfs/default.local
+          echo "Verifying CVMFS configuration..."
+          cvmfs_config chksetup
 
-          # Remove CVMFS_CONFIG_REPOSITORY from default.local if it exists
-          sed -i '/^CVMFS_CONFIG_REPOSITORY=/d' /etc/cvmfs/default.local
-
-          # Add CVMFS_CONFIG_REPOSITORY to default.conf
-          echo "CVMFS_CONFIG_REPOSITORY=cvmfs-config.cern.ch" >> /etc/cvmfs/default.conf
-
-          echo "CVMFS_REPOSITORIES=sft.cern.ch,sw.hsf.org" >> /etc/cvmfs/default.local
-
-          echo "New default.local"
-          cat /etc/cvmfs/default.local
-
-      - name: Setup CVMFS
-        run: cvmfs_config setup
-
-      - name: Check setup
-        run: cvmfs_config chksetup
-
-      - name: Manual mount
-        run: mount -t cvmfs sw.hsf.org /cvmfs/sw.hsf.org
-
-      # Generate Bug Report
-      - name: Generate Bug Report
+      # Step 2: Mount repositories
+      - name: Mount CVMFS Repositories
         run: |
-          set -e
-          cvmfs_config bugreport
-          echo "Bug report generated at /tmp/cvmfs-bugreport.*/*.tar.gz"
+          echo "Setting up CVMFS repositories..."
+          echo "CVMFS_CLIENT_PROFILE=single" >> /etc/cvmfs/default.conf
+          echo "CVMFS_REPOSITORIES=sft.cern.ch,sw.hsf.org" >> /etc/cvmfs/default.conf
+          cvmfs_config setup
+          sleep 5  # Give some time for the service to initialize
 
-      # Upload Bug Report
-      - name: Upload Bug Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: cvmfs-bugreport
-          path: /tmp/cvmfs-bugreport.*/*.tar.gz
-
-      - name: probe
+      # Step 3: Verify repositories are accessible
+      - name: Verify Repositories
         run: |
-          set -e
-          cvmfs_config probe
-          ls /cvmfs/sw.hsf.org || echo "CVMFS content not available"
-          ls /cvmfs/sw.hsf.org/key4hep/setup.sh || echo "key4hep content not available"
+          echo "Checking mounted repositories..."
+          ls /cvmfs/sft.cern.ch || echo "sft.cern.ch repository not mounted"
+          ls /cvmfs/sw.hsf.org || echo "sw.hsf.org repository not mounted"
+
+      # Step 4: Use CVMFS Content
+      - name: Test CVMFS Content Access
+        run: |
+          echo "Testing CVMFS content access..."
+          ls /cvmfs/sft.cern.ch > /dev/null && echo "sft.cern.ch accessible" || echo "Failed to access sft.cern.ch"
+          ls /cvmfs/sw.hsf.org > /dev/null && echo "sw.hsf.org accessible" || echo "Failed to access sw.hsf.org"
