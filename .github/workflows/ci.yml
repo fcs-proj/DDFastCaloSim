@@ -11,7 +11,12 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    container:
     image: ghcr.io/key4hep/key4hep-images/alma9-cvmfs
+    options: >-
+      --device /dev/fuse
+      --cap-add SYS_ADMIN
+      --privileged
 
     steps:
       - name: Start container
