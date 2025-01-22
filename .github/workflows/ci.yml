@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-24.04
     container:
       image: gitlab-registry.cern.ch/linuxsupport/alma9-base
-      volumes: /cvmfs:/cvmfs:shared
+      volumes:
+        - /cvmfs:/cvmfs:shared
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
