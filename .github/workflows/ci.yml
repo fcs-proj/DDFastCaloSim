@@ -31,21 +31,21 @@ jobs:
             --volume ${{ github.workspace }}:/workspace \
             --workdir /workspace \
             ${{ env.CONTAINER_IMAGE }} bash -c "
-              set -e
+
             echo '::group::Set-up key4hep'
-            source setup.sh
+            source setup.sh || exit 1
 
             echo '::group::Configure DDFastCaloSim'
             mkdir -p build
-            cmake -B build -S .
+            cmake -B build -S . || exit 1
 
             echo '::group::Build DDFastCaloSim'
-            cmake --build build -j 4
+            cmake --build build -j 4  || exit 1
             source build/thisDDFastCaloSim.sh
 
             echo '::group::Run simulation'
             chmod +x tests/run_ODD_sim.sh
-            source tests/run_ODD_sim.sh
+            source tests/run_ODD_sim.sh || exit 1
           "
 
       # Upload artifact
