@@ -16,7 +16,7 @@ env:
       --cap-add SYS_ADMIN \
       --volume /cvmfs:/cvmfs:shared \
       --volume ${{ github.workspace }}:/workspace \
-      ${{ env.CONTAINER_IMAGE }}
+      $CONTAINER_IMAGE
 
 jobs:
   run:
