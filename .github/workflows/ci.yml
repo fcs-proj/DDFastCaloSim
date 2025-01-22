@@ -8,22 +8,50 @@ on:
     branches:
       - main
 
+env:
+  CONTAINER_IMAGE: ghcr.io/key4hep/key4hep-images/alma9
+
 jobs:
   run:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      # Checkout code
+      - uses: actions/checkout@v4
 
-      - name: Initialize CVMFS
-        uses: cvmfs-contrib/github-action-cvmfs@v4
+      # Set up CVMFS
+      - uses: cvmfs-contrib/github-action-cvmfs@v4
 
-      - name: List CVMFS Contents
-        run: ls /cvmfs/sft.cern.ch/
-
-      - name: Run Tests
+      # Build and test in the container
+      - name: Build and test
         run: |
-          source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2024-11-28
-          which gcc
-          gcc version
-          exit 0
+          docker run --rm \
+            --device /dev/fuse \
+            --cap-add SYS_ADMIN \
+            --volume /cvmfs:/cvmfs:shared \
+            --volume ${{ github.workspace }}:/workspace \
+            --workdir /workspace \
+            ${{ env.CONTAINER_IMAGE }} bash -c "
+
+            echo '::group::Set-up key4hep'
+            source setup.sh
+
+            echo '::group::Configure DDFastCaloSim'
+            mkdir -p build
+            cmake -B build -S .
+
+            echo '::group::Build DDFastCaloSim'
+            cmake --build build -j 4
+            source build/thisDDFastCaloSim.sh
+
+            echo '::group::Run simulation'
+            chmod +x tests/run_ODD_sim.sh
+            source tests/run_ODD_sim.sh
+          "
+
+      # Upload artifact
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sim_output
+          path: tests/run/
+          if-no-files-found: error
+          retention-days: 7
