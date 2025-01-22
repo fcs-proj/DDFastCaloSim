@@ -10,13 +10,6 @@ on:
 
 env:
   CONTAINER_IMAGE: ghcr.io/key4hep/key4hep-images/alma9
-  DOCKER_RUN: |
-    docker run --rm \
-      --device /dev/fuse \
-      --cap-add SYS_ADMIN \
-      --volume /cvmfs:/cvmfs:shared \
-      --volume ${{ github.workspace }}:/workspace \
-      $CONTAINER_IMAGE
 
 jobs:
   run:
@@ -30,16 +23,15 @@ jobs:
 
       # Build and test in the container
       - name: Build and test
-        shell: bash
         run: |
-          ${{ env.DOCKER_RUN }} bash -c "
-            set -e
-          
-            #cd /workspace
-            pwd
-            ls
-            ls /cvmfs/sft.cern.ch
-            
+          docker run --rm \
+            --device /dev/fuse \
+            --cap-add SYS_ADMIN \
+            --volume /cvmfs:/cvmfs:shared \
+            --volume ${{ github.workspace }}:/workspace \
+            --workdir /workspace \
+            ${{ env.CONTAINER_IMAGE }} bash -c "
+              set -e
             echo '::group::Set-up key4hep'
             source setup.sh
 
