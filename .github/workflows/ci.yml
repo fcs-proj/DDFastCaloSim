@@ -33,19 +33,19 @@ jobs:
             ${{ env.CONTAINER_IMAGE }} bash -c "
 
             echo '::group::Set-up key4hep'
-            source setup.sh || exit 1
+            source setup.sh
 
             echo '::group::Configure DDFastCaloSim'
             mkdir -p build
-            cmake -B build -S . || exit 1
+            cmake -B build -S .
 
             echo '::group::Build DDFastCaloSim'
-            cmake --build build -j 4  || exit 1
+            cmake --build build -j 4
             source build/thisDDFastCaloSim.sh
 
             echo '::group::Run simulation'
             chmod +x tests/run_ODD_sim.sh
-            source tests/run_ODD_sim.sh || exit 1
+            source tests/run_ODD_sim.sh
           "
 
       # Upload artifact
