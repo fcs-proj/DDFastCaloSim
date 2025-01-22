@@ -10,6 +10,13 @@ on:
 
 env:
   CONTAINER_IMAGE: ghcr.io/key4hep/key4hep-images/alma9
+  DOCKER_RUN: |
+    docker run --rm \
+      --device /dev/fuse \
+      --cap-add SYS_ADMIN \
+      --volume /cvmfs:/cvmfs:shared \
+      --volume ${{ github.workspace }}:/workspace \
+      ghcr.io/key4hep/key4hep-images/alma9
 
 jobs:
   run:
@@ -22,33 +29,28 @@ jobs:
       - uses: cvmfs-contrib/github-action-cvmfs@v4
 
       # Run commands in the container
-      - name: Run setup and build in container
+      - name: Build and test
+        shell: bash
         run: |
-          docker run --rm \
-            --device /dev/fuse \
-            --cap-add SYS_ADMIN \
-            --volume /cvmfs:/cvmfs:shared \
-            --volume ${{ github.workspace }}:/workspace \
-            $CONTAINER_IMAGE \
-            bash -c "
-              set -e
-              cd /workspace
-              
-              echo '::group::Set-up key4hep'
-              source setup.sh
+          $DOCKER_RUN bash -c "
+            set -e
+            cd /workspace
+            
+            echo '::group::Set-up key4hep'
+            source setup.sh
 
-              echo '::group::Configure DDFastCaloSim'
-              mkdir -p build
-              cmake -B build -S .
+            echo '::group::Configure DDFastCaloSim'
+            mkdir -p build
+            cmake -B build -S .
 
-              echo '::group::Build DDFastCaloSim'
-              cmake --build build -j 4
-              source build/thisDDFastCaloSim.sh
+            echo '::group::Build DDFastCaloSim'
+            cmake --build build -j 4
+            source build/thisDDFastCaloSim.sh
 
-              echo '::group::Run simulation'
-              chmod +x tests/run_ODD_sim.sh
-              source tests/run_ODD_sim.sh
-            "
+            echo '::group::Run simulation'
+            chmod +x tests/run_ODD_sim.sh
+            source tests/run_ODD_sim.sh
+          "
 
       # Upload artifact
       - uses: actions/upload-artifact@v4
