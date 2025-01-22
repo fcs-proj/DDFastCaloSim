@@ -26,7 +26,7 @@ jobs:
             --cap-add SYS_ADMIN \
             --volume /cvmfs:/cvmfs:shared \
             --volume ${{ github.workspace }}:/workspace \
-            gitlab-registry.cern.ch/linuxsupport/alma9-base \
+            ghcr.io/key4hep/key4hep-images/alma9 \
             bash -c "
               set -e
               cd /workspace
