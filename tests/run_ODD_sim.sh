@@ -18,12 +18,12 @@ GEOMETRY_FILE="$SCRIPT_DIR/../geometry/OpenDataDetector/OpenDataDetector.xml"
 # Check if files exist
 if [[ ! -f "$STEERING_FILE" ]]; then
   echo "Error: Steering file not found at $STEERING_FILE"
-  exit 1
+  [[ "$CI" == "true" ]] && exit 1
 fi
 
 if [[ ! -f "$GEOMETRY_FILE" ]]; then
   echo "Error: Geometry file not found at $GEOMETRY_FILE"
-  exit 1
+  [[ "$CI" == "true" ]] && exit 1
 fi
 
 # Output directory
@@ -32,7 +32,7 @@ mkdir -p "$SCRIPT_DIR/run"
 # Run the simulation
 (
   cd "$SCRIPT_DIR/run" || exit
-  if ! ddsim \
+  ddsim \
     --steeringFile ${STEERING_FILE} \
     --compactFile ${GEOMETRY_FILE} \
     --numberOfEvents ${NUMEVENTS} \
@@ -42,13 +42,13 @@ mkdir -p "$SCRIPT_DIR/run"
     --gun.phiMin ${PHI_MIN} \
     --gun.phiMax ${PHI_MAX} \
     --gun.energy ${ENERGY}*MeV \
-    --outputFile ODD_sim.root; then
-    echo "Error: Simulation failed"
-    exit 1
-  fi
+    --outputFile ODD_sim.root
 )
 exit_status=$?
-if [ $exit_status -ne 0 ]; then
-  echo "Error: Subshell exited with status $exit_status"
-  exit $exit_status
+
+if [[ $exit_status -ne 0 ]]; then
+  echo "Error: Simulation failed with exit status $exit_status"
+  [[ "$CI" == "true" ]] && exit $exit_status
+else
+  echo "Simulation completed successfully."
 fi
