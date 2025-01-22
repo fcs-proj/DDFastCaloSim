@@ -34,7 +34,11 @@ jobs:
         run: |
           ${{ env.DOCKER_RUN }} bash -c "
             set -e
-            cd /workspace
+          
+            #cd /workspace
+            pwd
+            ls
+            ls /cvmfs/sft.cern.ch
             
             echo '::group::Set-up key4hep'
             source setup.sh
