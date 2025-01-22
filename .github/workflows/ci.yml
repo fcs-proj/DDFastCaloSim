@@ -1,45 +1,25 @@
-name: Key4hep build
-description: Build and test using the Key4hep stack
+name: Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    container:
+      image: gitlab-registry.cern.ch/linuxsupport/alma9-base
+      volumes: /cvmfs:/cvmfs:shared
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-  steps:
-    - shell: bash
-      run: echo "NOW=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+      - name: Initialize CVMFS
+        uses: cvmfs-contrib/github-action-cvmfs@v4
 
-    - uses: actions/cache@v4
-      with:
-        path: ~/.cache/ccache
-        key: ${{ inputs.build_type }}-${{ inputs.image }}-${{ env.NOW }}
-        restore-keys: |
-          ${{ inputs.build_type }}-${{ inputs.image }}
-
-    - name: Start container
-      shell: bash
-      run: |
-        name=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]')
-          docker run --name container --privileged -v ${GITHUB_WORKSPACE}:/${name} -v ~/.cache/ccache:/root/.cache/ccache -d ghcr.io/key4hep/key4hep-images/alma9-cvmfs tail -f /dev/null
-
-    - name: Setup environment and build
-      shell: bash
-      run: |
-          name=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]')
-
-          cat <<'EOF' > ${GITHUB_WORKSPACE}/script_container.sh
-          set -e
-
-          export CCACHE_DIR=/root/.cache/ccache
-          export CCACHE_SLOPPINESS=include_file_ctime,include_file_mtime
-          ccache --set-config=max_size=500M
-          ccache -z
-
-          name=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]')
-
-          if [ -x "$(command -v mold)" ]; then
-            rm /usr/bin/ld
-            ln -s /usr/bin/mold /usr/bin/ld
-            echo "Using the mold linker"
-          fi
-
-          ls /cvmfs/sw.hsf.org/key4hep/setup.sh
+      - name: List CVMFS Contents
+        run: ls /cvmfs/sft.cern.ch/
