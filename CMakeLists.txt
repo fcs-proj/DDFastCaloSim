@@ -17,8 +17,10 @@ message(STATUS "Configuring project ${PROJECT_NAME}")
 #----------------------------------------------------------------------------
 # Configure C++ Standard
 set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ standard to use")
-set(CMAKE_CXX_STANDARD_REQUIRED ON) # Ensure the standard is strictly required
-set(CMAKE_CXX_EXTENSIONS OFF)       # Disable compiler-specific extensions
+# Ensure the standard is strictly required
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# Disable compiler-specific extensions
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 #----------------------------------------------------------------------------
 # Find required packages
@@ -31,16 +33,17 @@ dd4hep_set_compiler_flags()
 dd4hep_use_python_executable()
 
 #----------------------------------------------------------------------------
-# Source and header file configuration
-file(GLOB sources source/*.cxx)
-set(headers ${PROJECT_SOURCE_DIR}/include/DDFastCaloSim/*.h)
+# Find sources
+file(GLOB DDFastCaloSim_SOURCES source/*.cxx)
 
 #----------------------------------------------------------------------------
 # Create the plugin library
-add_dd4hep_plugin(${PROJECT_NAME} SHARED ${sources})
+add_dd4hep_plugin(${PROJECT_NAME} SHARED ${DDFastCaloSim_SOURCES})
 
+# Set the include directories
 target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include)
 
+# Link plugins against Geant4 and DD4hep
 target_link_libraries(${PROJECT_NAME} PUBLIC ${Geant4_LIBRARIES} DD4hep::DDCore DD4hep::DDG4)
 
 #----------------------------------------------------------------------------
