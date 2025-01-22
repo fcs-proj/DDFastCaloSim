@@ -16,11 +16,11 @@ env:
       --cap-add SYS_ADMIN \
       --volume /cvmfs:/cvmfs:shared \
       --volume ${{ github.workspace }}:/workspace \
-      ghcr.io/key4hep/key4hep-images/alma9
+      ${{ env.CONTAINER_IMAGE }}
 
 jobs:
   run:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     steps:
       # Checkout code
       - uses: actions/checkout@v4
@@ -28,11 +28,11 @@ jobs:
       # Set up CVMFS
       - uses: cvmfs-contrib/github-action-cvmfs@v4
 
-      # Run commands in the container
+      # Build and test in the container
       - name: Build and test
         shell: bash
         run: |
-          $DOCKER_RUN bash -c "
+          ${{ env.DOCKER_RUN }} bash -c "
             set -e
             cd /workspace
             
