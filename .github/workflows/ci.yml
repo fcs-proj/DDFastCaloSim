@@ -1,29 +1,29 @@
-name: Pipeline
+name: CI with CVMFS in Container
 
 on:
   push:
     branches:
       - main
   pull_request:
-    branches:
-      - main
 
 jobs:
-  run:
+  test:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Initialize CVMFS on the host
-      - name: Initialize CVMFS
-        uses: cvmfs-contrib/github-action-cvmfs@v4
-
-      # Step 2: Checkout the code on the host
-      - name: Checkout Code
+      # Step 1: Checkout the code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 3: Run container-based steps with bind mount
-      - name: List CVMFS Contents Inside Container
-        uses: docker://gitlab-registry.cern.ch/linuxsupport/alma9-base
-        with:
-          args: >
-            --volume /cvmfs:/cvmfs:shared
-            ls /cvmfs/sft.cern.ch/
+      # Step 2: Set up CVMFS
+      - name: Set up CVMFS
+        uses: cvmfs-contrib/github-action-cvmfs@v4
+
+      # Step 3: Run commands in a container
+      - name: Run commands in container
+        run: |
+          docker run --rm \
+            --device /dev/fuse \
+            --cap-add SYS_ADMIN \
+            --volume /cvmfs:/cvmfs:shared \
+            gitlab-registry.cern.ch/linuxsupport/alma9-base \
+            bash -c "ls /cvmfs/sft.cern.ch/"
