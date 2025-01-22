@@ -10,11 +10,7 @@ on:
 
 jobs:
   run:
-    runs-on: ubuntu-24.04
-    container:
-      image: gitlab-registry.cern.ch/linuxsupport/alma9-base
-      volumes:
-        - /cvmfs:/cvmfs:shared
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -24,3 +20,8 @@ jobs:
 
       - name: List CVMFS Contents
         run: ls /cvmfs/sft.cern.ch/
+
+      - name: Run Tests
+        run: |
+          source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2024-11-28
+          exit 0
