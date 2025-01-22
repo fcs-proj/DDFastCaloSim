@@ -11,14 +11,21 @@ on:
 jobs:
   run:
     runs-on: ubuntu-24.04
-    uses: cvmfs-contrib/github-action-cvmfs@v4
+    steps:
+      # Step 1: Initialize CVMFS on the host (GitHub runner)
+      - name: Initialize CVMFS
+        uses: cvmfs-contrib/github-action-cvmfs@v4
+
+      # Step 2: Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
     container:
       image: gitlab-registry.cern.ch/linuxsupport/alma9-base
       volumes:
         - /cvmfs:/cvmfs:shared
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
 
+    steps:
+      # Step 3: Run a command inside the container
       - name: List CVMFS Contents
         run: ls /cvmfs/sft.cern.ch/
