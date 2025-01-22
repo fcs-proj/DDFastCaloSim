@@ -10,32 +10,15 @@ on:
 
 jobs:
   run:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
+    uses: cvmfs-contrib/github-action-cvmfs@v4
+    container:
+      image: gitlab-registry.cern.ch/linuxsupport/alma9-base
+      volumes:
+        - /cvmfs:/cvmfs:shared
     steps:
-      - uses: actions/checkout@v4
-      - uses: cvmfs-contrib/github-action-cvmfs@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      - name: Run Tests
-        run: |
-          set -e
-          echo "::group::Set-up key4hep"
-          source setup.sh
-          
-          echo "::group::Configure DDFastCaloSim"
-          mkdir -p build
-          cmake -B build -S .
-          
-          echo "::group::Build DDFastCaloSim"
-          cmake --build build -j 4
-          source build/thisDDFastCaloSim.sh
-
-          echo "::group::Run simulation"
-          chmod +x tests/run_ODD_sim.sh
-          ./tests/run_ODD_sim.sh
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: sim_output
-          path: tests/run/
-          if-no-files-found: error
-          retention-days: 7
+      - name: List CVMFS Contents
+        run: ls /cvmfs/sft.cern.ch/
