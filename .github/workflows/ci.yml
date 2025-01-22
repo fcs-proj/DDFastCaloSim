@@ -8,9 +8,12 @@ on:
     branches:
       - main
 
+env:
+  CONTAINER_IMAGE: ghcr.io/key4hep/key4hep-images/alma9
+
 jobs:
   run:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # Checkout code
       - uses: actions/checkout@v4
@@ -26,7 +29,7 @@ jobs:
             --cap-add SYS_ADMIN \
             --volume /cvmfs:/cvmfs:shared \
             --volume ${{ github.workspace }}:/workspace \
-            ghcr.io/key4hep/key4hep-images/alma9 \
+            $CONTAINER_IMAGE \
             bash -c "
               set -e
               cd /workspace
@@ -44,7 +47,7 @@ jobs:
 
               echo '::group::Run simulation'
               chmod +x tests/run_ODD_sim.sh
-              ./tests/run_ODD_sim.sh
+              source tests/run_ODD_sim.sh
             "
 
       # Upload artifact
