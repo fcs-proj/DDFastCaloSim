@@ -10,7 +10,7 @@ on:
 
 jobs:
   run:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       # Step 1: Initialize CVMFS on the host
       - name: Initialize CVMFS
@@ -26,4 +26,4 @@ jobs:
         with:
           args: >
             --volume /cvmfs:/cvmfs:shared
-        run: ls /cvmfs/sft.cern.ch/
+            ls /cvmfs/sft.cern.ch/
