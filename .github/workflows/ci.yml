@@ -25,7 +25,6 @@ jobs:
       volumes:
         - /cvmfs:/cvmfs:shared
 
-    steps:
       # Step 3: Run a command inside the container
       - name: List CVMFS Contents
         run: ls /cvmfs/sft.cern.ch/
