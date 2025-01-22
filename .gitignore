@@ -17,3 +17,4 @@ __pycache__/
 *.egg-info
 playground/
 tests/run
+fcs-venv/

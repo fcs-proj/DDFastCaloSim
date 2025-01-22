@@ -1,7 +1,14 @@
 #----------------------------------------------------------------------------
 # Setup the project
 cmake_minimum_required(VERSION 3.30)
+
+include(cmake/prelude.cmake)
+
 project(DDFastCaloSim)
+
+include(cmake/project-is-top-level.cmake)
+include(cmake/lint-targets.cmake)
+include(cmake/spell-targets.cmake)
 
 message(STATUS "Configuring project ${PROJECT_NAME}")
 
