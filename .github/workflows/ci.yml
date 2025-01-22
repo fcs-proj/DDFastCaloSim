@@ -1,29 +1,43 @@
-name: CI with CVMFS in Container
+name: Pipeline
 
 on:
   push:
     branches:
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  run:
+    runs-on: ubuntu-22.04
     steps:
-      # Step 1: Checkout the code
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # Step 2: Set up CVMFS
-      - name: Set up CVMFS
-        uses: cvmfs-contrib/github-action-cvmfs@v4
-
-      # Step 3: Run commands in a container
-      - name: Run commands in container
+      - uses: cvmfs-contrib/github-action-cvmfs@v4
+    
+      - name: Set-up key4hep
         run: |
-          docker run --rm \
-            --device /dev/fuse \
-            --cap-add SYS_ADMIN \
-            --volume /cvmfs:/cvmfs:shared \
-            gitlab-registry.cern.ch/linuxsupport/alma9-base \
-            bash -c "ls /cvmfs/sft.cern.ch/"
+          source setup.sh
+          
+      - name: Configure DDFastCaloSim
+        run: |
+          mkdir -p build
+          cmake -B build -S .
+
+      - name: Build DDFastCaloSim
+        run: |
+          cmake --build build -j 4
+          source build/thisDDFastCaloSim.sh
+
+      - name: Run simulation
+        run: |
+          chmod +x tests/run_ODD_sim.sh
+          ./tests/run_ODD_sim.sh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sim_output
+          path: tests/run/
+          if-no-files-found: error
+          retention-days: 7
