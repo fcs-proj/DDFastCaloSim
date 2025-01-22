@@ -10,7 +10,7 @@ on:
 
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       # Step 1: Initialize CVMFS on the host
       - name: Initialize CVMFS
@@ -20,8 +20,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 3: Run container-based steps
+      # Step 3: Run container-based steps with bind mount
       - name: List CVMFS Contents Inside Container
         uses: docker://gitlab-registry.cern.ch/linuxsupport/alma9-base
         with:
-          args: ls /cvmfs/sft.cern.ch/
+          args: >
+            --volume /cvmfs:/cvmfs:shared
+        run: ls /cvmfs/sft.cern.ch/
