@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 3.30)
 
 include(cmake/prelude.cmake)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 project(DDFastCaloSim)
 
 include(cmake/project-is-top-level.cmake)
