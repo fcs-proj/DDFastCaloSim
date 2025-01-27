@@ -10,12 +10,16 @@ dd4hep::sim::FastCaloSim::FastCaloSim(dd4hep::sim::Geant4Context* context,
 }
 bool dd4hep::sim::FastCaloSim::check_trigger(const G4FastTrack& track)
 {
+  std::cout << "Called fast simulation trigger" << std::endl;
   return true;
 }
 
 void dd4hep::sim::FastCaloSim::modelShower(const G4FastTrack& aTrack,
                                            G4FastStep& aStep)
 {
+  // Kill particle
+  aStep.KillPrimaryTrack();
+  aStep.SetPrimaryTrackPathLength(0.0);
   return;
 }
 
