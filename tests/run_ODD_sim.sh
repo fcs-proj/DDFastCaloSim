@@ -32,7 +32,7 @@ mkdir -p "$SCRIPT_DIR/run"
 # Run the simulation
 (
   cd "$SCRIPT_DIR/run" || exit
-  ddsim \
+  LD_PRELOAD=/srv/build/libDDFastCaloSim.so ddsim \
     --steeringFile ${STEERING_FILE} \
     --compactFile ${GEOMETRY_FILE} \
     --numberOfEvents ${NUMEVENTS} \
