@@ -29,10 +29,13 @@ fi
 # Output directory
 mkdir -p "$SCRIPT_DIR/run"
 
+# Set DDFastCaloSim library path
+DDFastCaloSim_LIB=${DDFastCaloSim_LIB:-"${SCRIPT_DIR}/../build/libDDFastCaloSim.so"}
+
 # Run the simulation
 (
   cd "$SCRIPT_DIR/run" || exit
-  ddsim \
+  LD_PRELOAD=${DDFastCaloSim_LIB} ddsim \
     --steeringFile ${STEERING_FILE} \
     --compactFile ${GEOMETRY_FILE} \
     --numberOfEvents ${NUMEVENTS} \

@@ -192,42 +192,43 @@ SIM.random.type = None
 # Configure fast simulation
 ###############################################################################
 
-# def fast_sim_config(kernel):
-#    from g4units import GeV, MeV  # DO NOT REMOVE OR MOVE!!!!! (EXCLAMATION MARK)
-#    from DDG4 import DetectorConstruction, Geant4, PhysicsList
 
-#    geant4 = Geant4(kernel)
-#    seq = geant4.detectorConstruction()
+def fast_sim_config(kernel):
+    from DDG4 import DetectorConstruction, Geant4, PhysicsList
 
-#    # Create a model for fast simulation
-#    model = DetectorConstruction(kernel, "FastCaloSim" )
+    geant4 = Geant4(kernel)
+    seq = geant4.detectorConstruction()
 
-#    # Mandatory model parameters
-#    model.RegionName = 'ECalBarrelRegion'
-#    model.Enable = True
-#    myParticles =  ["e-","e+","gamma","mu-","mu+","pi-","pi+"]
-#    model.ApplicableParticles = myParticles
-#    model.enableUI()
-#    seq.adopt(model)
-#    #-------------------
-#    model_endcap = DetectorConstruction(kernel, "FastCaloSim")
+    # Create a model for fast simulation
+    model = DetectorConstruction(kernel, "FastCaloSim")
 
-#    # Mandatory model parameters
-#    model_endcap.RegionName = 'ECalEndcapRegion'
-#    model_endcap.Enable = True
-#    model_endcap.ApplicableParticles = myParticles
+    # Mandatory model parameters
+    model.RegionName = "ECalBarrelRegion"
+    model.Enable = True
+    myParticles = ["e-", "e+", "gamma", "pi-", "pi+"]
+    model.ApplicableParticles = myParticles
+    model.enableUI()
+    seq.adopt(model)
+    # -------------------
+    model_endcap = DetectorConstruction(kernel, "FastCaloSim")
 
-#    model_endcap.enableUI()
-#    seq.adopt(model_endcap)
-#    #-------------------
+    # Mandatory model parameters
+    model_endcap.RegionName = "ECalEndcapRegion"
+    model_endcap.Enable = True
+    model_endcap.ApplicableParticles = myParticles
 
-#    # Now build the physics list:
-#    phys = kernel.physicsList()
-#    ph = PhysicsList(kernel, str('Geant4FastPhysics/FastPhysicsList'))
-#    ph.EnabledParticles = myParticles
-#    ph.BeVerbose = True
-#    ph.enableUI()
-#    phys.adopt(ph)
-#    phys.dump()
+    model_endcap.enableUI()
+    seq.adopt(model_endcap)
+    # -------------------
 
-# SIM.physics.setupUserPhysics( fast_sim_config )
+    # Now build the physics list:
+    phys = kernel.physicsList()
+    ph = PhysicsList(kernel, str("Geant4FastPhysics/FastPhysicsList"))
+    ph.EnabledParticles = myParticles
+    ph.BeVerbose = True
+    ph.enableUI()
+    phys.adopt(ph)
+    phys.dump()
+
+
+SIM.physics.setupUserPhysics(fast_sim_config)
