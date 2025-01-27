@@ -25,7 +25,7 @@ void dd4hep::sim::FastCaloSimModel::modelShower(const G4FastTrack& aTrack,
 {
   // Kill particle
   aStep.KillPrimaryTrack();
-  aStep.SetPrimaryTrackPathLength(0.0);
+  aStep.ProposePrimaryTrackPathLength(0.0);
   return;
 }
 
