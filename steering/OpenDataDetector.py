@@ -200,7 +200,7 @@ def fast_sim_config(kernel):
     seq = geant4.detectorConstruction()
 
     # Create a model for fast simulation
-    model = DetectorConstruction(kernel, "FastCaloSim")
+    model = DetectorConstruction(kernel, "FastCaloSimModel")
 
     # Mandatory model parameters
     model.RegionName = "ECalBarrelRegion"
@@ -210,7 +210,7 @@ def fast_sim_config(kernel):
     model.enableUI()
     seq.adopt(model)
     # -------------------
-    model_endcap = DetectorConstruction(kernel, "FastCaloSim")
+    model_endcap = DetectorConstruction(kernel, "FastCaloSimModel")
 
     # Mandatory model parameters
     model_endcap.RegionName = "ECalEndcapRegion"
