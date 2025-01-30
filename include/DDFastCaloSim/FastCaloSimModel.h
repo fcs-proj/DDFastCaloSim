@@ -3,6 +3,11 @@
 
 #include <DDG4/Geant4FastSimShowerModel.h>
 
+// -- FastCaloSim includes
+#include "FastCaloSim/Core/TFCSParametrizationBase.h"
+#include "FastCaloSim/Extrapolation/FastCaloSimCaloExtrapolation.h"
+#include "FastCaloSim/Transport/G4CaloTransportTool.h"
+
 class G4FastStep;
 class G4FastTrack;
 class G4ParticleDefinition;
@@ -60,6 +65,14 @@ public:
 
   /// User callback to implement the fast simulation model
   virtual void modelShower(const G4FastTrack& track, G4FastStep& step) override;
+
+private:
+  // Core FastCaloSim API
+  TFCSParametrizationBase m_parametrization;
+  // Geant4 transport tool
+  G4CaloTransportTool m_transportTool;
+  // Extrapolation tool
+  FastCaloSimCaloExtrapolation m_extrapolationTool;
 };
 }  // namespace sim
 }  // namespace dd4hep
