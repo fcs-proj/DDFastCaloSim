@@ -31,7 +31,6 @@ find_package(DD4hep REQUIRED COMPONENTS DDG4 DDParsers DDCore DDDetectors)
 
 # ----------------------------FastCaloSim-------------------------------------
 include(FetchContent)
-
 # LWTNN is not shipped by DD4hep but a dependency of FastCaloSim
 # We'll give FastCaloSim a hint where to find it
 set(lwtnn_ROOT "/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt"
@@ -42,11 +41,6 @@ FetchContent_Declare(
   GIT_REPOSITORY https://github.com/fcs-proj/FastCaloSim.git
   GIT_TAG v0.5.0-alpha
   GIT_PROGRESS TRUE
-  CMAKE_ARGS
-  -DCMAKE_BUILD_TYPE=Debug
-  -DCMAKE_CXX_FLAGS="-g -Wall -Wextra"
-  -DCMAKE_CXX_FLAGS_DEBUG="-O0 -g3 -DDEBUG"
-  -DFastCaloSim_DEVELOPER_MODE=ON
 )
 
 FetchContent_MakeAvailable(FastCaloSim)
