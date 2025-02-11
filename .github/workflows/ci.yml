@@ -44,13 +44,13 @@ jobs:
             source build/thisDDFastCaloSim.sh
 
             echo '::group::Run simulation'
-            ctest --test-dir build --output-on-failure
+            ctest --test-dir build/tests --output-on-failure
           "
 
       # Upload artifact
       - uses: actions/upload-artifact@v4
         with:
           name: sim_output
-          path: tests/run/
+          path: tests/output/
           if-no-files-found: error
           retention-days: 7

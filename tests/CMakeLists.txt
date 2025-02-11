@@ -33,11 +33,11 @@ message(STATUS "Using DDFastCaloSim_LIB = ${DDFastCaloSim_LIB}")
 
 # Add simulation test with modified gun settings
 add_test(
-    NAME DDFastCaloSim_Simulation
+    NAME ODD_Simulation
     COMMAND ddsim --steeringFile ${CMAKE_CURRENT_SOURCE_DIR}/configs/OpenDataDetector/simulation.py
 )
 set_tests_properties(
-  DDFastCaloSim_Simulation
+  ODD_Simulation
   PROPERTIES
     ENVIRONMENT
       "LD_PRELOAD=${DDFastCaloSim_LIB};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}:$ENV{PYTHONPATH};TEST_DIR=${TEST_DIR}"
