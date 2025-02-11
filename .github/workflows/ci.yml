@@ -44,8 +44,7 @@ jobs:
             source build/thisDDFastCaloSim.sh
 
             echo '::group::Run simulation'
-            chmod +x tests/run_ODD_sim.sh
-            CI=true source tests/run_ODD_sim.sh
+            ctest --test-dir build --output-on-failure
           "
 
       # Upload artifact
