@@ -16,5 +16,5 @@ __pycache__/
 *$py.class
 *.egg-info
 playground/
-tests/run
+tests/output
 fcs-venv/

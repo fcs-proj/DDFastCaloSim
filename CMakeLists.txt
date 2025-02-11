@@ -53,6 +53,8 @@ dd4hep_use_python_executable()
 # ----------------------------------------------------------------------------
 # Find sources
 file(GLOB DDFastCaloSim_SOURCES source/*.cxx)
+# Add test sources
+add_subdirectory(tests)
 
 # ----------------------------------------------------------------------------
 # Create the plugin library

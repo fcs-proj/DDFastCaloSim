@@ -45,7 +45,7 @@
         <detector name="ECalBarrel" type="DD4hep_PolyhedraBarrelCalorimeter2" id="ODD_ECalBarrel_ID" readout="ECalBarrelCollection" vis="BlueVis" gap="0.*cm" region="ECalBarrelRegion">
 
             <comment>EM Calorimeter Barrel</comment>
-            
+
             <type_flags type=" DetType_CALORIMETER + DetType_ELECTROMAGNETIC + DetType_BARREL"/>
 
             <envelope vis="ECALVis">
