@@ -27,7 +27,7 @@ TEST(ODDTransportTests, ODDTransport)
   const std::string output_file = "out.root";
 
   // Name of the log file
-  const std::string log_file = "build.log";
+  const std::string log_file = "out.log";
 
   // Build the simulation command
   const std::string cmd = "ddsim --steeringFile " + steering_file
@@ -52,11 +52,14 @@ TEST(ODDTransportTests, ODDTransport)
   LogComparer comparer(ref_log_file, log_file);
   // Set any prefixes to ignore in the log comparison
   comparer.setIgnoredPrefixes({
-    "DDSim.Helper.Filter INFO ReqFilt" // ordering of filters can differ
+      "DDSim.Helper.Filter INFO ReqFilt"  // ordering of filters
+      "XMLLoader        INFO  +++ Processing XML file:"  // file paths
   });
-  ASSERT_TRUE(comparer.compareLogs()) << "Log files differ! See the filtered differences above.";
+  ASSERT_TRUE(comparer.compareLogs())
+      << "Log files differ! See the filtered differences above.";
 
-  // Now compare transport results with references with a tolerance of 0.1 percent
+  // Now compare transport results with references with a tolerance of 0.1
+  // percent
   const std::string ref_transport_tracks = ref_dir + "/transport_tracks.json";
 
   const double tol = 1e-3;

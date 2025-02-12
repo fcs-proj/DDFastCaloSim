@@ -62,6 +62,9 @@ private:
   {
     std::string grep_filter = buildGrepPattern();
 
+    std::cout<<"Comparing <<"<<ref_log_file<<" and "<<new_log_file<<std::endl;
+    std::cout<<"Grep filter: "<<grep_filter<<std::endl;
+
     // Compare the log files, but ignore any
     // memory addresses (0x[0-9a-f]+ → 0xADDR)
     // and timing information (0-9]+\.[0-9]+ s → XX.XX s)
