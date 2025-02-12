@@ -35,33 +35,27 @@ def setup(kernel):
     geant4 = Geant4(kernel)
     seq = geant4.detectorConstruction()
 
-    # Create a model for fast simulation
-    model = DetectorConstruction(kernel, "FastCaloSimModel")
-
     # Mandatory model parameters
-    model.RegionName = "ECalBarrelRegion"
-    model.Enable = True
-    myParticles = ["e-", "e+", "gamma", "pi-", "pi+"]
-    model.ApplicableParticles = myParticles
-    model.enableUI()
-    seq.adopt(model)
-    # -------------------
-    model_endcap = DetectorConstruction(kernel, "FastCaloSimModel")
+    region_names = ["ECalBarrelRegion", "ECalEndcapRegion"]
+    active_particles = ["e-", "e+", "gamma", "pi-", "pi+"]
 
-    # Mandatory model parameters
-    model_endcap.RegionName = "ECalEndcapRegion"
-    model_endcap.Enable = True
-    model_endcap.ApplicableParticles = myParticles
-
-    model_endcap.enableUI()
-    seq.adopt(model_endcap)
-    # -------------------
+    for region in region_names:
+        # Create model
+        model = DetectorConstruction(kernel, "FastCaloSimModel")
+        # Attach model to region
+        model.RegionName = region
+        # Enable model
+        model.Enable = True
+        # Set active particles
+        model.ApplicableParticles = active_particles
+        model.enableUI()
+        seq.adopt(model)
 
     # Get the physics list
     physics_list = kernel.physicsList()
     # Define the fast simulation physics list
     fast_physics_list = PhysicsList(kernel, str("Geant4FastPhysics/FastPhysicsList"))
-    fast_physics_list.EnabledParticles = myParticles
+    fast_physics_list.EnabledParticles = active_particles
     fast_physics_list.BeVerbose = True
     fast_physics_list.enableUI()
     # Adopt the fast simulation physics list
