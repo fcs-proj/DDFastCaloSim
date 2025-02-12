@@ -19,11 +19,42 @@ dd4hep::sim::FastCaloSimModel::FastCaloSimModel(
     , m_parametrization()
     , m_transportTool()
     , m_extrapolationTool()
+    , m_transport_init(false)
+    , m_transportTracks()
+    , m_use_simplified_geo(false)
+    , m_transport_limit_volume("")
+    , m_max_transport_steps(100)
+    , m_transport_output("")
 {
+  // If set, the transport tracks will be serialized to this JSON file
+  declareProperty("TransportOutputFile", m_transport_output);
+  // Boolean flag to use simplified geometry
+  declareProperty("UseSimplifiedGeo", m_use_simplified_geo);
+  // Maximum number of transport steps
+  declareProperty("MaxTransportSteps", m_max_transport_steps);
+  // Name of the transport limit volume
+  declareProperty("TransportLimitVolume", m_transport_limit_volume);
 }
 bool dd4hep::sim::FastCaloSimModel::check_trigger(const G4FastTrack& track)
 {
-  std::cout << "Called fast simulation trigger" << std::endl;
+  // Ideally this would happen as a begin of run action
+  // Needs to be initialized only once, but geometry not available at
+  // construction time. TODO: fix this
+  if (!m_transport_init) {
+    m_transportTool.setUseSimplifiedGeo(m_use_simplified_geo);
+    m_transportTool.setMaxSteps(m_max_transport_steps);
+
+    if (m_transport_limit_volume.empty()) {
+      printout(ERROR,
+               "FastCaloSimModel",
+               "Transport limit volume not set. Aborting...");
+      abort();
+    }
+    m_transportTool.setTransportLimitVolume(m_transport_limit_volume);
+    m_transportTool.initializePropagator();
+    m_transport_init = true;
+  }
+
   return true;
 }
 
@@ -52,9 +83,17 @@ void dd4hep::sim::FastCaloSimModel::modelShower(const G4FastTrack& aTrack,
   auto msg = print_track(track);
   printout(INFO, "FastCaloSimModel", msg);
 
-  // Kill particle
-  aStep.KillPrimaryTrack();
-  aStep.ProposePrimaryTrackPathLength(0.0);
+  // Perform the track transport
+  std::vector<G4FieldTrack> step_vector = m_transportTool.transport(*track);
+  TestHelpers::Track trk(step_vector);
+  m_transportTracks.add(trk);
+
+  // Print the step vector
+  printout(
+      INFO, "FastCaloSimModel", "Step vector size: %d", step_vector.size());
+
+  killParticle(aStep, 0);
+
   return;
 }
 
