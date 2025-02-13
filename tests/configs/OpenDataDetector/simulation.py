@@ -10,8 +10,8 @@ from steering.main import SIM
 TEST_DIR = os.environ["TEST_DIR"]
 ## Geometry input file
 SIM.compactFile = f"{TEST_DIR}/geometry/OpenDataDetector/OpenDataDetector.xml"
-## Output file
-SIM.outputFile = f"{TEST_DIR}/output/ODD_sim.root"
+## Output file (this should be set in the ctest)
+SIM.outputFile = None
 ## Number of events to simulate
 SIM.numberOfEvents = 1
 
@@ -48,10 +48,21 @@ def setup(kernel):
         model.Enable = True
         # Set active particles
         model.ApplicableParticles = active_particles
-        model.enableUI()
+
+        # ----- User properties of the model ----------
+
+        # If set, transport tracks will be saved to the output file
+        model.TransportOutputFile = "transport_tracks.json"
+        # Whether to use the simplified geometry for transport
+        model.UseSimplifiedGeo = False
+        # Maximum number of steps for transport
+        model.MaxTransportSteps = 1500
+        # Volume name for transport limit
+        model.TransportLimitVolume = "HCalHiddenEnvelope"
+
         seq.adopt(model)
 
-    # Get the physics list
+    # Get the physics lists
     physics_list = kernel.physicsList()
     # Define the fast simulation physics list
     fast_physics_list = PhysicsList(kernel, str("Geant4FastPhysics/FastPhysicsList"))

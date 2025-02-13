@@ -36,10 +36,11 @@ include(FetchContent)
 set(lwtnn_ROOT "/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt"
   CACHE PATH "Where to find lwtnn" FORCE
 )
+
 FetchContent_Declare(
   FastCaloSim
   GIT_REPOSITORY https://github.com/fcs-proj/FastCaloSim.git
-  GIT_TAG v0.5.0-alpha
+  GIT_TAG v0.7.0-alpha
   GIT_PROGRESS TRUE
 )
 
@@ -61,10 +62,10 @@ add_subdirectory(tests)
 add_dd4hep_plugin(${PROJECT_NAME} SHARED ${DDFastCaloSim_SOURCES})
 
 # Set the include directories
-target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include ${PROJECT_SOURCE_DIR}/tests)
 
 # Link plugins against Geant4 and DD4hep
-target_link_libraries(${PROJECT_NAME} PUBLIC ${Geant4_LIBRARIES} DD4hep::DDCore DD4hep::DDG4 FastCaloSim::FastCaloSim)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${Geant4_LIBRARIES} DD4hep::DDCore DD4hep::DDG4 FastCaloSim::FastCaloSim nlohmann_json::nlohmann_json)
 
 # ----------------------------------------------------------------------------
 # Installation configuration for the plugin library
