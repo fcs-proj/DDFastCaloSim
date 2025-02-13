@@ -50,10 +50,10 @@ TEST(ODDTransportTests, ODDTransport)
   const std::string ref_log_file = ref_dir + log_file;
 
   LogComparer comparer(ref_log_file, log_file);
-  // Set any prefixes to ignore in the log comparison
-  comparer.setIgnoredPrefixes({
-      "DDSim.Helper.Filter INFO ReqFilt",  // ordering of filters
-      "XMLLoader        INFO  +++ Processing XML file:"  // file paths
+  // Lines containing these patterns will be ignored in the comparison
+  comparer.setIgnorePatterns({
+    "DDSim.Helper.Filter INFO ReqFilt",
+    "XMLLoader        INFO  +++ Processing XML file:"
   });
   ASSERT_TRUE(comparer.compareLogs())
       << "Log files differ! See the filtered differences above.";

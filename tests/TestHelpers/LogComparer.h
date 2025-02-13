@@ -2,6 +2,7 @@
 #define LOG_COMPARER_H
 
 #include <cstdlib>
+#include <iostream>
 #include <sstream>
 #include <string>
 #include <utility>
@@ -17,10 +18,10 @@ public:
   {
   }
 
-  // Set prefixes to ignore
-  void setIgnoredPrefixes(const std::vector<std::string>& prefixes)
+  // Supply any regex patterns to ignore lines that match those patterns
+  void setIgnorePatterns(const std::vector<std::string>& patterns)
   {
-    ignore_prefixes = prefixes;
+    ignore_patterns = patterns;
   }
 
   // Run the diff with filtering
@@ -37,42 +38,54 @@ public:
 private:
   const std::string ref_log_file;
   const std::string new_log_file;
-  std::vector<std::string> ignore_prefixes;
+  std::vector<std::string> ignore_patterns;
 
-  // Build the dynamic grep pattern for ignored prefixes
+  // Build the dynamic grep pattern that ignores lines matching any of the
+  // regexes
   auto buildGrepPattern() const -> std::string
   {
-    if (ignore_prefixes.empty())
-      return "";  // No filtering needed
-
-    std::ostringstream grep_pattern;
-    grep_pattern << "'^(";
-    for (size_t i = 0; i < ignore_prefixes.size(); ++i) {
-      if (i > 0)
-        grep_pattern << "|";
-      grep_pattern << ignore_prefixes[i];
+    // If no patterns, no filtering
+    if (ignore_patterns.empty()) {
+      return "";
     }
-    grep_pattern << ")'";
 
-    return "| grep -Ev " + grep_pattern.str();
+    // Build something like:  grep -Ev '(PAT1|PAT2|...)'
+    std::ostringstream pattern_stream;
+    pattern_stream << "'(";
+    for (size_t i = 0; i < ignore_patterns.size(); ++i) {
+      if (i > 0) {
+        pattern_stream << "|";
+      }
+      pattern_stream << ignore_patterns[i];
+    }
+    pattern_stream << ")'";
+
+    // Return the pipeline to grep out (-v) lines matching any pattern
+    return "| grep -Ev " + pattern_stream.str();
   }
 
   // Build the full diff command with filtering
   auto buildDiffCommand() const -> std::string
   {
+    // Make the grep pipeline
     std::string grep_filter = buildGrepPattern();
 
-    std::cout<<"Comparing "<<ref_log_file<<" and "<<new_log_file<<std::endl;
-    std::cout<<"Grep filter: "<<grep_filter<<std::endl;
+    std::cout << "Comparing " << ref_log_file << " and " << new_log_file
+              << std::endl;
+    std::cout << "Grep filter: " << grep_filter << std::endl;
 
-    // Compare the log files, but ignore any
-    // memory addresses (0x[0-9a-f]+ → 0xADDR)
-    // and timing information (0-9]+\.[0-9]+ s → XX.XX s)
-    return "diff -u <(sed -E 's/0x[0-9a-f]+/0xADDR/g; s/[0-9]+\\.[0-9]+ "
-           "s/XX.XX s/g' "
-        + ref_log_file + " " + grep_filter + ") "
-        + "<(sed -E 's/0x[0-9a-f]+/0xADDR/g; s/[0-9]+\\.[0-9]+ s/XX.XX s/g' "
-        + new_log_file + " " + grep_filter + ")";
+    // We'll replace memory addresses (0x[0-9a-f]+ → 0xADDR)
+    // and timing info ([0-9]+\.[0-9]+ s → XX.XX s).
+    // Then pass both files through the same sed+grep pipeline
+    // and compare them with a unified diff (-u).
+    std::ostringstream cmd;
+    cmd << "diff -u "
+        << "<(sed -E 's/0x[0-9a-f]+/0xADDR/g; s/[0-9]+\\.[0-9]+ s/XX.XX s/g' "
+        << ref_log_file << " " << grep_filter << ") "
+        << "<(sed -E 's/0x[0-9a-f]+/0xADDR/g; s/[0-9]+\\.[0-9]+ s/XX.XX s/g' "
+        << new_log_file << " " << grep_filter << ")";
+
+    return cmd.str();
   }
 };
 
