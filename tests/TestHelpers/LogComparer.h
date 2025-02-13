@@ -35,8 +35,8 @@ public:
   auto getDiffCommand() const -> std::string { return buildDiffCommand(); }
 
 private:
-  std::string ref_log_file;
-  std::string new_log_file;
+  const std::string ref_log_file;
+  const std::string new_log_file;
   std::vector<std::string> ignore_prefixes;
 
   // Build the dynamic grep pattern for ignored prefixes

@@ -54,13 +54,23 @@ public:
    */
   void serialize(const std::string& filename) const
   {
-    nlohmann::json j = flatten();
-    if (j.empty()) {
-      throw std::runtime_error("JSON serialization failed. Object is empty!");
+    try {
+      nlohmann::json j = flatten();
+      if (j.empty()) {
+        throw std::runtime_error("JSON serialization failed. Object is empty!");
+      }
+      std::ofstream ofs(filename);
+      if (!ofs) {
+        throw std::runtime_error("Failed to open output file: " + filename);
+      }
+      ofs << j.dump();
+      if (!ofs) {
+        throw std::runtime_error("Failed to write to output file: " + filename);
+      }
+      ofs.close();
+    } catch (const nlohmann::json::exception& e) {
+      throw std::runtime_error("JSON error: " + std::string(e.what()));
     }
-    std::ofstream ofs(filename);
-    ofs << j.dump();
-    ofs.close();
   }
 
 protected:

@@ -35,7 +35,12 @@ public:
   {
     // Serialize the tracks
     if (m_transportTracks.size() > 0 && !m_transport_output.empty()) {
-      m_transportTracks.serialize(m_transport_output);
+      try {
+        m_transportTracks.serialize(m_transport_output);
+      } catch (const std::exception& e) {
+        std::cerr << "Failed to serialize transport tracks: " << e.what()
+                  << std::endl;
+      }
     }
   };
 

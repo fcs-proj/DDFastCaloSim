@@ -169,8 +169,13 @@ private:
   {
     double val1 = json1.get<double>();
     double val2 = json2.get<double>();
-    double percent_diff =
-        std::fabs(val1 - val2) / std::max(std::fabs(val1), std::fabs(val2));
+    double percent_diff = NAN;
+    double denom = std::max(std::fabs(val1), std::fabs(val2));
+    if (denom == 0.0) {
+      percent_diff = 0.0;
+    } else {
+      percent_diff = std::fabs(val1 - val2) / denom;
+    }
     if (percent_diff > m_tolerance) {
       print_difference("Value mismatch", val1, val2, path, percent_diff * 100);
       return false;

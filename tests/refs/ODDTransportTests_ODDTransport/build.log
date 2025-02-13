@@ -1961,8 +1961,8 @@ FastPhysicsList  INFO  Enable fast simulation for particle type: pi-
 FastPhysicsList  INFO  Enable fast simulation for particle type: pi+
 FastPhysicsList  INFO  Constructed and initialized Geant4 Fast Physics [G4FastSimulationPhysics].
 Myphysics        INFO  Registered Geant4 physics constructor G4StepLimiterPhysics to physics list
-UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xe1da750 Kernel:0xe142120 [-1]
-Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.382 seconds]
+UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xddf2840 Kernel:0xdd5a110 [-1]
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.379 seconds]
 Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/ConstructGeo/
 
  hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
@@ -2727,6 +2727,6 @@ FastCaloSimModel INFO  Step vector size: 1501
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 0 run 0.
 GenerationInit   WARN  +++ Finished run 0 after 1 events (1 events in total)
 
-DDSim            INFO Total Time:   30.47 s (User), 1.20 s (System)
-DDSim            INFO StartUp Time: 5.58 s, Event Processing: 24.89 s (24.89 s/Event) 
+DDSim            INFO Total Time:   30.36 s (User), 1.13 s (System)
+DDSim            INFO StartUp Time: 5.35 s, Event Processing: 25.01 s (25.01 s/Event) 
 Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.

@@ -52,7 +52,7 @@ TEST(ODDTransportTests, ODDTransport)
   LogComparer comparer(ref_log_file, log_file);
   // Set any prefixes to ignore in the log comparison
   comparer.setIgnoredPrefixes({
-      "DDSim.Helper.Filter INFO ReqFilt"  // ordering of filters
+      "DDSim.Helper.Filter INFO ReqFilt",  // ordering of filters
       "XMLLoader        INFO  +++ Processing XML file:"  // file paths
   });
   ASSERT_TRUE(comparer.compareLogs())

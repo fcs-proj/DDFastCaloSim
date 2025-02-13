@@ -1,3 +1,4 @@
+exclude: '^tests/refs/.*$'
 repos:
   - repo: local
     hooks:
