@@ -62,7 +62,7 @@ private:
   {
     std::string grep_filter = buildGrepPattern();
 
-    std::cout<<"Comparing <<"<<ref_log_file<<" and "<<new_log_file<<std::endl;
+    std::cout<<"Comparing "<<ref_log_file<<" and "<<new_log_file<<std::endl;
     std::cout<<"Grep filter: "<<grep_filter<<std::endl;
 
     // Compare the log files, but ignore any

@@ -47,7 +47,7 @@ TEST(ODDTransportTests, ODDTransport)
   ASSERT_TRUE(system(plot_transport_exec.c_str()) == 0);
 
   // Reference log file
-  const std::string ref_log_file = ref_dir + "/" + log_file;
+  const std::string ref_log_file = ref_dir + log_file;
 
   LogComparer comparer(ref_log_file, log_file);
   // Set any prefixes to ignore in the log comparison
@@ -60,7 +60,7 @@ TEST(ODDTransportTests, ODDTransport)
 
   // Now compare transport results with references with a tolerance of 0.1
   // percent
-  const std::string ref_transport_tracks = ref_dir + "/transport_tracks.json";
+  const std::string ref_transport_tracks = ref_dir + "transport_tracks.json";
 
   const double tol = 1e-3;
   JsonComparer json_tool(tol);
