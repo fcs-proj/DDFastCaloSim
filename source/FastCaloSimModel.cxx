@@ -34,6 +34,9 @@ dd4hep::sim::FastCaloSimModel::FastCaloSimModel(
   declareProperty("MaxTransportSteps", m_max_transport_steps);
   // Name of the transport limit volume
   declareProperty("TransportLimitVolume", m_transport_limit_volume);
+
+  /// TODO: Set the CaloGeo* geometry for extrapolation
+  m_extrapolationTool.set_geometry(nullptr);
 }
 bool dd4hep::sim::FastCaloSimModel::check_trigger(const G4FastTrack& track)
 {
