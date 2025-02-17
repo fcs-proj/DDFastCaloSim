@@ -5,6 +5,7 @@
 ######################################################################
 import os
 from steering.main import SIM
+from math import pi
 
 
 TEST_DIR = os.environ["TEST_DIR"]
@@ -21,7 +22,16 @@ SIM.gun.energy = 65536
 SIM.gun.etaMin = 0.20
 SIM.gun.etaMax = 0.25
 SIM.gun.phiMin = 0
-SIM.gun.phiMax = 6.28318530718  # 2 * pi
+SIM.gun.phiMax = 2 * pi
+
+# Source position of the particle gun (TODO: generate at calorimeter surface)
+SIM.gun.position = (0, 0, 0)
+
+# SIM.gun.momentumMin = 65536
+# SIM.gun.momentumMax = 65536
+
+# Direction of the particle gun (TODO: needs to be compatible with production at origin)
+# SIM.gun.direction = (0,1,0)
 
 
 ######################################################################

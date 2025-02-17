@@ -1,37 +1,39 @@
 ######################################################################
 ## Configuration for the DDG4 ParticleGun
 ######################################################################
-from g4units import MeV
-from math import pi
 
 
 def setup(SIM):
-    # Direction of the particle gun
-    SIM.gun.direction = (0, 1, 0)
-
-    # Uniform sampling of the particle gun
-    SIM.gun.distribution = "uniform"
-
-    # Total energy for the particle gun
-    SIM.gun.energy = 65536 * MeV
+    ## Options for random distributions:
+    ##  'uniform' is the default distribution, flat in theta
+    ##  'cos(theta)' is flat in cos(theta)
+    ##  'eta', or 'pseudorapidity' is flat in pseudorapity
+    ##  'ffbar' is distributed according to 1+cos^2(theta)
+    SIM.gun.distribution = "eta"
 
     # Multiplicity of the particle gun
     SIM.gun.multiplicity = 1
 
-    # Particle type for the particle gun
-    SIM.gun.particle = "gamma"
+    # Total energy for the particle gun
+    # SIM.gun.energy = None
 
-    # Source position of the particle gun (TODO: generate at calorimeter surface)
-    SIM.gun.position = (0.0, 0.0, 0.0)
+    # Particle type for the particle gun
+    # SIM.gun.particle = None
+
+    # Source position of the particle gun
+    # SIM.gun.position = None
+
+    # Direction of the particle gun
+    # SIM.gun.direction = None
 
     # Minimal azimuthal angle for random distribution
-    SIM.gun.phiMin = 0
+    # SIM.gun.phiMin = None
 
     # Maximal azimuthal angle for random distribution
-    SIM.gun.phiMax = 2 * pi
+    # SIM.gun.phiMax = None
 
     # Minimal pseudorapidity for random distribution (overrides thetaMax)
-    SIM.gun.etaMin = 0.20
+    # SIM.gun.etaMin = None
 
     # Maximal pseudorapidity for random distribution (overrides thetaMin)
-    SIM.gun.etaMax = 0.25
+    # SIM.gun.etaMax = None

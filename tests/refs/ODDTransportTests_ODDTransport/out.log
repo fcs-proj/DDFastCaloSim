@@ -1961,8 +1961,8 @@ FastPhysicsList  INFO  Enable fast simulation for particle type: pi-
 FastPhysicsList  INFO  Enable fast simulation for particle type: pi+
 FastPhysicsList  INFO  Constructed and initialized Geant4 Fast Physics [G4FastSimulationPhysics].
 Myphysics        INFO  Registered Geant4 physics constructor G4StepLimiterPhysics to physics list
-UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xe1da750 Kernel:0xe142120 [-1]
-Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.382 seconds]
+UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xcfe7610 Kernel:0xcfa2dc0 [-1]
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.387 seconds]
 Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/ConstructGeo/
 
  hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
@@ -2688,8 +2688,8 @@ Max 2J for sampling of angular correlations         10
 EventSeeder1     INFO  Get RunID: runID=0
 Geant4Output2EDM4hep INFO  Opened out.root for output
 GenerationInit   INFO  +++ Initializing event 1. Within run:0 event 1.
-Gun              INFO  Shoot [0] [65.536 , 65.536] GeV gamma pos:(0.000 0.000 0.000)[mm] dir:( 0.000  1.000  0.000)
-Gun              INFO  Particle [0] gamma        Mom:65.536 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.953  0.222  0.205)
+Gun              INFO  Shoot [0] [65.536 , 65.536] GeV gamma pos:(0.000 0.000 0.000)[mm] dir:( 0.000  0.000  1.000)
+Gun              INFO  Particle [0] gamma        Mom:65.536 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.946  0.220  0.237)
 Gun              INFO  +-> Interaction [0] [65.536 , 65.536] GeV gamma pos:(0.000 0.000 0.000)[mm]
 Gun              INFO  +++   +-> ID:  0 gamma        status:00000002 PDG:    22 Vtx:(+0.00e+00,+0.00e+00,+0.00e+00)[mm] time: +0.00e+00 [ns] #Dau:  0 #Par:0      
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
@@ -2707,18 +2707,18 @@ FastCaloSimModel INFO
   |    [1;32mPosition Information[0m  
   |    x      = 1234.10
   |    y      = 287.03
-  |    z      = 265.71
+  |    z      = 309.32
   |    r      = 1267.04
-  |    eta    = 0.21
+  |    eta    = 0.24
   |    phi    = 0.23
   |                                                             
   |    [1;32mMomentum Information[0m  
-  |    px     = 62473.37
-  |    py     = 14530.04
-  |    pz     = 13450.79
+  |    px     = 62011.18
+  |    py     = 14422.54
+  |    pz     = 15542.54
   |    |p|    = 65536.00
-  |    Pt     = 64140.81
-  |    eta    = 0.21
+  |    Pt     = 63666.29
+  |    eta    = 0.24
   |    phi    = 0.23
   |    Ekin   = 65536.00
   +------------------------------------------------------------+
@@ -2727,6 +2727,6 @@ FastCaloSimModel INFO  Step vector size: 1501
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 0 run 0.
 GenerationInit   WARN  +++ Finished run 0 after 1 events (1 events in total)
 
-DDSim            INFO Total Time:   30.47 s (User), 1.20 s (System)
-DDSim            INFO StartUp Time: 5.58 s, Event Processing: 24.89 s (24.89 s/Event) 
+DDSim            INFO Total Time:   31.14 s (User), 1.12 s (System)
+DDSim            INFO StartUp Time: 5.47 s, Event Processing: 25.67 s (25.67 s/Event) 
 Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.
