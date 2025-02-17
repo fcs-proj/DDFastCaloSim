@@ -1,9 +1,11 @@
 #include "DDFastCaloSim/FastCaloSimModel.h"
 
+#include "DDFastCaloSim/FastCaloSimWriter.h"
 #include "DDFastCaloSim/TrackMsg.h"
 
 // -- Framework includes
 #include <DD4hep/Printout.h>
+#include <DDG4/Geant4Action.h>
 
 // -- Geant4 includes
 #include <G4Event.hh>
@@ -34,6 +36,9 @@ dd4hep::sim::FastCaloSimModel::FastCaloSimModel(
   declareProperty("MaxTransportSteps", m_max_transport_steps);
   // Name of the transport limit volume
   declareProperty("TransportLimitVolume", m_transport_limit_volume);
+
+  /// TODO: Set the CaloGeo* geometry for extrapolation
+  m_extrapolationTool.set_geometry(nullptr);
 }
 bool dd4hep::sim::FastCaloSimModel::check_trigger(const G4FastTrack& track)
 {
@@ -87,6 +92,19 @@ void dd4hep::sim::FastCaloSimModel::modelShower(const G4FastTrack& aTrack,
   std::vector<G4FieldTrack> step_vector = m_transportTool.transport(*track);
   TestHelpers::Track trk(step_vector);
   m_transportTracks.add(trk);
+
+  auto writer = dynamic_cast<dd4hep::sim::FastCaloSimWriter*>(
+      context()->eventAction().get("FastCaloSimWriter"));
+  if (writer) {
+    writer->addData(1);  // add your float value (or computed value)
+  } else {
+    printout(ERROR,
+             "FastCaloSimModel",
+             "FastCaloSimWriter not found in event action sequence!");
+  }
+
+  // TFCSExtrapolationState extrap;
+  // m_extrapolationTool.extrapolate(extrap, &truth, step_vector);
 
   // Print the step vector
   printout(
