@@ -21,7 +21,7 @@ TEST(ODDTransportTests, ODDTransport)
 
   // Steering file with test configuration
   const std::string steering_file =
-      std::string(TEST_CONFIGS_DIR) + "/OpenDataDetector/simulation.py";
+      std::string(TEST_CONFIGS_DIR) + "/OpenDataDetector/transport.py";
 
   // Name of ROOT file with simulation output
   const std::string output_file = "out.root";
@@ -43,7 +43,7 @@ TEST(ODDTransportTests, ODDTransport)
       + "plot_transport.py" + " --input transport_tracks.json"
       + " --output transport_tracks.png" + " --label \"" + label + "\""
       + " --track_zoom" + " --region_composition "
-      + std::string(PYTHON_SCRIPTS_DIR) + "composition_config.json";
+      + std::string(PYTHON_INPUT_DIR) + "composition_config.json";
 
   ASSERT_TRUE(system(plot_transport_exec.c_str()) == 0);
 

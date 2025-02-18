@@ -52,6 +52,7 @@ def fast_sim_cfg(kernel):
     config.transport_output_file = "transport_tracks.json"
     config.use_simplified_geo = False
     config.max_transport_steps = 1500
+    # config.parametrization_pdg_id = 22
     config.transport_limit_volume = "HCalHiddenEnvelope"
     config.setup()
 
