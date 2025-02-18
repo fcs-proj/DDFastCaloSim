@@ -1,7 +1,3 @@
-# Set the DDFastCaloSim library path
-set(DDFastCaloSim_LIB "${CMAKE_SOURCE_DIR}/build/libDDFastCaloSim.so")
-message(STATUS "Using DDFastCaloSim_LIB = ${DDFastCaloSim_LIB}")
-
 function(add_tests TEST_SOURCES)
     foreach(TEST_FILE ${TEST_SOURCES})
         get_filename_component(TEST_NAME ${TEST_FILE} NAME_WE)

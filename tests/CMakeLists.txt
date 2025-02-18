@@ -29,6 +29,19 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
+
+# Find the DDFastCaloSim library
+find_library(DDFastCaloSim_LIB
+  NAMES DDFastCaloSim libDDFastCaloSim
+  PATHS "${CMAKE_SOURCE_DIR}/build"
+  NO_DEFAULT_PATH
+)
+if(NOT DDFastCaloSim_LIB)
+  message(FATAL_ERROR "DDFastCaloSim library not found")
+endif()
+
+message(STATUS "Using DDFastCaloSim_LIB = ${DDFastCaloSim_LIB}")
+
 # ---- Tests ----
 
 include(GoogleTest)

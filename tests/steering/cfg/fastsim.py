@@ -20,6 +20,15 @@ class FastSimModelConfig:
         self.parametrization_pdg_id = -1
 
     def setup(self):
+        if not self.region_names:
+            raise ValueError("No regions specified for fast simulation")
+        if not self.active_particles:
+            raise ValueError("No particles specified for fast simulation")
+        if not self.transport_limit_volume:
+            raise ValueError("transport_limit_volume must be set")
+        if self.max_transport_steps <= 0:
+            raise ValueError("max_transport_steps must be positive")
+
         geant4 = Geant4(self.kernel)
         seq = geant4.detectorConstruction()
 
