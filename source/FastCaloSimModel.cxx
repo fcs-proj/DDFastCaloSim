@@ -159,13 +159,15 @@ void dd4hep::sim::FastCaloSimModel::createParametrizationInput(
   G4DynamicParticle particle(
       ptcl_def, direction, aTrack.GetPrimaryTrack()->GetKineticEnergy());
 
-  // Create the secondary track
-  aStep.CreateSecondaryTrack(particle,
-                             aTrack.GetPrimaryTrackLocalPosition(),
-                             aTrack.GetPrimaryTrack()->GetGlobalTime());
+  // Create the secondary track, this is the particle to be parametrized
+  G4Track* param_ptcl =
+      aStep.CreateSecondaryTrack(particle,
+                                 aTrack.GetPrimaryTrackLocalPosition(),
+                                 aTrack.GetPrimaryTrack()->GetGlobalTime());
 
   // Do transport (and extrapolation) and write out information
-  std::vector<G4FieldTrack> step_vector = m_transportTool.transport(*track);
+  std::vector<G4FieldTrack> step_vector =
+      m_transportTool.transport(*param_ptcl);
 
   /// TODO: Implement extrapolation and writer
 

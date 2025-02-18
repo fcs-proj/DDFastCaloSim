@@ -1,5 +1,6 @@
 # Define minimum CMake version
 cmake_minimum_required(VERSION 3.30)
+
 # Define test project
 project(DDFastCaloSimTests LANGUAGES CXX)
 
@@ -29,21 +30,12 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-
-# Find the DDFastCaloSim library
-find_library(DDFastCaloSim_LIB
-  NAMES DDFastCaloSim libDDFastCaloSim
-  PATHS "${CMAKE_SOURCE_DIR}/build"
-  NO_DEFAULT_PATH
-)
-if(NOT DDFastCaloSim_LIB)
-  message(FATAL_ERROR "DDFastCaloSim library not found")
-endif()
+# Set the DDFastCaloSim library
+set(DDFastCaloSim_LIB "${CMAKE_BINARY_DIR}/libDDFastCaloSim.so")
 
 message(STATUS "Using DDFastCaloSim_LIB = ${DDFastCaloSim_LIB}")
 
 # ---- Tests ----
-
 include(GoogleTest)
 
 # ---- Add tests ----
