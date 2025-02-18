@@ -81,6 +81,9 @@ public:
   /// User callback to implement the fast simulation model
   void modelShower(const G4FastTrack& track, G4FastStep& step) override;
 
+  /// @brief Hook to create the input for the FastCaloSim parametrization
+  void createParametrizationInput(const G4FastTrack& track, G4FastStep& step);
+
 private:
   // Core FastCaloSim API
   TFCSParametrizationBase m_parametrization;
@@ -104,6 +107,9 @@ private:
   int m_max_transport_steps;
   /// @brief (Optional) Name of the file to serialize the transport tracks to
   std::string m_transport_output;
+  /// @brief If this is set, the model will generate input for the
+  /// parametrization
+  int m_param_pdgId;
 };
 }  // namespace dd4hep::sim
 
