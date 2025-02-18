@@ -38,11 +38,12 @@ TEST(ODDTransportTests, ODDTransport)
   ASSERT_EQ(status, 0) << "Simulation command failed: " << cmd;
 
   // Plot the transport tracks
-  std::string label = "ODD Transport";
+  std::string label = "";
   std::string plot_transport_exec = "python3 " + std::string(PYTHON_SCRIPTS_DIR)
       + "plot_transport.py" + " --input transport_tracks.json"
       + " --output transport_tracks.png" + " --label \"" + label + "\""
-      + " --track_zoom";
+      + " --track_zoom" + " --region_composition "
+      + std::string(PYTHON_SCRIPTS_DIR) + "composition_config.json";
 
   ASSERT_TRUE(system(plot_transport_exec.c_str()) == 0);
 
@@ -51,10 +52,9 @@ TEST(ODDTransportTests, ODDTransport)
 
   LogComparer comparer(ref_log_file, log_file);
   // Lines containing these patterns will be ignored in the comparison
-  comparer.setIgnorePatterns({
-    "DDSim.Helper.Filter INFO ReqFilt",
-    "XMLLoader        INFO  +++ Processing XML file:"
-  });
+  comparer.setIgnorePatterns(
+      {"DDSim.Helper.Filter INFO ReqFilt",
+       "XMLLoader        INFO  +++ Processing XML file:"});
   ASSERT_TRUE(comparer.compareLogs())
       << "Log files differ! See the filtered differences above.";
 

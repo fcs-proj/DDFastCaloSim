@@ -1,0 +1,97 @@
+{
+    "beampipe": [
+        {
+            "rmin": 0,
+            "rmax": 24.4,
+            "zmin": -4000,
+            "zmax": 4000,
+            "color": "#000000"
+        }
+    ],
+    "pixel": [
+        {
+            "rmin": 25,
+            "rmax": 200,
+            "zmin": -2400,
+            "zmax": 2400,
+            "color": "#add1e7"
+        }
+    ],
+    "sstrips": [
+        {
+            "rmin": 202,
+            "rmax": 720,
+            "zmin": -3150,
+            "zmax": 3150,
+            "color": "#0bb3fa"
+        }
+    ],
+    "lstrips": [
+        {
+            "rmin": 720,
+            "rmax": 1140,
+            "zmin": -3150,
+            "zmax": 3150,
+            "color": "#6261eb"
+        }
+    ],
+    "solenoid": [
+        {
+            "rmin": 1160,
+            "rmax": 1200,
+            "zmin": -3000,
+            "zmax": 3000,
+            "color": "#a0a0a0"
+        }
+    ],
+    "ecalbarrel": [
+        {
+            "rmin": 1250,
+            "rmax": 1500,
+            "zmin": -3050,
+            "zmax": 3050,
+            "color": "#df1c22"
+        }
+    ],
+    "ecalendcap": [
+        {
+            "rmin": 315,
+            "rmax": 1500,
+            "zmin": 3200,
+            "zmax": 3450,
+            "color": "#fd8c14"
+        },
+        {
+            "rmin": 315,
+            "rmax": 1540,
+            "zmin": -3450,
+            "zmax": -3200,
+            "color": "#fd8c14"
+        }
+    ],
+    "hcalbarrel": [
+        {
+            "rmin": 1600,
+            "rmax": 3436,
+            "zmin": -3450,
+            "zmax": 3450,
+            "color": "#96208e"
+        }
+    ],
+    "hcalendcap": [
+        {
+            "rmin": 355,
+            "rmax": 3436,
+            "zmin": 3600,
+            "zmax": 5436,
+            "color": "#a56ea5"
+        },
+        {
+            "rmin": 355,
+            "rmax": 3436,
+            "zmin": -5436,
+            "zmax": -3600,
+            "color": "#a56ea5"
+        }
+    ]
+}
