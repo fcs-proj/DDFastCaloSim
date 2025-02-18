@@ -19,7 +19,7 @@ SIM.numberOfEvents = 1
 ## Particle gun configuration
 SIM.gun.distribution = "eta"
 SIM.gun.multiplicity = 1
-SIM.gun.particle = "gamma"
+SIM.gun.particle = "geantino"
 SIM.gun.energy = 65536
 SIM.gun.etaMin = 0.20
 SIM.gun.etaMax = 0.25
@@ -48,11 +48,11 @@ def fast_sim_cfg(kernel):
     config = FastSimModelConfig(kernel)
     # Set specific configuration
     config.region_names = ["ECalBarrelRegion", "ECalEndcapRegion"]
-    config.active_particles = ["e-", "e+", "gamma", "pi-", "pi+"]
-    config.transport_output_file = "transport_tracks.json"
+    config.active_particles = ["geantino"]
     config.use_simplified_geo = False
     config.max_transport_steps = 1500
     config.transport_limit_volume = "HCalHiddenEnvelope"
+    config.parametrization_pdg_id = 22
     config.setup()
 
 

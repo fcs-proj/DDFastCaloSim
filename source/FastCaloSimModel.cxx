@@ -9,6 +9,7 @@
 #include <G4Event.hh>
 #include <G4EventManager.hh>
 #include <G4FastStep.hh>
+#include <G4Geantino.hh>
 
 // -- FastCaloSim includes
 #include "FastCaloSim/Core/TFCSTruthState.h"
@@ -25,6 +26,7 @@ dd4hep::sim::FastCaloSimModel::FastCaloSimModel(
     , m_transport_limit_volume("")
     , m_max_transport_steps(100)
     , m_transport_output("")
+    , m_param_pdgId(-1)
 {
   // If set, the transport tracks will be serialized to this JSON file
   declareProperty("TransportOutputFile", m_transport_output);
@@ -34,6 +36,8 @@ dd4hep::sim::FastCaloSimModel::FastCaloSimModel(
   declareProperty("MaxTransportSteps", m_max_transport_steps);
   // Name of the transport limit volume
   declareProperty("TransportLimitVolume", m_transport_limit_volume);
+  // If set, the model will generate input for the parametrization
+  declareProperty("ParametrizationPDG", m_param_pdgId);
 
   /// TODO: Set the CaloGeo* geometry for extrapolation
   m_extrapolationTool.set_geometry(nullptr);
@@ -67,6 +71,16 @@ void dd4hep::sim::FastCaloSimModel::modelShower(const G4FastTrack& aTrack,
   // Get Geant4 primary track
   const G4Track* track = aTrack.GetPrimaryTrack();
 
+  // Print track information
+  auto msg = print_track(track);
+  printout(INFO, "FastCaloSimModel", msg);
+
+  // Hook if we only want to generate the parametrization input
+  if (m_param_pdgId != -1) {
+    createParametrizationInput(aTrack, aStep);
+    return;
+  }
+
   // Set the FastCaloSim truth state
   TFCSTruthState truth;
 
@@ -82,9 +96,6 @@ void dd4hep::sim::FastCaloSimModel::modelShower(const G4FastTrack& aTrack,
                      track->GetMomentum().eta(),
                      track->GetMomentum().phi(),
                      track->GetDefinition()->GetPDGMass());
-  // Print track information
-  auto msg = print_track(track);
-  printout(INFO, "FastCaloSimModel", msg);
 
   // Perform the track transport
   std::vector<G4FieldTrack> step_vector = m_transportTool.transport(*track);
@@ -98,6 +109,70 @@ void dd4hep::sim::FastCaloSimModel::modelShower(const G4FastTrack& aTrack,
   killParticle(aStep, 0);
 
   return;
+}
+
+/**
+ * @brief Hook to create the input for the FastCaloSim parametrization
+ *
+ * To generate the input for the FastCaloSim parametrization:
+ * - Shoot non-interacting particles (geantinos) to the calorimeter face
+ * - Replace the geantino with the particle to be parametrized
+ *   (with consistent position, energy, and direction)
+ * - Record the transport of the particle through the calorimeter
+ * - Continue the Geant4 shower simulation to record G4 info
+ */
+
+void dd4hep::sim::FastCaloSimModel::createParametrizationInput(
+    const G4FastTrack& aTrack, G4FastStep& aStep)
+{
+  printout(INFO, "FastCaloSimModel", "Running in parametrization mode...");
+
+  // Get Geant4 primary track
+  const G4Track* track = aTrack.GetPrimaryTrack();
+
+  // Make sure this hook is only called with geantinos
+  if (track->GetDefinition() != G4Geantino::GeantinoDefinition()) {
+    printout(ERROR,
+             "FastCaloSimModel",
+             "Received particle is not a geantino. Aborting...");
+    abort();
+  }
+
+  // Replace the geantino with exactly one secondary
+  aStep.SetNumberOfSecondaryTracks(1);
+
+  // Build the secondary track
+  G4ParticleMomentum direction(aTrack.GetPrimaryTrackLocalDirection());
+
+  // Find the requested particle for the parametrization
+  G4ParticleDefinition* ptcl_def =
+      G4ParticleTable::GetParticleTable()->FindParticle(m_param_pdgId);
+
+  if (!ptcl_def) {
+    printout(ERROR,
+             "FastCaloSimModel",
+             "Failed to find particle with PDG ID %d. Aborting...",
+             m_param_pdgId);
+    abort();
+  }
+  // Sets the particle type, energy and direction
+  G4DynamicParticle particle(
+      ptcl_def, direction, aTrack.GetPrimaryTrack()->GetKineticEnergy());
+
+  // Create the secondary track, this is the particle to be parametrized
+  G4Track* param_ptcl =
+      aStep.CreateSecondaryTrack(particle,
+                                 aTrack.GetPrimaryTrackLocalPosition(),
+                                 aTrack.GetPrimaryTrack()->GetGlobalTime());
+
+  // Do transport (and extrapolation) and write out information
+  std::vector<G4FieldTrack> step_vector =
+      m_transportTool.transport(*param_ptcl);
+
+  /// TODO: Implement extrapolation and writer
+
+  // Kill initial geantino
+  killParticle(aStep, 0);
 }
 
 #include <DDG4/Factories.h>

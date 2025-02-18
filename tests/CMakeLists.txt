@@ -1,5 +1,6 @@
 # Define minimum CMake version
 cmake_minimum_required(VERSION 3.30)
+
 # Define test project
 project(DDFastCaloSimTests LANGUAGES CXX)
 
@@ -29,27 +30,16 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-# ---- Tests ----
+# Set the DDFastCaloSim library
+set(DDFastCaloSim_LIB "${CMAKE_BINARY_DIR}/libDDFastCaloSim.so")
 
-include(GoogleTest)
-
-# Set the DDFastCaloSim library path
-set(DDFastCaloSim_LIB "${CMAKE_SOURCE_DIR}/build/libDDFastCaloSim.so")
 message(STATUS "Using DDFastCaloSim_LIB = ${DDFastCaloSim_LIB}")
 
+# ---- Tests ----
+include(GoogleTest)
 
-add_executable(ODD_TransportTests source/ODDTransportTests.cxx)
-target_link_libraries(ODD_TransportTests PRIVATE gtest_main nlohmann_json::nlohmann_json)
-target_include_directories(ODD_TransportTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+# ---- Add tests ----
+include(../cmake/tests.cmake)
+file(GLOB TEST_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/source/*Tests.cxx")
 
-# Add simulation test with modified gun settings
-add_test(
-    NAME ODD_Simulation
-    COMMAND ODD_TransportTests
-)
-set_tests_properties(
-  ODD_Simulation
-  PROPERTIES
-    ENVIRONMENT
-      "LD_PRELOAD=${DDFastCaloSim_LIB};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}:$ENV{PYTHONPATH};TEST_DIR=${TEST_DIR}"
-)
+add_tests("${TEST_SOURCES}")
