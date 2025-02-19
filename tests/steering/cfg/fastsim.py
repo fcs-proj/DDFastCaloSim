@@ -4,8 +4,8 @@ from DDG4 import DetectorConstruction, Geant4, PhysicsList
 class FastSimModelConfig:
     def __init__(self, kernel):
         self.kernel = kernel
-        # Names of regions where the model will be applied
-        self.region_names = []
+        # Names of region where the model will be applied
+        self.region_name = ""
         # Particles that the model will be applied to
         self.active_particles = []
         # Output file for transport data
@@ -20,8 +20,8 @@ class FastSimModelConfig:
         self.parametrization_pdg_id = -1
 
     def setup(self):
-        if not self.region_names:
-            raise ValueError("No regions specified for fast simulation")
+        if not self.region_name:
+            raise ValueError("No region specified for fast simulation")
         if not self.active_particles:
             raise ValueError("No particles specified for fast simulation")
         if not self.transport_limit_volume:
@@ -33,19 +33,20 @@ class FastSimModelConfig:
         seq = geant4.detectorConstruction()
 
         # Configure the model
-        for region in self.region_names:
-            model = DetectorConstruction(self.kernel, "FastCaloSimModel")
-            model.RegionName = region
-            model.Enable = True
-            model.ApplicableParticles = self.active_particles
-            # Custom model properties
-            model.TransportOutputFile = self.transport_output_file
-            model.UseSimplifiedGeo = self.use_simplified_geo
-            model.MaxTransportSteps = self.max_transport_steps
-            model.TransportLimitVolume = self.transport_limit_volume
-            model.ParametrizationPDG = self.parametrization_pdg_id
-            # Attach the model to the region
-            seq.adopt(model)
+        model = DetectorConstruction(self.kernel, "FastCaloSimModel")
+        model.Enable = True
+        model.ApplicableParticles = self.active_particles
+        model.RegionName = self.region_name
+
+        # Custom model properties
+        model.TransportOutputFile = self.transport_output_file
+        model.UseSimplifiedGeo = self.use_simplified_geo
+        model.MaxTransportSteps = self.max_transport_steps
+        model.TransportLimitVolume = self.transport_limit_volume
+        model.ParametrizationPDG = self.parametrization_pdg_id
+
+        # Attach the model to the region
+        seq.adopt(model)
 
         # Set up the user physics for fast simulation
         physics_list = self.kernel.physicsList()

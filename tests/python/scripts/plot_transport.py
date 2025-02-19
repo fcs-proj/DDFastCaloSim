@@ -25,7 +25,7 @@ def main(args):
     for track_id in data.track_id.unique():
         track_data = data[data.track_id == track_id]
         # Plot the transport in the z-r plane
-        ax.plot(track_data.z, track_data.r, "o--", ms=3, color="black", zorder=10)
+        ax.plot(track_data.z, track_data.r, "o", ms=1, color="black", zorder=10)
 
     # Remember the track zoom region
     track_x_lim = ax.get_xlim()

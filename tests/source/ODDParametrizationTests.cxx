@@ -15,6 +15,9 @@ TEST(ODDParametrizationTests, ODDParametrization)
   // Get the path to the reference files
   const std::string ref_dir = TestHelpers::IOManager::ref_dir();
 
+  // Set test directory as environment variable
+  setenv("TEST_WORKING_DIR", output_dir.c_str(), 1);
+
   // Change the current directory to the output directory
   std::filesystem::current_path(output_dir);
 

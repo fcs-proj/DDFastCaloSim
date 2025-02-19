@@ -40,7 +40,7 @@ set(lwtnn_ROOT "/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt"
 FetchContent_Declare(
   FastCaloSim
   GIT_REPOSITORY https://github.com/fcs-proj/FastCaloSim.git
-  GIT_TAG v0.7.0-alpha
+  GIT_TAG v0.9.0-alpha
   GIT_PROGRESS TRUE
 )
 

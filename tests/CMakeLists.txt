@@ -5,8 +5,11 @@ cmake_minimum_required(VERSION 3.30)
 project(DDFastCaloSimTests LANGUAGES CXX)
 
 # ---- Test Base Directory ----
-set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
+# Python environment variables passed in cmake/tests.cmake
+set(TEST_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+
+# Definitions for google tests
 add_definitions(-DTEST_BASE_DIR="${CMAKE_CURRENT_SOURCE_DIR}")
 add_definitions(-DTEST_OUTPUT_DIR="${CMAKE_CURRENT_SOURCE_DIR}/output/")
 add_definitions(-DTEST_REFS_DIR="${CMAKE_CURRENT_SOURCE_DIR}/refs/")
@@ -15,7 +18,7 @@ add_definitions(-DPYTHON_SCRIPTS_DIR="${CMAKE_CURRENT_SOURCE_DIR}/python/scripts
 add_definitions(-DPYTHON_INPUT_DIR="${CMAKE_CURRENT_SOURCE_DIR}/python/input/")
 
 # ---- Create test output Location ----
-file(MAKE_DIRECTORY ${TEST_DIR}/output)
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/output)
 
 # ---- Dependencies ----
 

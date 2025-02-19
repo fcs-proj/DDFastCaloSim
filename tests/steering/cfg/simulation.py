@@ -13,7 +13,7 @@ SIM.enableG4GPS = False
 SIM.enableG4Gun = False
 SIM.enableGun = True
 ## number of events to simulate, used in batch mode
-SIM.numberOfEvents = 100
+SIM.numberOfEvents = -1
 ## Output file from the simulation
 SIM.outputFile = "output.root"
 ## Physics list to use in simulation

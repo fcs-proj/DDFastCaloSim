@@ -99,8 +99,6 @@ void dd4hep::sim::FastCaloSimModel::modelShower(const G4FastTrack& aTrack,
 
   // Perform the track transport
   std::vector<G4FieldTrack> step_vector = m_transportTool.transport(*track);
-  TestHelpers::Track trk(step_vector);
-  m_transportTracks.add(trk);
 
   // Print the step vector
   printout(
@@ -168,6 +166,12 @@ void dd4hep::sim::FastCaloSimModel::createParametrizationInput(
   // Do transport (and extrapolation) and write out information
   std::vector<G4FieldTrack> step_vector =
       m_transportTool.transport(*param_ptcl);
+
+  TestHelpers::Track trk(step_vector);
+  m_transportTracks.add(trk);
+
+  // Print number of steps
+  printout(INFO, "FastCaloSimModel", "Number of steps: %d", step_vector.size());
 
   /// TODO: Implement extrapolation and writer
 

@@ -4,4 +4,4 @@ check-filenames =
 check-hidden =
 skip = */.git,*/build,*/prefix,*test/data,*/.vscode,*/playground,*/fcs-venv,*/geometry,CODE_OF_CONDUCT.md
 quiet-level = 2
-ignore-words-list = hist,gaus,stdio,jupyter,cancelled
+ignore-words-list = hist,gaus,stdio,jupyter,cancelled,arange

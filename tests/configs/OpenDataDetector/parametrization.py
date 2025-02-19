@@ -4,37 +4,43 @@
 #
 ######################################################################
 import os
+import numpy as np
 from steering.main import SIM
-from math import pi
+from python.ParticleEventGenerator import ParticleEventGenerator
 
 
-TEST_DIR = os.environ["TEST_DIR"]
+# Base and working directories
+TEST_BASE_DIR = os.getenv("TEST_BASE_DIR")
+TEST_WORKING_DIR = os.getenv("TEST_WORKING_DIR")
+
 ## Geometry input file
-SIM.compactFile = f"{TEST_DIR}/geometry/OpenDataDetector/OpenDataDetector.xml"
-## Output file (this should be set in the ctest)
-SIM.outputFile = None
-## Number of events to simulate
-SIM.numberOfEvents = 1
+SIM.compactFile = f"{TEST_BASE_DIR}/geometry/OpenDataDetector/OpenDataDetector.xml"
 
-## Particle gun configuration
-SIM.gun.distribution = "eta"
-SIM.gun.multiplicity = 1
-SIM.gun.particle = "geantino"
-SIM.gun.energy = 65536
-SIM.gun.etaMin = 0.20
-SIM.gun.etaMax = 0.25
-SIM.gun.phiMin = 0
-SIM.gun.phiMax = 2 * pi
 
-# Source position of the particle gun (TODO: generate at calorimeter surface)
-SIM.gun.position = (0, 0, 0)
+######################################################################
+# Configure particle generation
+######################################################################
 
-# SIM.gun.momentumMin = 65536
-# SIM.gun.momentumMax = 65536
+# Generate single geantino events
+# uniform sampling in 0.20 < eta < 0.25
+# uniform sampling in 0 < phi < 2*pi
+# truth momentum = 100 MeV
+gen = ParticleEventGenerator(seed=42)
+gen.generate(
+    nEvents=5,
+    pid=0,
+    momentum=100,
+    mass=0,
+    phi_min=0,
+    phi_max=2 * np.pi,
+    eta_min=0.20,
+    eta_max=0.25,
+)
 
-# Direction of the particle gun (TODO: needs to be compatible with production at origin)
-# SIM.gun.direction = (0,1,0)
+evnt_path = os.path.join(TEST_WORKING_DIR, "event.hepmc")
+gen.save(evnt_path)
 
+SIM.inputFiles = [evnt_path]
 
 ######################################################################
 # Configure fast simulation
@@ -47,12 +53,19 @@ def fast_sim_cfg(kernel):
     # Import the base fast simulation model configuration
     config = FastSimModelConfig(kernel)
     # Set specific configuration
-    config.region_names = ["ECalBarrelRegion", "ECalEndcapRegion"]
+    config.region_name = "ECalBarrelRegion"
+    # Only geantinos will trigger the fast simulation
     config.active_particles = ["geantino"]
+    # Use simplified geometry for calorimeter transport?
     config.use_simplified_geo = False
+    # Maximum number of transport steps for calorimeter transport
     config.max_transport_steps = 1500
-    config.transport_limit_volume = "HCalHiddenEnvelope"
+    # Maximum volume to which transport is performed
+    config.transport_limit_volume = "NotImplementedYet"
+    # PDG ID of the particle to be parametrized
     config.parametrization_pdg_id = 22
+
+    # Setup the fast simulation model
     config.setup()
 
 

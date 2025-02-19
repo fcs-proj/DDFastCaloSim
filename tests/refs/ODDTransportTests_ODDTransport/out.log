@@ -1830,6 +1830,7 @@ DDSim            INFO Enabling the PrimaryHandler
 Geant4UI         INFO  +++ EDM4hepOutput> Install Geant4 control directory:/ddg4/EDM4hepOutput/
 Geant4UI         INFO  +++ GeneratorAction> Install Geant4 control directory:/ddg4/GeneratorAction/
 Geant4UI         INFO  +++ Gun> Install Geant4 control directory:/ddg4/Gun/
+Geant4UI         INFO  +++ hepmc4> Install Geant4 control directory:/ddg4/hepmc4/
 Geant4UI         INFO  +++ InteractionMerger> Install Geant4 control directory:/ddg4/InteractionMerger/
 Geant4UI         INFO  +++ PrimaryHandler> Install Geant4 control directory:/ddg4/PrimaryHandler/
 Geant4UI         INFO  +++ TrackingAction> Install Geant4 control directory:/ddg4/TrackingAction/
@@ -1923,7 +1924,7 @@ PhysicsList            +++ RangeCut:            0.700000
 Geant4UI         INFO  +++ GlobalRangeCut> Install Geant4 control directory:/ddg4/GlobalRangeCut/
 Geant4Kernel           OutputLevel:  2
 Geant4Kernel           UI:           UI
-Geant4Kernel           NumEvents:    1
+Geant4Kernel           NumEvents:    -1
 Geant4Kernel           NumThreads:   0
 Geant4UI         INFO  +++ FastPhysicsList> Install Geant4 control directory:/ddg4/FastPhysicsList/
 PhysicsList            +++ Dump of physics list component(s)
@@ -1954,15 +1955,11 @@ G4PhysListFactory::GetReferencePhysList <FTFP_BERT>  EMoption= 0
 <<< Geant4 Physics List simulation engine: FTFP_BERT
 
 
-FastPhysicsList  INFO  Enable fast simulation for particle type: e-
-FastPhysicsList  INFO  Enable fast simulation for particle type: e+
-FastPhysicsList  INFO  Enable fast simulation for particle type: gamma
-FastPhysicsList  INFO  Enable fast simulation for particle type: pi-
-FastPhysicsList  INFO  Enable fast simulation for particle type: pi+
+FastPhysicsList  INFO  Enable fast simulation for particle type: geantino
 FastPhysicsList  INFO  Constructed and initialized Geant4 Fast Physics [G4FastSimulationPhysics].
 Myphysics        INFO  Registered Geant4 physics constructor G4StepLimiterPhysics to physics list
-UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xcfe7610 Kernel:0xcfa2dc0 [-1]
-Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.387 seconds]
+UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xd81e9e0 Kernel:0xd7e1bd0 [-1]
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.383 seconds]
 Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/ConstructGeo/
 
  hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
@@ -1972,13 +1969,9 @@ Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/
  for neutron : 3 to 6 GeV
 
 ### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
-            e+ : fastSimProcess_massGeom[geom:world_volume_1] 
-            e- : fastSimProcess_massGeom[geom:world_volume_1] 
-         gamma : fastSimProcess_massGeom[geom:world_volume_1] 
-           pi+ : fastSimProcess_massGeom[geom:world_volume_1] 
-           pi- : fastSimProcess_massGeom[geom:world_volume_1] 
+      geantino : fastSimProcess_massGeom[geom:world_volume_1] 
 GlobalRangeCut   INFO  +++ Set PhysicsList RangeCut to 0.100000 mm
-UI               INFO  ++ Start run with 1 events.
+UI               INFO  ++ Start run with 2147483647 events.
 =======================================================================
 ======                 Electromagnetic Physics Parameters      ========
 =======================================================================
@@ -2686,47 +2679,925 @@ Correlated gamma emission flag                      0
 Max 2J for sampling of angular correlations         10
 =======================================================================
 EventSeeder1     INFO  Get RunID: runID=0
+HEPMC3FileReader INFO  Created file reader. Try to open input /srv/tests/output/ODDTransportTests_ODDTransport/event.hepmc
+ERROR::ReaderAscii: not enough implicit vertices
 Geant4Output2EDM4hep INFO  Opened out.root for output
 GenerationInit   INFO  +++ Initializing event 1. Within run:0 event 1.
-Gun              INFO  Shoot [0] [65.536 , 65.536] GeV gamma pos:(0.000 0.000 0.000)[mm] dir:( 0.000  0.000  1.000)
-Gun              INFO  Particle [0] gamma        Mom:65.536 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.946  0.220  0.237)
-Gun              INFO  +-> Interaction [0] [65.536 , 65.536] GeV gamma pos:(0.000 0.000 0.000)[mm]
-Gun              INFO  +++   +-> ID:  0 gamma        status:00000002 PDG:    22 Vtx:(+0.00e+00,+0.00e+00,+0.00e+00)[mm] time: +0.00e+00 [ns] #Dau:  0 #Par:0      
+Gun              INFO  Shoot [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm] dir:( 0.000  0.000  1.000)
+Gun              INFO  Particle [0] mu-          Mom:0.364 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.000  0.000  1.000)
+Gun              INFO  +-> Interaction [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm]
+Gun              INFO  +++   +-> ID:  0 mu-          status:00000002 PDG:    13 Vtx:(+0.00e+00,+0.00e+00,+0.00e+00)[mm] time: +0.00e+00 [ns] #Dau:  0 #Par:0      
+HEPMC3FileReader::moveToEvent INFO  Skipping the first 0 events 
+ERROR::ReaderAscii: not enough implicit vertices
+HEPMC3FileReader INFO  Read event from file
+hepmc4           INFO  +++ Particle interaction with 30 generator particles and 30 vertices ++++++++++++++++++++++++
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 EventSeeder1     INFO  At beginEvent: eventID=0, runID=0 initialSeed=42, newSeed=1328797229
 ParticleHandler  INFO  +++ Event 0 Begin event action. Access event related information.
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_2891!CableBox_66#66!Cable_16#16'
+   - at position : (1099.999999778308,0,2094.731651174525)
+     in direction: (0.4649219924089806,0,0.8853516482022631)
+    (local position: (-2.216920620412566e-07,-0.7500000000000001,19.73165117452527))
+    (local direction: (0.4649219924089806,0,0.8853516482022631)).
+  Previous phys volume: 'AV_2891!CableBox_66#66!Cable_15#15'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
 Initializing G4PropagatorInField for thread -1
 Using full geometry for particle transport
 Using world volume: world_volume_1
-Transport will be stopped at volume: HCalHiddenEnvelope
+Transport will be stopped at volume: NotImplementedYet
 Maximum allowed number of steps in particle transport: 1500
 FastCaloSimModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 22[0m
+  |  [1;36mFastCaloSimModel received particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
-  |    x      = 1234.10
-  |    y      = 287.03
-  |    z      = 309.32
-  |    r      = 1267.04
-  |    eta    = 0.24
-  |    phi    = 0.23
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 2380.38
+  |    r      = 1250.00
+  |    eta    = 1.40
+  |    phi    = 0.00
   |                                                             
   |    [1;32mMomentum Information[0m  
-  |    px     = 62011.18
-  |    py     = 14422.54
-  |    pz     = 15542.54
-  |    |p|    = 65536.00
-  |    Pt     = 63666.29
-  |    eta    = 0.24
-  |    phi    = 0.23
-  |    Ekin   = 65536.00
+  |    px     = 4.65
+  |    py     = 0.00
+  |    pz     = 8.85
+  |    |p|    = 10.00
+  |    Pt     = 4.65
+  |    eta    = 1.40
+  |    phi    = 0.00
+  |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Step vector size: 1501
-Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 0 run 0.
-GenerationInit   WARN  +++ Finished run 0 after 1 events (1 events in total)
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 2122.98
+  |    r      = 1250.00
+  |    eta    = 1.30
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 5.07
+  |    py     = 0.00
+  |    pz     = 8.62
+  |    |p|    = 10.00
+  |    Pt     = 5.07
+  |    eta    = 1.30
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
 
-DDSim            INFO Total Time:   31.14 s (User), 1.12 s (System)
-DDSim            INFO StartUp Time: 5.47 s, Event Processing: 25.67 s (25.67 s/Event) 
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 1886.83
+  |    r      = 1250.00
+  |    eta    = 1.20
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 5.52
+  |    py     = 0.00
+  |    pz     = 8.34
+  |    |p|    = 10.00
+  |    Pt     = 5.52
+  |    eta    = 1.20
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+### Birks coefficients used in run time
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_2831!CableBox_6#6!Cable_6#6'
+   - at position : (1099.999999857108,0,1469.212216945745)
+     in direction: (0.5993340605707919,0,0.8004990217606306)
+    (local position: (-1.428923042112729e-07,-0.7500000000000001,19.21221694574479))
+    (local direction: (0.5993340605707919,0,0.8004990217606306)).
+  Previous phys volume: 'AV_2831!CableBox_6#6!Cable_5#5'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 1669.56
+  |    r      = 1250.00
+  |    eta    = 1.10
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 5.99
+  |    py     = 0.00
+  |    pz     = 8.00
+  |    |p|    = 10.00
+  |    Pt     = 5.99
+  |    eta    = 1.10
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_2651!CableBox_72#72!Cable_6#6'
+   - at position : (990.4687012587403,0,1163.999999986101)
+     in direction: (0.6480542736638844,0,0.7615941559557659)
+    (local position: (1.389912540616933e-08,-0.7500000000000001,70.46870125874034))
+    (local direction: (-0.7615941559557659,0,0.6480542736638844)).
+  Previous phys volume: 'AV_2651!CableBox_72#72!Cable_5#5'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 1469.00
+  |    r      = 1250.00
+  |    eta    = 1.00
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 6.48
+  |    py     = 0.00
+  |    pz     = 7.62
+  |    |p|    = 10.00
+  |    Pt     = 6.48
+  |    eta    = 1.00
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 1283.15
+  |    r      = 1250.00
+  |    eta    = 0.90
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 6.98
+  |    py     = 0.00
+  |    pz     = 7.16
+  |    |p|    = 10.00
+  |    Pt     = 6.98
+  |    eta    = 0.90
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 1110.13
+  |    r      = 1250.00
+  |    eta    = 0.80
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 7.48
+  |    py     = 0.00
+  |    pz     = 6.64
+  |    |p|    = 10.00
+  |    Pt     = 7.48
+  |    eta    = 0.80
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 948.23
+  |    r      = 1250.00
+  |    eta    = 0.70
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 7.97
+  |    py     = 0.00
+  |    pz     = 6.04
+  |    |p|    = 10.00
+  |    Pt     = 7.97
+  |    eta    = 0.70
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 795.82
+  |    r      = 1250.00
+  |    eta    = 0.60
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 8.44
+  |    py     = 0.00
+  |    pz     = 5.37
+  |    |p|    = 10.00
+  |    Pt     = 8.44
+  |    eta    = 0.60
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 651.37
+  |    r      = 1250.00
+  |    eta    = 0.50
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 8.87
+  |    py     = 0.00
+  |    pz     = 4.62
+  |    |p|    = 10.00
+  |    Pt     = 8.87
+  |    eta    = 0.50
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 513.44
+  |    r      = 1250.00
+  |    eta    = 0.40
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 9.25
+  |    py     = 0.00
+  |    pz     = 3.80
+  |    |p|    = 10.00
+  |    Pt     = 9.25
+  |    eta    = 0.40
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 380.65
+  |    r      = 1250.00
+  |    eta    = 0.30
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 9.57
+  |    py     = 0.00
+  |    pz     = 2.91
+  |    |p|    = 10.00
+  |    Pt     = 9.57
+  |    eta    = 0.30
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 251.67
+  |    r      = 1250.00
+  |    eta    = 0.20
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 9.80
+  |    py     = 0.00
+  |    pz     = 1.97
+  |    |p|    = 10.00
+  |    Pt     = 9.80
+  |    eta    = 0.20
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 125.21
+  |    r      = 1250.00
+  |    eta    = 0.10
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 9.95
+  |    py     = 0.00
+  |    pz     = 1.00
+  |    |p|    = 10.00
+  |    Pt     = 9.95
+  |    eta    = 0.10
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 0.00
+  |    r      = 1250.00
+  |    eta    = 0.00
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 10.00
+  |    py     = 0.00
+  |    pz     = 0.00
+  |    |p|    = 10.00
+  |    Pt     = 10.00
+  |    eta    = 0.00
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -125.21
+  |    r      = 1250.00
+  |    eta    = -0.10
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 9.95
+  |    py     = 0.00
+  |    pz     = -1.00
+  |    |p|    = 10.00
+  |    Pt     = 9.95
+  |    eta    = -0.10
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -251.67
+  |    r      = 1250.00
+  |    eta    = -0.20
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 9.80
+  |    py     = 0.00
+  |    pz     = -1.97
+  |    |p|    = 10.00
+  |    Pt     = 9.80
+  |    eta    = -0.20
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -380.65
+  |    r      = 1250.00
+  |    eta    = -0.30
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 9.57
+  |    py     = 0.00
+  |    pz     = -2.91
+  |    |p|    = 10.00
+  |    Pt     = 9.57
+  |    eta    = -0.30
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -513.44
+  |    r      = 1250.00
+  |    eta    = -0.40
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 9.25
+  |    py     = 0.00
+  |    pz     = -3.80
+  |    |p|    = 10.00
+  |    Pt     = 9.25
+  |    eta    = -0.40
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -651.37
+  |    r      = 1250.00
+  |    eta    = -0.50
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 8.87
+  |    py     = 0.00
+  |    pz     = -4.62
+  |    |p|    = 10.00
+  |    Pt     = 8.87
+  |    eta    = -0.50
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -795.82
+  |    r      = 1250.00
+  |    eta    = -0.60
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 8.44
+  |    py     = 0.00
+  |    pz     = -5.37
+  |    |p|    = 10.00
+  |    Pt     = 8.44
+  |    eta    = -0.60
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -948.23
+  |    r      = 1250.00
+  |    eta    = -0.70
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 7.97
+  |    py     = 0.00
+  |    pz     = -6.04
+  |    |p|    = 10.00
+  |    Pt     = 7.97
+  |    eta    = -0.70
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -1110.13
+  |    r      = 1250.00
+  |    eta    = -0.80
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 7.48
+  |    py     = 0.00
+  |    pz     = -6.64
+  |    |p|    = 10.00
+  |    Pt     = 7.48
+  |    eta    = -0.80
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -1283.15
+  |    r      = 1250.00
+  |    eta    = -0.90
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 6.98
+  |    py     = 0.00
+  |    pz     = -7.16
+  |    |p|    = 10.00
+  |    Pt     = 6.98
+  |    eta    = -0.90
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -1469.00
+  |    r      = 1250.00
+  |    eta    = -1.00
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 6.48
+  |    py     = 0.00
+  |    pz     = -7.62
+  |    |p|    = 10.00
+  |    Pt     = 6.48
+  |    eta    = -1.00
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -1669.56
+  |    r      = 1250.00
+  |    eta    = -1.10
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 5.99
+  |    py     = 0.00
+  |    pz     = -8.00
+  |    |p|    = 10.00
+  |    Pt     = 5.99
+  |    eta    = -1.10
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -1886.83
+  |    r      = 1250.00
+  |    eta    = -1.20
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 5.52
+  |    py     = 0.00
+  |    pz     = -8.34
+  |    |p|    = 10.00
+  |    Pt     = 5.52
+  |    eta    = -1.20
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -2122.98
+  |    r      = 1250.00
+  |    eta    = -1.30
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 5.07
+  |    py     = 0.00
+  |    pz     = -8.62
+  |    |p|    = 10.00
+  |    Pt     = 5.07
+  |    eta    = -1.30
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_2351!CableBox_66#66!Cable_16#16'
+   - at position : (1099.999999649474,0,-2094.73165092918)
+     in direction: (0.4649219924089817,0,-0.8853516482022625)
+    (local position: (-3.505258518998744e-07,-0.7500000000000001,-19.73165092918043))
+    (local direction: (0.4649219924089817,0,-0.8853516482022625)).
+  Previous phys volume: 'AV_2351!CableBox_66#66!Cable_15#15'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -2380.38
+  |    r      = 1250.00
+  |    eta    = -1.40
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 4.65
+  |    py     = 0.00
+  |    pz     = -8.85
+  |    |p|    = 10.00
+  |    Pt     = 4.65
+  |    eta    = -1.40
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+FastCaloSimModel INFO  Number of steps: 1501
+FastCaloSimModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -2661.60
+  |    r      = 1250.00
+  |    eta    = -1.50
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 4.25
+  |    py     = 0.00
+  |    pz     = -9.05
+  |    |p|    = 10.00
+  |    Pt     = 4.25
+  |    eta    = -1.50
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+FastCaloSimModel INFO  Running in parametrization mode...
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'world_volume_1'
+   - at position : (4696.424405952246,-2.842170943040401e-14,-10000)
+     in direction: (0.4250960349422805,0,-0.9051482536448665)
+    (local position: (4696.424405952246,-2.842170943040401e-14,-10000))
+    (local direction: (0.4250960349422805,0,-0.9051482536448665)).
+  Previous phys volume: 'world_volume_1'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : LocateGlobalPointAndSetup failed: Particle may be transported outside the world volume.
+      issued by : G4CaloTransportTool::transport
+Transport failure at step 1314/1500
+ - Position: (4696.42,-2.84217e-14,-10000)
+ - Momentum: (4.25096,0,-9.05148)
+Possible cause: The transport is likely outside the world volume.
+Check if an envelope volume is defined and properly set up.
+This issue should not occur during normal operation.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+FastCaloSimModel INFO  Number of steps: 1316
+Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 0 run -1.
+GenerationInit   INFO  +++ Initializing event 2. Within run:0 event 2.
+Gun              INFO  Shoot [1] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm] dir:( 0.000  0.000  1.000)
+Gun              INFO  Particle [0] mu-          Mom:1.561 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.000  0.000  1.000)
+Gun              INFO  +-> Interaction [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm]
+Gun              INFO  +++   +-> ID:  0 mu-          status:00000002 PDG:    13 Vtx:(+0.00e+00,+0.00e+00,+0.00e+00)[mm] time: +0.00e+00 [ns] #Dau:  0 #Par:0      
+HEPMC3FileReader::moveToEvent INFO  Skipping the first 1 events 
+UI               INFO  ++ End of file reached, ending run...
+GenerationInit   WARN  +++ Finished run 0 after 2 events (2 events in total)
+
+DDSim            INFO Total Time:   31.84 s (User), 1.29 s (System)
+DDSim            INFO StartUp Time: 5.62 s, Event Processing: 26.22 s (26.22 s/Event) 
 Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.
