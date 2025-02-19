@@ -31,18 +31,7 @@ public:
                    const std::string& name);
 
   // Default destructor
-  ~FastCaloSimModel() override
-  {
-    // Serialize the tracks
-    if (m_transportTracks.size() > 0 && !m_transport_output.empty()) {
-      try {
-        m_transportTracks.serialize(m_transport_output);
-      } catch (const std::exception& e) {
-        std::cerr << "Failed to serialize transport tracks: " << e.what()
-                  << std::endl;
-      }
-    }
-  };
+  ~FastCaloSimModel() override {};
 
   /// Geometry construction callback. Called at Construct()
   void constructGeo(
@@ -84,7 +73,7 @@ public:
   /// @brief Hook to create the input for the FastCaloSim parametrization
   void createParametrizationInput(const G4FastTrack& track, G4FastStep& step);
 
-private:
+protected:
   // Core FastCaloSim API
   TFCSParametrizationBase m_parametrization;
   // Geant4 transport tool

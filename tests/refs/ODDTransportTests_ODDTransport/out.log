@@ -1956,8 +1956,8 @@ G4PhysListFactory::GetReferencePhysList <FTFP_BERT>  EMoption= 0
 FastPhysicsList  INFO  Enable fast simulation for particle type: geantino
 FastPhysicsList  INFO  Constructed and initialized Geant4 Fast Physics [G4FastSimulationPhysics].
 Myphysics        INFO  Registered Geant4 physics constructor G4StepLimiterPhysics to physics list
-UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xea627c0 Kernel:0xea24f50 [-1]
-Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.479 seconds]
+UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xefd8230 Kernel:0xef89ed0 [-1]
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.383 seconds]
 Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/ConstructGeo/
 
  hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
@@ -2741,9 +2741,9 @@ Using full geometry for particle transport
 Using world volume: world_volume_1
 Transport will be stopped at volume: NotImplementedYet
 Maximum allowed number of steps in particle transport: 1500
-FastCaloSimModel INFO  
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -2764,11 +2764,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -2789,11 +2788,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -2814,8 +2812,7 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 1501
 ### Birks coefficients used in run time
 
 -------- WWWW ------- G4Exception-START -------- WWWW -------
@@ -2836,9 +2833,9 @@ Stuck Track: potential geometry or navigation problem.
 *** This is just a warning message. ***
 -------- WWWW -------- G4Exception-END --------- WWWW -------
 
-FastCaloSimModel INFO  
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -2859,8 +2856,7 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 1501
 
 -------- WWWW ------- G4Exception-START -------- WWWW -------
 *** G4Exception : GeomNav1002
@@ -2880,9 +2876,9 @@ Stuck Track: potential geometry or navigation problem.
 *** This is just a warning message. ***
 -------- WWWW -------- G4Exception-END --------- WWWW -------
 
-FastCaloSimModel INFO  
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -2903,11 +2899,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -2928,11 +2923,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -2953,11 +2947,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -2978,11 +2971,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3003,11 +2995,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3028,11 +3019,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3053,11 +3043,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3078,11 +3067,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3103,11 +3091,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3128,11 +3115,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3153,11 +3139,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3178,11 +3163,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3203,11 +3187,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3228,11 +3211,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3253,11 +3235,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3278,11 +3259,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3303,11 +3283,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3328,11 +3307,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3353,11 +3331,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3378,11 +3355,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3403,11 +3379,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3428,11 +3403,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3453,11 +3427,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3478,8 +3451,7 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 1501
 
 -------- WWWW ------- G4Exception-START -------- WWWW -------
 *** G4Exception : GeomNav1002
@@ -3499,9 +3471,9 @@ Stuck Track: potential geometry or navigation problem.
 *** This is just a warning message. ***
 -------- WWWW -------- G4Exception-END --------- WWWW -------
 
-FastCaloSimModel INFO  
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3522,11 +3494,10 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
-FastCaloSimModel INFO  
+ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -3547,7 +3518,6 @@ FastCaloSimModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
 
 -------- WWWW ------- G4Exception-START -------- WWWW -------
 *** G4Exception : GeomNav1002
@@ -3580,10 +3550,10 @@ This issue should not occur during normal operation.
 *** This is just a warning message. ***
 -------- WWWW -------- G4Exception-END --------- WWWW -------
 
-FastCaloSimModel INFO  Number of steps: 1316
+ParametrizationModel INFO  Number of steps: 1316
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 0 run -1.
 GenerationInit   WARN  +++ Finished run 0 after 1 events (1 events in total)
 
-DDSim            INFO Total Time:   39.44 s (User), 1.45 s (System)
-DDSim            INFO StartUp Time: 7.05 s, Event Processing: 32.39 s (32.39 s/Event) 
+DDSim            INFO Total Time:   31.66 s (User), 1.25 s (System)
+DDSim            INFO StartUp Time: 5.56 s, Event Processing: 26.10 s (26.10 s/Event) 
 Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.

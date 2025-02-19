@@ -1956,8 +1956,8 @@ G4PhysListFactory::GetReferencePhysList <FTFP_BERT>  EMoption= 0
 FastPhysicsList  INFO  Enable fast simulation for particle type: geantino
 FastPhysicsList  INFO  Constructed and initialized Geant4 Fast Physics [G4FastSimulationPhysics].
 Myphysics        INFO  Registered Geant4 physics constructor G4StepLimiterPhysics to physics list
-UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xe69e500 Kernel:0xe65e670 [-1]
-Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.462 seconds]
+UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xdbed190 Kernel:0xdb716f0 [-1]
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.384 seconds]
 Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/ConstructGeo/
 
  hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
@@ -2693,9 +2693,9 @@ Using full geometry for particle transport
 Using world volume: world_volume_1
 Transport will be stopped at volume: NotImplementedYet
 Maximum allowed number of steps in particle transport: 1500
-FastCaloSimModel INFO  
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = -1158.99
@@ -2716,8 +2716,7 @@ FastCaloSimModel INFO
   |    Ekin   = 100.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 1501
 ### Birks coefficients used in run time
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 0 run -1.
 GenerationInit   INFO  +++ Initializing event 2. Within run:0 event 2.
@@ -2728,9 +2727,9 @@ hepmc4           INFO  +++ Particle interaction with 1 generator particles and 1
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 EventSeeder1     INFO  At beginEvent: eventID=1, runID=0 initialSeed=42, newSeed=901388549
 ParticleHandler  INFO  +++ Event 1 Begin event action. Access event related information.
-FastCaloSimModel INFO  
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = -406.66
@@ -2751,8 +2750,7 @@ FastCaloSimModel INFO
   |    Ekin   = 100.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 1501
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 1 run -1.
 GenerationInit   INFO  +++ Initializing event 3. Within run:0 event 3.
 HEPMC3FileReader::moveToEvent INFO  Skipping the first 2 events 
@@ -2762,9 +2760,9 @@ hepmc4           INFO  +++ Particle interaction with 1 generator particles and 1
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 EventSeeder1     INFO  At beginEvent: eventID=2, runID=0 initialSeed=42, newSeed=1343800373
 ParticleHandler  INFO  +++ Event 2 Begin event action. Access event related information.
-FastCaloSimModel INFO  
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 1250.00
@@ -2785,8 +2783,7 @@ FastCaloSimModel INFO
   |    Ekin   = 100.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 1501
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 2 run -1.
 GenerationInit   INFO  +++ Initializing event 4. Within run:0 event 4.
 HEPMC3FileReader::moveToEvent INFO  Skipping the first 3 events 
@@ -2796,9 +2793,9 @@ hepmc4           INFO  +++ Particle interaction with 1 generator particles and 1
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 EventSeeder1     INFO  At beginEvent: eventID=3, runID=0 initialSeed=42, newSeed=1830669110
 ParticleHandler  INFO  +++ Event 3 Begin event action. Access event related information.
-FastCaloSimModel INFO  
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = 284.75
@@ -2819,8 +2816,7 @@ FastCaloSimModel INFO
   |    Ekin   = 100.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 1501
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 3 run -1.
 GenerationInit   INFO  +++ Initializing event 5. Within run:0 event 5.
 HEPMC3FileReader::moveToEvent INFO  Skipping the first 4 events 
@@ -2830,9 +2826,9 @@ hepmc4           INFO  +++ Particle interaction with 1 generator particles and 1
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 EventSeeder1     INFO  At beginEvent: eventID=4, runID=0 initialSeed=42, newSeed=2524321710
 ParticleHandler  INFO  +++ Event 4 Begin event action. Access event related information.
-FastCaloSimModel INFO  
+ParametrizationModel INFO  
   +------------------------------------------------------------+
-  |  [1;36mFastCaloSimModel received particle: 0[0m
+  |  [1;36mReceived particle: 0[0m
   |                                                             
   |    [1;32mPosition Information[0m  
   |    x      = -1193.66
@@ -2853,11 +2849,10 @@ FastCaloSimModel INFO
   |    Ekin   = 100.00
   +------------------------------------------------------------+
 
-FastCaloSimModel INFO  Running in parametrization mode...
-FastCaloSimModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 1501
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 4 run -1.
 GenerationInit   WARN  +++ Finished run 0 after 5 events (5 events in total)
 
-DDSim            INFO Total Time:   37.63 s (User), 1.67 s (System)
-DDSim            INFO StartUp Time: 6.66 s, Event Processing: 30.97 s (6.19 s/Event) 
+DDSim            INFO Total Time:   31.19 s (User), 1.21 s (System)
+DDSim            INFO StartUp Time: 5.74 s, Event Processing: 25.45 s (5.09 s/Event) 
 Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.
