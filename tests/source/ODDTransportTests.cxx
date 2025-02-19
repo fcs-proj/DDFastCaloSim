@@ -55,9 +55,10 @@ TEST(ODDTransportTests, ODDTransport)
 
   LogComparer comparer(ref_log_file, log_file);
   // Lines containing these patterns will be ignored in the comparison
-  comparer.setIgnorePatterns(
-      {"DDSim.Helper.Filter INFO ReqFilt",
-       "XMLLoader        INFO  +++ Processing XML file:"});
+  comparer.setIgnorePatterns({"DDSim.Helper.Filter INFO ReqFilt",
+                              "XMLLoader        INFO  +++ Processing XML file:",
+                              "HEPMC3FileReader INFO  Created file reader"});
+
   ASSERT_TRUE(comparer.compareLogs())
       << "Log files differ! See the filtered differences above.";
 
