@@ -1825,11 +1825,9 @@ Geant4UI         INFO  +++ RunAction> Install Geant4 control directory:/ddg4/Run
 DDSim.Helper.OutputConfig INFO ++++ Setting up EDM4hep ROOT Output ++++
 Geant4UI         INFO  +++ EventAction> Install Geant4 control directory:/ddg4/EventAction/
 EDM4hepOutput    INFO  Writer is now instantiated ...
-DDSim            INFO ++++ Adding DD4hep Particle Gun ++++
 DDSim            INFO Enabling the PrimaryHandler
 Geant4UI         INFO  +++ EDM4hepOutput> Install Geant4 control directory:/ddg4/EDM4hepOutput/
 Geant4UI         INFO  +++ GeneratorAction> Install Geant4 control directory:/ddg4/GeneratorAction/
-Geant4UI         INFO  +++ Gun> Install Geant4 control directory:/ddg4/Gun/
 Geant4UI         INFO  +++ hepmc4> Install Geant4 control directory:/ddg4/hepmc4/
 Geant4UI         INFO  +++ InteractionMerger> Install Geant4 control directory:/ddg4/InteractionMerger/
 Geant4UI         INFO  +++ PrimaryHandler> Install Geant4 control directory:/ddg4/PrimaryHandler/
@@ -1924,7 +1922,7 @@ PhysicsList            +++ RangeCut:            0.700000
 Geant4UI         INFO  +++ GlobalRangeCut> Install Geant4 control directory:/ddg4/GlobalRangeCut/
 Geant4Kernel           OutputLevel:  2
 Geant4Kernel           UI:           UI
-Geant4Kernel           NumEvents:    -1
+Geant4Kernel           NumEvents:    5
 Geant4Kernel           NumThreads:   0
 Geant4UI         INFO  +++ FastPhysicsList> Install Geant4 control directory:/ddg4/FastPhysicsList/
 PhysicsList            +++ Dump of physics list component(s)
@@ -1958,8 +1956,8 @@ G4PhysListFactory::GetReferencePhysList <FTFP_BERT>  EMoption= 0
 FastPhysicsList  INFO  Enable fast simulation for particle type: geantino
 FastPhysicsList  INFO  Constructed and initialized Geant4 Fast Physics [G4FastSimulationPhysics].
 Myphysics        INFO  Registered Geant4 physics constructor G4StepLimiterPhysics to physics list
-UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xe657c30 Kernel:0xe616510 [-1]
-Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.375 seconds]
+UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xe69e500 Kernel:0xe65e670 [-1]
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.462 seconds]
 Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/ConstructGeo/
 
  hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
@@ -1971,7 +1969,7 @@ Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/
 ### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
       geantino : fastSimProcess_massGeom[geom:world_volume_1] 
 GlobalRangeCut   INFO  +++ Set PhysicsList RangeCut to 0.100000 mm
-UI               INFO  ++ Start run with 2147483647 events.
+UI               INFO  ++ Start run with 5 events.
 =======================================================================
 ======                 Electromagnetic Physics Parameters      ========
 =======================================================================
@@ -2683,15 +2681,10 @@ HEPMC3FileReader INFO  Created file reader. Try to open input /srv/tests/output/
 ERROR::ReaderAscii: not enough implicit vertices
 Geant4Output2EDM4hep INFO  Opened out.root for output
 GenerationInit   INFO  +++ Initializing event 1. Within run:0 event 1.
-Gun              INFO  Shoot [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm] dir:( 0.000  0.000  1.000)
-Gun              INFO  Particle [0] mu-          Mom:0.364 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.000  0.000  1.000)
-Gun              INFO  +-> Interaction [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm]
-Gun              INFO  +++   +-> ID:  0 mu-          status:00000002 PDG:    13 Vtx:(+0.00e+00,+0.00e+00,+0.00e+00)[mm] time: +0.00e+00 [ns] #Dau:  0 #Par:0      
 HEPMC3FileReader::moveToEvent INFO  Skipping the first 0 events 
 ERROR::ReaderAscii: not enough implicit vertices
 HEPMC3FileReader INFO  Read event from file
 hepmc4           INFO  +++ Particle interaction with 1 generator particles and 1 vertices ++++++++++++++++++++++++
-PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 EventSeeder1     INFO  At beginEvent: eventID=0, runID=0 initialSeed=42, newSeed=1328797229
 ParticleHandler  INFO  +++ Event 0 Begin event action. Access event related information.
@@ -2728,15 +2721,10 @@ FastCaloSimModel INFO  Number of steps: 1501
 ### Birks coefficients used in run time
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 0 run -1.
 GenerationInit   INFO  +++ Initializing event 2. Within run:0 event 2.
-Gun              INFO  Shoot [1] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm] dir:( 0.000  0.000  1.000)
-Gun              INFO  Particle [0] mu-          Mom:9.093 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.000  0.000  1.000)
-Gun              INFO  +-> Interaction [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm]
-Gun              INFO  +++   +-> ID:  0 mu-          status:00000002 PDG:    13 Vtx:(+0.00e+00,+0.00e+00,+0.00e+00)[mm] time: +0.00e+00 [ns] #Dau:  0 #Par:0      
 HEPMC3FileReader::moveToEvent INFO  Skipping the first 1 events 
 ERROR::ReaderAscii: not enough implicit vertices
 HEPMC3FileReader INFO  Read event from file
 hepmc4           INFO  +++ Particle interaction with 1 generator particles and 1 vertices ++++++++++++++++++++++++
-PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 EventSeeder1     INFO  At beginEvent: eventID=1, runID=0 initialSeed=42, newSeed=901388549
 ParticleHandler  INFO  +++ Event 1 Begin event action. Access event related information.
@@ -2767,15 +2755,10 @@ FastCaloSimModel INFO  Running in parametrization mode...
 FastCaloSimModel INFO  Number of steps: 1501
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 1 run -1.
 GenerationInit   INFO  +++ Initializing event 3. Within run:0 event 3.
-Gun              INFO  Shoot [2] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm] dir:( 0.000  0.000  1.000)
-Gun              INFO  Particle [0] mu-          Mom:3.513 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.000  0.000  1.000)
-Gun              INFO  +-> Interaction [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm]
-Gun              INFO  +++   +-> ID:  0 mu-          status:00000002 PDG:    13 Vtx:(+0.00e+00,+0.00e+00,+0.00e+00)[mm] time: +0.00e+00 [ns] #Dau:  0 #Par:0      
 HEPMC3FileReader::moveToEvent INFO  Skipping the first 2 events 
 ERROR::ReaderAscii: not enough implicit vertices
 HEPMC3FileReader INFO  Read event from file
 hepmc4           INFO  +++ Particle interaction with 1 generator particles and 1 vertices ++++++++++++++++++++++++
-PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 EventSeeder1     INFO  At beginEvent: eventID=2, runID=0 initialSeed=42, newSeed=1343800373
 ParticleHandler  INFO  +++ Event 2 Begin event action. Access event related information.
@@ -2806,15 +2789,10 @@ FastCaloSimModel INFO  Running in parametrization mode...
 FastCaloSimModel INFO  Number of steps: 1501
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 2 run -1.
 GenerationInit   INFO  +++ Initializing event 4. Within run:0 event 4.
-Gun              INFO  Shoot [3] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm] dir:( 0.000  0.000  1.000)
-Gun              INFO  Particle [0] mu-          Mom:1.396 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.000  0.000  1.000)
-Gun              INFO  +-> Interaction [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm]
-Gun              INFO  +++   +-> ID:  0 mu-          status:00000002 PDG:    13 Vtx:(+0.00e+00,+0.00e+00,+0.00e+00)[mm] time: +0.00e+00 [ns] #Dau:  0 #Par:0      
 HEPMC3FileReader::moveToEvent INFO  Skipping the first 3 events 
 ERROR::ReaderAscii: not enough implicit vertices
 HEPMC3FileReader INFO  Read event from file
 hepmc4           INFO  +++ Particle interaction with 1 generator particles and 1 vertices ++++++++++++++++++++++++
-PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 EventSeeder1     INFO  At beginEvent: eventID=3, runID=0 initialSeed=42, newSeed=1830669110
 ParticleHandler  INFO  +++ Event 3 Begin event action. Access event related information.
@@ -2845,15 +2823,10 @@ FastCaloSimModel INFO  Running in parametrization mode...
 FastCaloSimModel INFO  Number of steps: 1501
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 3 run -1.
 GenerationInit   INFO  +++ Initializing event 5. Within run:0 event 5.
-Gun              INFO  Shoot [4] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm] dir:( 0.000  0.000  1.000)
-Gun              INFO  Particle [0] mu-          Mom:4.426 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.000  0.000  1.000)
-Gun              INFO  +-> Interaction [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm]
-Gun              INFO  +++   +-> ID:  0 mu-          status:00000002 PDG:    13 Vtx:(+0.00e+00,+0.00e+00,+0.00e+00)[mm] time: +0.00e+00 [ns] #Dau:  0 #Par:0      
 HEPMC3FileReader::moveToEvent INFO  Skipping the first 4 events 
 ERROR::ReaderAscii: not enough implicit vertices
 HEPMC3FileReader INFO  Read event from file
 hepmc4           INFO  +++ Particle interaction with 1 generator particles and 1 vertices ++++++++++++++++++++++++
-PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 EventSeeder1     INFO  At beginEvent: eventID=4, runID=0 initialSeed=42, newSeed=2524321710
 ParticleHandler  INFO  +++ Event 4 Begin event action. Access event related information.
@@ -2883,15 +2856,8 @@ FastCaloSimModel INFO
 FastCaloSimModel INFO  Running in parametrization mode...
 FastCaloSimModel INFO  Number of steps: 1501
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 4 run -1.
-GenerationInit   INFO  +++ Initializing event 6. Within run:0 event 6.
-Gun              INFO  Shoot [5] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm] dir:( 0.000  0.000  1.000)
-Gun              INFO  Particle [0] mu-          Mom:6.312 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.000  0.000  1.000)
-Gun              INFO  +-> Interaction [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm]
-Gun              INFO  +++   +-> ID:  0 mu-          status:00000002 PDG:    13 Vtx:(+0.00e+00,+0.00e+00,+0.00e+00)[mm] time: +0.00e+00 [ns] #Dau:  0 #Par:0      
-HEPMC3FileReader::moveToEvent INFO  Skipping the first 5 events 
-UI               INFO  ++ End of file reached, ending run...
-GenerationInit   WARN  +++ Finished run 0 after 6 events (6 events in total)
+GenerationInit   WARN  +++ Finished run 0 after 5 events (5 events in total)
 
-DDSim            INFO Total Time:   31.27 s (User), 1.17 s (System)
-DDSim            INFO StartUp Time: 5.80 s, Event Processing: 25.47 s (5.09 s/Event) 
+DDSim            INFO Total Time:   37.63 s (User), 1.67 s (System)
+DDSim            INFO StartUp Time: 6.66 s, Event Processing: 30.97 s (6.19 s/Event) 
 Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.

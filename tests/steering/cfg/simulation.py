@@ -9,9 +9,10 @@ SIM = DD4hepSimulation()
 SIM.compactFile = "OpenDataDetector.xml"
 ## Lorentz boost for the crossing angle, in radian!
 SIM.enableDetailedShowerMode = False
+# Disable particle gun as we are using HepMC input
 SIM.enableG4GPS = False
 SIM.enableG4Gun = False
-SIM.enableGun = True
+SIM.enableGun = False
 ## number of events to simulate, used in batch mode
 SIM.numberOfEvents = -1
 ## Output file from the simulation

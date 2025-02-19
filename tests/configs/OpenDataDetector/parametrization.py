@@ -16,6 +16,8 @@ TEST_WORKING_DIR = os.getenv("TEST_WORKING_DIR")
 ## Geometry input file
 SIM.compactFile = f"{TEST_BASE_DIR}/geometry/OpenDataDetector/OpenDataDetector.xml"
 
+# Configure the number of events to simulate
+SIM.numberOfEvents = 5
 
 ######################################################################
 # Configure particle generation
@@ -27,7 +29,7 @@ SIM.compactFile = f"{TEST_BASE_DIR}/geometry/OpenDataDetector/OpenDataDetector.x
 # truth momentum = 100 MeV
 gen = ParticleEventGenerator(seed=42)
 gen.generate(
-    nEvents=5,
+    nEvents=SIM.numberOfEvents,
     pid=0,
     momentum=100,
     mass=0,

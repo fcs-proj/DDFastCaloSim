@@ -1825,17 +1825,15 @@ Geant4UI         INFO  +++ RunAction> Install Geant4 control directory:/ddg4/Run
 DDSim.Helper.OutputConfig INFO ++++ Setting up EDM4hep ROOT Output ++++
 Geant4UI         INFO  +++ EventAction> Install Geant4 control directory:/ddg4/EventAction/
 EDM4hepOutput    INFO  Writer is now instantiated ...
-DDSim            INFO ++++ Adding DD4hep Particle Gun ++++
 DDSim            INFO Enabling the PrimaryHandler
 Geant4UI         INFO  +++ EDM4hepOutput> Install Geant4 control directory:/ddg4/EDM4hepOutput/
 Geant4UI         INFO  +++ GeneratorAction> Install Geant4 control directory:/ddg4/GeneratorAction/
-Geant4UI         INFO  +++ Gun> Install Geant4 control directory:/ddg4/Gun/
 Geant4UI         INFO  +++ hepmc4> Install Geant4 control directory:/ddg4/hepmc4/
 Geant4UI         INFO  +++ InteractionMerger> Install Geant4 control directory:/ddg4/InteractionMerger/
 Geant4UI         INFO  +++ PrimaryHandler> Install Geant4 control directory:/ddg4/PrimaryHandler/
 Geant4UI         INFO  +++ TrackingAction> Install Geant4 control directory:/ddg4/TrackingAction/
 Geant4UI         INFO  +++ SteppingAction> Install Geant4 control directory:/ddg4/SteppingAction/
-DDSim.Helper.Filter INFO ReqFilt {'edep1kev', 'edep0'}
+DDSim.Helper.Filter INFO ReqFilt {'edep0', 'edep1kev'}
 DDSim            INFO getDetectorLists - found active detector ECalBarrel type: calorimeter
 DDSim            INFO getDetectorLists - Identified ECalBarrel as a calorimeter
 DDSim            INFO getDetectorLists - found active detector ECalEndcap type: calorimeter
@@ -1924,7 +1922,7 @@ PhysicsList            +++ RangeCut:            0.700000
 Geant4UI         INFO  +++ GlobalRangeCut> Install Geant4 control directory:/ddg4/GlobalRangeCut/
 Geant4Kernel           OutputLevel:  2
 Geant4Kernel           UI:           UI
-Geant4Kernel           NumEvents:    -1
+Geant4Kernel           NumEvents:    1
 Geant4Kernel           NumThreads:   0
 Geant4UI         INFO  +++ FastPhysicsList> Install Geant4 control directory:/ddg4/FastPhysicsList/
 PhysicsList            +++ Dump of physics list component(s)
@@ -1958,8 +1956,8 @@ G4PhysListFactory::GetReferencePhysList <FTFP_BERT>  EMoption= 0
 FastPhysicsList  INFO  Enable fast simulation for particle type: geantino
 FastPhysicsList  INFO  Constructed and initialized Geant4 Fast Physics [G4FastSimulationPhysics].
 Myphysics        INFO  Registered Geant4 physics constructor G4StepLimiterPhysics to physics list
-UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xd81e9e0 Kernel:0xd7e1bd0 [-1]
-Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.383 seconds]
+UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xea627c0 Kernel:0xea24f50 [-1]
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.479 seconds]
 Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/ConstructGeo/
 
  hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
@@ -1971,7 +1969,7 @@ Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/
 ### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
       geantino : fastSimProcess_massGeom[geom:world_volume_1] 
 GlobalRangeCut   INFO  +++ Set PhysicsList RangeCut to 0.100000 mm
-UI               INFO  ++ Start run with 2147483647 events.
+UI               INFO  ++ Start run with 1 events.
 =======================================================================
 ======                 Electromagnetic Physics Parameters      ========
 =======================================================================
@@ -2683,15 +2681,10 @@ HEPMC3FileReader INFO  Created file reader. Try to open input /srv/tests/output/
 ERROR::ReaderAscii: not enough implicit vertices
 Geant4Output2EDM4hep INFO  Opened out.root for output
 GenerationInit   INFO  +++ Initializing event 1. Within run:0 event 1.
-Gun              INFO  Shoot [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm] dir:( 0.000  0.000  1.000)
-Gun              INFO  Particle [0] mu-          Mom:0.364 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.000  0.000  1.000)
-Gun              INFO  +-> Interaction [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm]
-Gun              INFO  +++   +-> ID:  0 mu-          status:00000002 PDG:    13 Vtx:(+0.00e+00,+0.00e+00,+0.00e+00)[mm] time: +0.00e+00 [ns] #Dau:  0 #Par:0      
 HEPMC3FileReader::moveToEvent INFO  Skipping the first 0 events 
 ERROR::ReaderAscii: not enough implicit vertices
 HEPMC3FileReader INFO  Read event from file
 hepmc4           INFO  +++ Particle interaction with 30 generator particles and 30 vertices ++++++++++++++++++++++++
-PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
@@ -3589,15 +3582,8 @@ This issue should not occur during normal operation.
 
 FastCaloSimModel INFO  Number of steps: 1316
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 0 run -1.
-GenerationInit   INFO  +++ Initializing event 2. Within run:0 event 2.
-Gun              INFO  Shoot [1] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm] dir:( 0.000  0.000  1.000)
-Gun              INFO  Particle [0] mu-          Mom:1.561 GeV vertex:( 0.000  0.000  0.000)[mm] direction:( 0.000  0.000  1.000)
-Gun              INFO  +-> Interaction [0] [0.000 , 10.000] GeV mu- pos:(0.000 0.000 0.000)[mm]
-Gun              INFO  +++   +-> ID:  0 mu-          status:00000002 PDG:    13 Vtx:(+0.00e+00,+0.00e+00,+0.00e+00)[mm] time: +0.00e+00 [ns] #Dau:  0 #Par:0      
-HEPMC3FileReader::moveToEvent INFO  Skipping the first 1 events 
-UI               INFO  ++ End of file reached, ending run...
-GenerationInit   WARN  +++ Finished run 0 after 2 events (2 events in total)
+GenerationInit   WARN  +++ Finished run 0 after 1 events (1 events in total)
 
-DDSim            INFO Total Time:   31.84 s (User), 1.29 s (System)
-DDSim            INFO StartUp Time: 5.62 s, Event Processing: 26.22 s (26.22 s/Event) 
+DDSim            INFO Total Time:   39.44 s (User), 1.45 s (System)
+DDSim            INFO StartUp Time: 7.05 s, Event Processing: 32.39 s (32.39 s/Event) 
 Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.
