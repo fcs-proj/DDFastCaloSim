@@ -18,6 +18,8 @@ class FastSimModelConfig:
         self.transport_limit_volume = ""
         # Hook to generate input for parametrization
         self.parametrization_pdg_id = -1
+        # Model name
+        self.model_name = ""
 
     def setup(self):
         if not self.region_name:
@@ -28,12 +30,14 @@ class FastSimModelConfig:
             raise ValueError("transport_limit_volume must be set")
         if self.max_transport_steps <= 0:
             raise ValueError("max_transport_steps must be positive")
+        if self.model_name not in ["FastCaloSimModel", "ParametrizationModel"]:
+            raise ValueError("Model not supported")
 
         geant4 = Geant4(self.kernel)
         seq = geant4.detectorConstruction()
 
         # Configure the model
-        model = DetectorConstruction(self.kernel, "FastCaloSimModel")
+        model = DetectorConstruction(self.kernel, self.model_name)
         model.Enable = True
         model.ApplicableParticles = self.active_particles
         model.RegionName = self.region_name

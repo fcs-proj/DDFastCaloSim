@@ -19,7 +19,7 @@
  * @brief Build a formatted multi-line message from a G4Track alone,
  *        using an ASCII box layout for nicer readability, with colored headers.
  */
-inline std::stringstream print_track(const G4Track* track)
+inline auto print_track(const G4Track* track) -> std::stringstream
 {
   // Access necessary info
   const auto* pdef = track->GetDefinition();
@@ -36,8 +36,7 @@ inline std::stringstream print_track(const G4Track* track)
   std::stringstream msg;
   msg << "\n"
       << "  +------------------------------------------------------------+\n"
-      << "  |  " << BOLDCYAN << "FastCaloSimModel received particle: " << pdgId
-      << RESET << "\n"
+      << "  |  " << BOLDCYAN << "Received particle: " << pdgId << RESET << "\n"
       << "  |                                                             \n"
       << std::fixed << std::setprecision(2) << "  |    " << BOLDGREEN
       << "Position Information" << RESET << "  \n"

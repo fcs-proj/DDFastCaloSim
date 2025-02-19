@@ -52,6 +52,8 @@ def fast_sim_cfg(kernel):
 
     # Import the base fast simulation model configuration
     config = FastSimModelConfig(kernel)
+    # Set the fast simulation model name
+    config.model_name = "ParametrizationModel"
     # Set specific configuration
     config.region_name = "ECalBarrelRegion"
     # Only geantinos will trigger the fast simulation
