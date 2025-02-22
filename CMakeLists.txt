@@ -33,7 +33,7 @@ find_package(DD4hep REQUIRED COMPONENTS DDG4 DDParsers DDCore DDDetectors)
 include(FetchContent)
 # LWTNN is not shipped by DD4hep but a dependency of FastCaloSim
 # We'll give FastCaloSim a hint where to find it
-set(lwtnn_ROOT "/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt"
+set(lwtnn_ROOT "/cvmfs/sft.cern.ch/lcg/releases/lwtnn/2.13-500c2/x86_64-el9-gcc14-opt/"
   CACHE PATH "Where to find lwtnn" FORCE
 )
 

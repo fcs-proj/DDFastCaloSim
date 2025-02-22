@@ -6,7 +6,7 @@ function(add_tests TEST_SOURCES)
         add_executable(${TEST_NAME} ${TEST_FILE})
 
         # Link the test executable with the GoogleTest and necessary libraries
-        target_link_libraries(${TEST_NAME} PRIVATE gtest gtest_main nlohmann_json::nlohmann_json)
+        target_link_libraries(${TEST_NAME} PRIVATE gtest gtest_main nlohmann_json::nlohmann_json ROOT::Core)
 
         # Add include directories
         target_include_directories(${TEST_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
@@ -15,8 +15,14 @@ function(add_tests TEST_SOURCES)
         add_test(NAME ${TEST_NAME}
             COMMAND ${TEST_NAME})
 
-        # Set the test properties: load the DDFastCaloSim library and set the PYTHONPATH
+        # Set the test properties
+        # Propagate the dd4hep environment to tets
+        # Preload the DDFastCaloSim library
         set_tests_properties(${TEST_NAME} PROPERTIES
-            ENVIRONMENT "LD_PRELOAD=${DDFastCaloSim_LIB};PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}:$ENV{PYTHONPATH};TEST_BASE_DIR=${TEST_BASE_DIR}")
+            ENVIRONMENT "DDFastCaloSim_LIB=${DDFastCaloSim_LIB};
+                         TEST_BASE_DIR=${TEST_BASE_DIR};
+                         LD_PRELOAD=${DDFastCaloSim_LIB}:$ENV{LD_PRELOAD};
+                         LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$ENV{LD_LIBRARY_PATH};
+                         PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}:$ENV{PYTHONPATH};")
     endforeach()
 endfunction()
