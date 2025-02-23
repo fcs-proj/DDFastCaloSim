@@ -1,6 +1,7 @@
 // -- DDFastCaloSim includes
 #include "DDFastCaloSim/ParametrizationModel.h"
 
+#include "DDFastCaloSim/ParametrizationWriter.h"
 #include "DDFastCaloSim/TrackMsg.h"
 
 // -- Geant4 includes
@@ -80,7 +81,18 @@ void dd4hep::sim::ParametrizationModel::modelShower(const G4FastTrack& aTrack,
   printout(
       INFO, "ParametrizationModel", "Number of steps: %d", step_vector.size());
 
-  /// TODO: Implement extrapolation and writer
+  TFCSExtrapolationState extrapol_state;
+  /// TODO: m_extrapolationTool.extrapolate(step_vector, state);
+
+  auto collector = dynamic_cast<dd4hep::sim::ParamCollector*>(
+      context()->eventAction().get("ParamCollector"));
+  if (collector) {
+    collector->get_event_data().extrapolations.push_back(extrapol_state);
+  } else {
+    printout(ERROR,
+             "ParametrizationModel",
+             "ParamCollector not found in event action sequence!");
+  }
 
   // Kill initial geantino
   killParticle(aStep, 0);
