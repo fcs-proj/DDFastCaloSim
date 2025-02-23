@@ -52,6 +52,17 @@ class FastSimModelConfig:
         # Attach the model to the region
         seq.adopt(model)
 
+        if self.model_name == "ParametrizationModel":
+            # Add the parametrization writer to the event action sequence
+            from DDG4 import EventAction, RunAction
+
+            # Collects parametrization data
+            collector = EventAction(self.kernel, "ParamCollector", shared=True)
+            # Writes parametrization data to file
+            writer = RunAction(self.kernel, "ParamWriter", shared=True)
+            self.kernel.runAction().adopt(writer)
+            self.kernel.eventAction().adopt(collector)
+
         # Set up the user physics for fast simulation
         physics_list = self.kernel.physicsList()
         fast_physics_list = PhysicsList(
