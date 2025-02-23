@@ -19,6 +19,11 @@ TEST(ODDTransportTests, ODDTransport)
   // Set test directory as environment variable
   setenv("TEST_WORKING_DIR", output_dir.c_str(), 1);
 
+  // Pre-load the DDFastCaloSim library
+  /// TODO: instead of this we should be able to just source
+  /// thisDDFastCaloSim.sh however something in key4hep is not working properly
+  setenv("LD_PRELOAD", std::getenv("DDFastCaloSim_LIB"), 1);
+
   // Change the current directory to the output directory
   std::filesystem::current_path(output_dir);
 

@@ -19,11 +19,10 @@ function(add_tests TEST_SOURCES)
         # Propagate the dd4hep environment to tets
         # Preload the DDFastCaloSim library
         set(ENV_VARS
-            "DDFastCaloSim_LIB=${DDFastCaloSim_LIB};"
-            "TEST_BASE_DIR=${TEST_BASE_DIR};"
-            "LD_PRELOAD=${DDFastCaloSim_LIB}:$ENV{LD_PRELOAD};"
-            "LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$ENV{LD_LIBRARY_PATH};"
-            "PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}:$ENV{PYTHONPATH};"
+            "TEST_BASE_DIR=${TEST_BASE_DIR}"
+            "DDFastCaloSim_LIB=${DDFastCaloSim_LIB}"
+            "LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$ENV{LD_LIBRARY_PATH}"
+            "PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}:$ENV{PYTHONPATH}"
         )
 
         set_tests_properties(${TEST_NAME} PROPERTIES ENVIRONMENT "${ENV_VARS}")
