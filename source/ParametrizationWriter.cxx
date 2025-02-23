@@ -53,9 +53,7 @@ ParamWriter::ParamWriter(Geant4Context* context, const std::string& name)
 
 ParamWriter::~ParamWriter()
 {
-  delete tree;
   delete output_file;
-  output_file->Close();
 }
 
 void ParamWriter::begin(const G4Run* /*run*/)
@@ -67,9 +65,18 @@ void ParamWriter::begin(const G4Run* /*run*/)
 
 void ParamWriter::end(const G4Run* /*run*/)
 {
-  if (output_file) {
-    output_file->Write();
+  if (!output_file) {
+    dd4hep::printout(dd4hep::ERROR, "ParamWriter", "Output file not found!");
+    return;
   }
+
+  if (output_file->IsZombie()) {
+    dd4hep::printout(dd4hep::ERROR, "ParamWriter", "Output file is a zombie!");
+    return;
+  }
+
+  output_file->Write();
+  output_file->Close();
 }
 
 /// -------------------------------------------------------------------
@@ -77,6 +84,10 @@ void ParamWriter::end(const G4Run* /*run*/)
 /// -------------------------------------------------------------------
 void ParamWriter::write_event(const EventData& data)
 {
+  if (!tree) {
+    dd4hep::printout(dd4hep::ERROR, "ParamWriter", "Tree not found!");
+    return;
+  }
   // Copy the event data to the tree
   event_data = data;
   tree->Fill();

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DDFastCaloSim/ParamOutputEMD.h"
+#include "DDFastCaloSim/ParamOutputEDM.h"
 #include "DDG4/Geant4EventAction.h"
 #include "DDG4/Geant4RunAction.h"
 #include "TFile.h"
@@ -51,8 +51,8 @@ public:
   void write_event(const EventData& data);
 
 private:
-  TFile* output_file;
-  TTree* tree;
+  TFile* output_file {nullptr};
+  TTree* tree {nullptr};
 
   // Event level buffer to store single event
   EventData event_data;

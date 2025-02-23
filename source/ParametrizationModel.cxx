@@ -92,6 +92,7 @@ void dd4hep::sim::ParametrizationModel::modelShower(const G4FastTrack& aTrack,
     printout(ERROR,
              "ParametrizationModel",
              "ParamCollector not found in event action sequence!");
+    abort();
   }
 
   // Kill initial geantino
