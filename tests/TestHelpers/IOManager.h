@@ -32,4 +32,13 @@ inline auto ref_dir() -> std::string
   return TEST_REFS_DIR + test_suite_name() + "_" + test_name() + "/";
 }
 
+inline void preload_ddfastcalosim()
+{
+  const char* lib_path = std::getenv("DDFastCaloSim_LIB");
+  if (!lib_path) {
+    FAIL() << "DDFastCaloSim_LIB environment variable is not set";
+  }
+  setenv("LD_PRELOAD", lib_path, 1);
+}
+
 }  // namespace TestHelpers::IOManager

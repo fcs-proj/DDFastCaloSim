@@ -22,7 +22,7 @@ TEST(ODDTransportTests, ODDTransport)
   // Pre-load the DDFastCaloSim library
   /// TODO: instead of this we should be able to just source
   /// thisDDFastCaloSim.sh however something in key4hep is not working properly
-  setenv("LD_PRELOAD", std::getenv("DDFastCaloSim_LIB"), 1);
+  TestHelpers::IOManager::preload_ddfastcalosim();
 
   // Change the current directory to the output directory
   std::filesystem::current_path(output_dir);
