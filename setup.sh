@@ -45,3 +45,13 @@ if ! pre-commit --version &>/dev/null; then
 else
     echo "✅ Pre-commit hooks are already installed."
 fi
+
+# Capture all environment variables for the current session
+# This allows us to use jupyter notebooks in the key4hep environment
+ENV_FILE=".env"
+echo "🔄 Saving all environment variables to .env file..."
+
+# Use printenv to get all environment variables and format them for .env
+printenv | awk -F= '{print $1"=\"" $2 "\""}' > "$ENV_FILE"
+
+echo "✅ .env file created successfully."
