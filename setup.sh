@@ -52,6 +52,8 @@ ENV_FILE=".env"
 echo "🔄 Saving all environment variables to .env file..."
 
 # Use printenv to get all environment variables and format them for .env
-printenv | awk -F= '{print $1"=\"" $2 "\""}' > "$ENV_FILE"
+# Exclude PKG_CONFIG_PATH to avoid execvp(3) failed.: Argument list too long
+# Nothing particuler about PKG_CONFIG_PATH, just that it's long and not needed
+printenv | grep -vE "^(PKG_CONFIG_PATH)=" | awk -F= '{print $1"=\"" $2 "\""}' > "$ENV_FILE"
 
 echo "✅ .env file created successfully."
