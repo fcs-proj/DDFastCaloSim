@@ -51,9 +51,24 @@ fi
 ENV_FILE=".env"
 echo "🔄 Saving all environment variables to .env file..."
 
-# Use printenv to get all environment variables and format them for .env
-# Exclude PKG_CONFIG_PATH to avoid execvp(3) failed.: Argument list too long
-# Nothing particular about PKG_CONFIG_PATH, just that it's long and not needed
-printenv | grep -vE "^(PKG_CONFIG_PATH)=" | awk -F= '{print $1"=\"" $2 "\""}' > "$ENV_FILE"
+# Use printenv to retrieve all environment variables and format them for a .env file.
+#
+# Exclusions:
+# 1) Exclude PKG_CONFIG_PATH to prevent "execvp(3) failed: Argument list too long."
+#    - There is nothing special about PKG_CONFIG_PATH, but it is long and unnecessary.
+# 2) Exclude all SINGULARITY and APPTAINER-related variables.
+#    - This helps avoid potential conflicts or issues with Singularity/Apptainer.
+
+EXCLUDE_PATTERNS=(
+    PKG_CONFIG_PATH 
+    ".*SINGULARITY.*"
+    ".*APPTAINER.*"
+    ALRB_CONT_IMAGE
+)
+# Convert patterns into a grep-compatible regex
+EXCLUDE_REGEX="$(printf "|%s" "${EXCLUDE_PATTERNS[@]}" | cut -c2-)"
+
+printenv | grep -vE "^(${EXCLUDE_REGEX})=" \
+    | awk -F= '{print $1"=\"" $2 "\""}' > "$ENV_FILE"
 
 echo "✅ .env file created successfully."
