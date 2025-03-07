@@ -23,7 +23,7 @@ private:
   std::vector<float>* m_newTTC_IDCaloBoundary_r = nullptr;
   std::vector<float>* m_newTTC_IDCaloBoundary_z = nullptr;
   std::vector<float>* m_newTTC_Angle3D = nullptr;
-	std::vector<float>* m_newTTC_AngleEta = nullptr;
+  std::vector<float>* m_newTTC_AngleEta = nullptr;
 
   std::vector<std::vector<float>>* m_newTTC_entrance_eta = nullptr;
   std::vector<std::vector<float>>* m_newTTC_entrance_phi = nullptr;

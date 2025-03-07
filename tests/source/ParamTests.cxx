@@ -46,7 +46,8 @@ TEST_F(ParamTests, Parametrization)
 
   comparer.setIgnorePatterns({"DDSim.Helper.Filter INFO ReqFilt",
                               "XMLLoader        INFO  +++ Processing XML file:",
-                              "HEPMC3FileReader INFO  Created file reader"});
+                              "HEPMC3FileReader INFO  Created file reader",
+                              "Geant4Output2EDM4hep INFO  Opened"});
 
   ASSERT_TRUE(comparer.compareLogs()) << "Log files differ!";
 
