@@ -52,7 +52,7 @@ jobs:
             cmake --build build -j 4
 
             echo '::group::Run simulation'
-            ctest -j4 --test-dir build/tests --verbose --no-tests=error --output-on-failure
+            ctest -j4 --test-dir build/tests --no-tests=error --output-on-failure
           "
 
       # Upload artifact

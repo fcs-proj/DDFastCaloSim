@@ -32,6 +32,7 @@ public:
   /// User callback to implement the parametrization model
   void modelShower(const G4FastTrack& track, G4FastStep& step) override;
 };
+
 }  // namespace dd4hep::sim
 
 #endif /* ParametrizationModel_HH */

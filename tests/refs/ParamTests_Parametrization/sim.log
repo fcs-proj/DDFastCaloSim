@@ -1956,8 +1956,8 @@ G4PhysListFactory::GetReferencePhysList <FTFP_BERT>  EMoption= 0
 FastPhysicsList  INFO  Enable fast simulation for particle type: geantino
 FastPhysicsList  INFO  Constructed and initialized Geant4 Fast Physics [G4FastSimulationPhysics].
 Myphysics        INFO  Registered Geant4 physics constructor G4StepLimiterPhysics to physics list
-UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xd1d6040 Kernel:0xd194b90 [-1]
-Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.373 seconds]
+UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xe39b040 Kernel:0xe31fc80 [-1]
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.380 seconds]
 Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/ConstructGeo/
 
  hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
@@ -2677,9 +2677,9 @@ Correlated gamma emission flag                      0
 Max 2J for sampling of angular correlations         10
 =======================================================================
 EventSeeder1     INFO  Get RunID: runID=0
-HEPMC3FileReader INFO  Created file reader. Try to open input /srv/tests/output/ODDParametrizationTests_ODDParametrization/event.hepmc
+HEPMC3FileReader INFO  Created file reader. Try to open input /srv/tests/output/ParamTests_Parametrization/event.hepmc
 ERROR::ReaderAscii: not enough implicit vertices
-Geant4Output2EDM4hep INFO  Opened out.root for output
+Geant4Output2EDM4hep INFO  Opened /srv/tests/output/ParamTests_Parametrization/dd4hep_out.root for output
 GenerationInit   INFO  +++ Initializing event 1. Within run:0 event 1.
 HEPMC3FileReader::moveToEvent INFO  Skipping the first 0 events 
 ERROR::ReaderAscii: not enough implicit vertices
@@ -2853,6 +2853,6 @@ ParametrizationModel INFO  Number of steps: 1501
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 4 run -1.
 GenerationInit   WARN  +++ Finished run 0 after 5 events (5 events in total)
 
-DDSim            INFO Total Time:   30.32 s (User), 1.16 s (System)
-DDSim            INFO StartUp Time: 5.45 s, Event Processing: 24.87 s (4.97 s/Event) 
+DDSim            INFO Total Time:   30.66 s (User), 1.32 s (System)
+DDSim            INFO StartUp Time: 5.53 s, Event Processing: 25.13 s (5.03 s/Event) 
 Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.

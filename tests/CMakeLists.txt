@@ -16,6 +16,7 @@ add_definitions(-DTEST_REFS_DIR="${CMAKE_CURRENT_SOURCE_DIR}/refs/")
 add_definitions(-DTEST_CONFIGS_DIR="${CMAKE_CURRENT_SOURCE_DIR}/configs/")
 add_definitions(-DPYTHON_SCRIPTS_DIR="${CMAKE_CURRENT_SOURCE_DIR}/python/scripts/")
 add_definitions(-DPYTHON_INPUT_DIR="${CMAKE_CURRENT_SOURCE_DIR}/python/input/")
+add_definitions(-DCONVERTER_EXECUTABLE="${CMAKE_BINARY_DIR}/converter/createParamInput")
 
 # ---- Create test output Location ----
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/output)

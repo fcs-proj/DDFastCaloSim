@@ -16,7 +16,6 @@ using namespace dd4hep::sim;
 ParamCollector::ParamCollector(Geant4Context* context, const std::string& name)
     : Geant4EventAction(context, name)
 {
-  dd4hep::printout(dd4hep::DEBUG, "ParamCollector", "ParamCollector created");
 }
 
 ParamCollector::~ParamCollector() {}
@@ -48,7 +47,6 @@ void ParamCollector::end(const G4Event* /*event*/)
 ParamWriter::ParamWriter(Geant4Context* context, const std::string& name)
     : Geant4RunAction(context, name)
 {
-  dd4hep::printout(dd4hep::DEBUG, "ParamWriter", "ParamWriter created");
 }
 
 ParamWriter::~ParamWriter()
@@ -58,8 +56,8 @@ ParamWriter::~ParamWriter()
 
 void ParamWriter::begin(const G4Run* /*run*/)
 {
-  output_file = new TFile("param_output.root", "RECREATE");
-  tree = new TTree("param_info", "Input for parametrization");
+  output_file = new TFile(m_param_output_file.c_str(), "RECREATE");
+  tree = new TTree(m_param_tree_name.c_str(), "Input for parametrization");
   event_data.bind_to_tree(tree);
 }
 
