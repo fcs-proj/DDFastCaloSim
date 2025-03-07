@@ -78,7 +78,7 @@ auto main(int argc, char* argv[]) -> int
   fout->Close();
   fin->Close();
 
-  std::cout << "Done, wrote " << nentries << " entries to " << output_file
-            << std::endl;
+  std::cout << "[ExtrapolationConverter] Done. Wrote " << nentries << " entries." << std::endl;
+  std::cout << "[ExtrapolationConverter] Output file: " << output_file << std::endl;
   return 0;
 }

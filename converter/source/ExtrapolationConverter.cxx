@@ -8,6 +8,7 @@
 ExtrapolationConverter::ExtrapolationConverter(int m_n_layers)
     : m_n_layers(m_n_layers)
 {
+  std::cout << "[ExtrapolationConverter] Initializing..." << std::endl;
   /// @brief Calorimeter face position for each incident particle
   m_newTTC_IDCaloBoundary_eta = new std::vector<float>;
   m_newTTC_IDCaloBoundary_phi = new std::vector<float>;
@@ -43,6 +44,8 @@ ExtrapolationConverter::ExtrapolationConverter(int m_n_layers)
 
 ExtrapolationConverter::~ExtrapolationConverter()
 {
+  std::cout << "[ExtrapolationConverter] Clean up..." << std::endl;
+
   delete m_newTTC_IDCaloBoundary_eta;
   delete m_newTTC_IDCaloBoundary_phi;
   delete m_newTTC_IDCaloBoundary_r;
@@ -74,6 +77,8 @@ ExtrapolationConverter::~ExtrapolationConverter()
 
 void ExtrapolationConverter::createBranches(TTree* outTree)
 {
+  std::cout<< "[ExtrapolationConverter] Creating branches..." << std::endl;
+
   if (!outTree) {
     std::cerr
         << "ExtrapolationConverter::createBranches ERROR: outTree is null!\n";
