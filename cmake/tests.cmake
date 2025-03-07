@@ -6,10 +6,15 @@ function(add_tests TEST_SOURCES)
         add_executable(${TEST_NAME} ${TEST_FILE})
 
         # Link the test executable with the GoogleTest and necessary libraries
-        target_link_libraries(${TEST_NAME} PRIVATE gtest gtest_main nlohmann_json::nlohmann_json ROOT::Core FastCaloSim::FastCaloSim)
+        target_link_libraries(${TEST_NAME} PRIVATE
+            gtest
+            gtest_main
+            nlohmann_json::nlohmann_json
+            ROOT::Core
+            FastCaloSim::FastCaloSim)
 
         # Add include directories
-        target_include_directories(${TEST_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+        target_include_directories(${TEST_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_SOURCE_DIR})
 
         # Add the test to the test suite
         add_test(NAME ${TEST_NAME}

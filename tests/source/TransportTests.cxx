@@ -8,7 +8,7 @@
 #include "TestHelpers/JsonComparer.h"
 #include "TestHelpers/LogComparer.h"
 
-TEST(ODDTransportTests, ODDTransport)
+TEST(TransportTests, Transport)
 {
   // Create the output directory for the test
   const std::string output_dir =
@@ -32,10 +32,10 @@ TEST(ODDTransportTests, ODDTransport)
       std::string(TEST_CONFIGS_DIR) + "/OpenDataDetector/transport.py";
 
   // Name of ROOT file with simulation output
-  const std::string output_file = "out.root";
+  const std::string output_file = "dd4hep_out.root";
 
   // Name of the log file
-  const std::string log_file = "out.log";
+  const std::string log_file = "dd4hep_out.log";
 
   // Build the simulation command
   const std::string cmd = "ddsim --steeringFile " + steering_file

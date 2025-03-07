@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 #include <gtest/gtest.h>
 
 namespace TestHelpers::IOManager
@@ -24,6 +25,14 @@ inline auto create_test_output_dir() -> std::string
   const std::string command = "mkdir -p " + output_dir;
   system(command.c_str());
 
+  return output_dir;
+}
+
+inline auto get_test_output_dir(const std::string& test_suite_name,
+                                const std::string& test_name)
+{
+  const std::string output_dir =
+      TEST_OUTPUT_DIR + test_suite_name + "_" + test_name + "/";
   return output_dir;
 }
 

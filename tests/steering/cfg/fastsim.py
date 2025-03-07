@@ -60,6 +60,7 @@ class FastSimModelConfig:
             collector = EventAction(self.kernel, "ParamCollector", shared=True)
             # Writes parametrization data to file
             writer = RunAction(self.kernel, "ParamWriter", shared=True)
+
             self.kernel.runAction().adopt(writer)
             self.kernel.eventAction().adopt(collector)
 

@@ -50,12 +50,27 @@ public:
   /// Writes a single event to the ROOT file (called by `ParamCollector`)
   void write_event(const EventData& data);
 
+  /// @brief Output setters
+  void set_param_output_file(const std::string& param_output_file)
+  {
+    m_param_output_file = param_output_file;
+  }
+  void set_param_tree_name(const std::string& param_tree_name)
+  {
+    m_param_tree_name = param_tree_name;
+  }
+
 private:
   TFile* output_file {nullptr};
   TTree* tree {nullptr};
 
   // Event level buffer to store single event
   EventData event_data;
+
+  /// @brief Name of the ROOT file to write param information to
+  std::string m_param_output_file = "param_output.root";
+  /// @brief Name of the TTree to write param information to
+  std::string m_param_tree_name = "param_info";
 };
 
 }  // namespace dd4hep::sim
