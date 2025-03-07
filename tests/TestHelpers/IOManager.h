@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+
 #include <gtest/gtest.h>
 
 namespace TestHelpers::IOManager
@@ -34,6 +35,14 @@ inline auto get_test_output_dir(const std::string& test_suite_name,
   const std::string output_dir =
       TEST_OUTPUT_DIR + test_suite_name + "_" + test_name + "/";
   return output_dir;
+}
+
+inline auto get_test_ref_dir(const std::string& test_suite_name,
+                             const std::string& test_name)
+{
+  const std::string ref_dir =
+      TEST_REFS_DIR + test_suite_name + "_" + test_name + "/";
+  return ref_dir;
 }
 
 inline auto ref_dir() -> std::string
