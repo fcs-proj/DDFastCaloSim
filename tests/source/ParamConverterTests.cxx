@@ -66,7 +66,7 @@ TEST(ParamConverterTests, ParamConverterTest)
 
   LogComparer comparer(ref_log_file, test_log_file);
 
-  comparer.setIgnorePatterns({"[ExtrapolationConverter] Output file:"});
+  comparer.setIgnorePatterns({"[createParamInput] Output file:"});
 
   ASSERT_TRUE(comparer.compareLogs()) << "Log files differ!";
 
