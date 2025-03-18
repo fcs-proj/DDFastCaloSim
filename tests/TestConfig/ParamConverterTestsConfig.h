@@ -34,7 +34,7 @@ public:
     const std::string log_output_path = test_output_dir + log_file_name;
 
     return std::string(CONVERTER_EXECUTABLE) + " " + param_input_path + " "
-        + converter_output_path(test_output_dir) + " 2>&1 | tee "
-        + log_output_path;
+        + dd4hep_input_path + " " + converter_output_path(test_output_dir)
+        + " 2>&1 | tee " + log_output_path;
   }
 };

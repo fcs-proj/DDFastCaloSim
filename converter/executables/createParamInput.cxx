@@ -1,51 +1,38 @@
 #include <iostream>
 
-#include <TFile.h>
-#include <TSystem.h>
-#include <TTree.h>
-
 #include "FastCaloSim/Core/TFCSExtrapolationState.h"
 #include "FastCaloSimConverter/ExtrapolationConverter.h"
+#include "FastCaloSimConverter/InputLoader.h"
+#include "TFile.h"
+#include "TTree.h"
 
 auto main(int argc, char* argv[]) -> int
 {
-  if (argc != 3) {
+  if (argc != 4) {
     std::cerr << "Usage: " << argv[0]
-              << " <input_param_output.root> <output_converter_output.root>"
-              << std::endl;
+              << " <model_input> <dd4hep_input> <output_file>" << std::endl;
     return 1;
   }
+  std::string model_input = argv[1];
+  std::string dd4hep_input = argv[2];
+  std::string output_file = argv[3];
 
-  std::string param_input = argv[1];
-  std::string output_file = argv[2];
+  InputLoader loader;
 
-  // 1) Open input file, retrieve TTree
-  TFile* fin = TFile::Open(param_input.c_str(), "READ");
-  if (!fin || fin->IsZombie()) {
-    std::cerr << "Error: Failed to open input ROOT file: " << param_input
-              << std::endl;
+  // Get trees from files with specified branch names
+  TTree* model_tree = loader.get_tree(model_input, "param_info");
+  TTree* dd4hep_tree = loader.get_tree(dd4hep_input, "events");
+
+  // Make sure trees have identical number of entries
+  if (model_tree->GetEntries() != dd4hep_tree->GetEntries()) {
+    std::cerr << "Error: Trees have different number of entries" << std::endl;
     return 1;
   }
+  // Number of events to process
+  int n_entries = model_tree->GetEntries();
 
-  TTree* inTree = dynamic_cast<TTree*>(fin->Get("param_info"));
-  if (!inTree) {
-    std::cerr << "Error: TTree 'param_info' not found in ROOT file: "
-              << param_input << std::endl;
-    return 1;
-  }
-
-  // Set branch address for "extrapolations"
-  std::vector<TFCSExtrapolationState>* extrapolations = nullptr;
-  inTree->SetBranchAddress("extrapolations", &extrapolations);
-
-  // 2) Create output file + TTree
+  // Create output file
   TFile* fout = TFile::Open(output_file.c_str(), "RECREATE");
-  if (!fout || fout->IsZombie()) {
-    std::cerr << "Error: Failed to create output ROOT file: " << output_file
-              << std::endl;
-    return 1;
-  }
-
   TTree* outTree =
       new TTree("FCS_ParametrizationInput", "FCS_ParametrizationInput");
 
@@ -53,32 +40,27 @@ auto main(int argc, char* argv[]) -> int
   // -> Crashes if set to >0 as extrapolation states are not initialized
   int n_layers = 0;
 
-  // 3) Create an instance of our ExtrapolationConverter
+  // Initialize extrapolation converter
   ExtrapolationConverter converter {n_layers};
+  converter.create_branches(outTree);
+  converter.set_addresses(model_tree);
 
-  // 4) Let the converter create branches for newTTC stuff in 'outTree'
-  converter.createBranches(outTree);
-
-  Long64_t nentries = inTree->GetEntries();
-  for (Long64_t i = 0; i < nentries; i++) {
-    inTree->GetEntry(i);
-
-    // Fill the converter's data from extrapolations
-    converter.fillEvent(*extrapolations);
-
-    // Fill this row in the output TTree
+  // Fill the output tree
+  for (Long64_t i = 0; i < n_entries; i++) {
+    model_tree->GetEntry(i);
     outTree->Fill();
   }
 
-  // 7) Write out the new TTree
+  // Write out the new TTree
   fout->cd();
   outTree->Write();
 
   // Cleanup
   fout->Close();
-  fin->Close();
 
-  std::cout << "[ExtrapolationConverter] Done. Wrote " << nentries << " entries." << std::endl;
-  std::cout << "[ExtrapolationConverter] Output file: " << output_file << std::endl;
+  std::cout << "[ExtrapolationConverter] Done. Wrote " << n_entries
+            << " entries." << std::endl;
+  std::cout << "[ExtrapolationConverter] Output file: " << output_file
+            << std::endl;
   return 0;
 }

@@ -75,9 +75,9 @@ ExtrapolationConverter::~ExtrapolationConverter()
   delete m_newTTC_back_OK;
 }
 
-void ExtrapolationConverter::createBranches(TTree* outTree)
+void ExtrapolationConverter::create_branches(TTree* outTree)
 {
-  std::cout<< "[ExtrapolationConverter] Creating branches..." << std::endl;
+  std::cout << "[ExtrapolationConverter] Creating branches..." << std::endl;
 
   if (!outTree) {
     std::cerr
@@ -118,7 +118,7 @@ void ExtrapolationConverter::createBranches(TTree* outTree)
   outTree->Branch("newTTC_back_OK", &m_newTTC_back_OK);
 }
 
-void ExtrapolationConverter::fillEvent(
+void ExtrapolationConverter::fill_event(
     const std::vector<TFCSExtrapolationState>& extrapolations)
 {
   // 1) Clear for the new event
@@ -196,4 +196,20 @@ void ExtrapolationConverter::fillEvent(
     m_newTTC_back_detaBorder->push_back(std::move(detaBorder[2]));
     m_newTTC_back_OK->push_back(std::move(ok[2]));
   }
+}
+
+void ExtrapolationConverter::set_addresses(TTree* inputTree)
+{
+  if (!inputTree) {
+    std::cerr << "ExtrapolationConverter::setBranchAddresses ERROR: inputTree "
+                 "is null!\n";
+    return;
+  }
+  inputTree->SetBranchAddress("extrapolations", &m_extrapolations);
+}
+
+void ExtrapolationConverter::process_entry(Long64_t entry, TTree* inputTree)
+{
+  inputTree->GetEntry(entry);
+  fill_event(*m_extrapolations);
 }
