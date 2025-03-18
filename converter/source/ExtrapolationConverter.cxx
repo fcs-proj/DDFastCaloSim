@@ -5,7 +5,9 @@
 #include "FastCaloSim/Core/TFCSExtrapolationState.h"
 #include "FastCaloSim/Geometry/Cell.h"
 
-ExtrapolationConverter::ExtrapolationConverter(int m_n_layers)
+ExtrapolationConverter::ExtrapolationConverter(int m_n_layer,
+                                               TTree* inTree,
+                                               TTree* outTree)
     : m_n_layers(m_n_layers)
 {
   std::cout << "[ExtrapolationConverter] Initializing..." << std::endl;
@@ -40,6 +42,9 @@ ExtrapolationConverter::ExtrapolationConverter(int m_n_layers)
   m_newTTC_back_z = new std::vector<std::vector<float>>;
   m_newTTC_back_detaBorder = new std::vector<std::vector<float>>;
   m_newTTC_back_OK = new std::vector<std::vector<bool>>;
+
+  create_branches(outTree);
+  set_addresses(inTree);
 }
 
 ExtrapolationConverter::~ExtrapolationConverter()

@@ -41,9 +41,7 @@ auto main(int argc, char* argv[]) -> int
   int n_layers = 0;
 
   // Initialize extrapolation converter
-  ExtrapolationConverter converter {n_layers};
-  converter.create_branches(outTree);
-  converter.set_addresses(model_tree);
+  ExtrapolationConverter converter {n_layers, model_tree, outTree};
 
   // Fill the output tree
   for (Long64_t i = 0; i < n_entries; i++) {

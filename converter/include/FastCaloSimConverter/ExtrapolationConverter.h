@@ -10,7 +10,7 @@ class TFCSExtrapolationState;
 class ExtrapolationConverter
 {
 public:
-  ExtrapolationConverter(int m_n_layers);
+  ExtrapolationConverter(int m_n_layers, TTree* inTree, TTree* outTree);
   ~ExtrapolationConverter();
 
   /// @brief Creates branches in the output TTree for extrapolation data
