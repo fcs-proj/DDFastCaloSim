@@ -47,7 +47,7 @@ auto main(int argc, char* argv[]) -> int
 
   // Fill the output tree
   for (Long64_t i = 0; i < n_entries; i++) {
-    model_tree->GetEntry(i);
+    converter.process_entry(i, model_tree);
     outTree->Fill();
   }
 
