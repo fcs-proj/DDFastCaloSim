@@ -3,8 +3,14 @@
 #include "FastCaloSim/Core/TFCSExtrapolationState.h"
 #include "FastCaloSimConverter/ExtrapolationConverter.h"
 #include "FastCaloSimConverter/InputLoader.h"
+
+// ROOT headers
+#include "ROOT/TBufferMerger.hxx"
+#include "ROOT/TTreeProcessorMT.hxx"
 #include "TFile.h"
+#include "TROOT.h"
 #include "TTree.h"
+#include "TTreeReader.h"
 
 auto main(int argc, char* argv[]) -> int
 {
@@ -16,6 +22,9 @@ auto main(int argc, char* argv[]) -> int
   std::string model_input = argv[1];
   std::string dd4hep_input = argv[2];
   std::string output_file = argv[3];
+
+  // Enable multi-threading in ROOT
+  ROOT::EnableImplicitMT();
 
   InputLoader loader;
 
@@ -31,34 +40,41 @@ auto main(int argc, char* argv[]) -> int
   // Number of events to process
   int n_entries = model_tree->GetEntries();
 
-  // Create output file
-  TFile* fout = TFile::Open(output_file.c_str(), "RECREATE");
-  TTree* outTree =
-      new TTree("FCS_ParametrizationInput", "FCS_ParametrizationInput");
+  // Create a buffer merger for thread-safe writing
+  auto merger =
+      std::make_unique<ROOT::TBufferMerger>(output_file.c_str(), "RECREATE");
 
   // Number of layers in the calorimeter
   // -> Crashes if set to >0 as extrapolation states are not initialized
   int n_layers = 0;
 
-  // Initialize extrapolation converter
-  ExtrapolationConverter converter {n_layers, model_tree, outTree};
+  // Define the processing function that each thread will execute
+  auto processFunction = [&](TTreeReader& reader)
+  {
+    // Get a file from the merger to create a local tree
+    auto myFile = merger->GetFile();
+    TTree* outTree =
+        new TTree("FCS_ParametrizationInput", "FCS_ParametrizationInput");
 
-  // Fill the output tree
-  for (Long64_t i = 0; i < n_entries; i++) {
-    converter.process_entry(i, model_tree);
-    outTree->Fill();
-  }
+    // Create a thread-local ExtrapolationConverter
+    ExtrapolationConverter converter(n_layers, &reader, outTree);
 
-  // Write out the new TTree
-  fout->cd();
-  outTree->Write();
+    // Process entries in this thread's chunk
+    while (reader.Next()) {
+      converter.process_entry();
+      outTree->Fill();
+    }
 
-  // Cleanup
-  fout->Close();
+    // Write the local tree to the merged output
+    myFile->Write();
+  };
 
-  std::cout << "[ExtrapolationConverter] Done. Wrote " << n_entries
-            << " entries." << std::endl;
-  std::cout << "[ExtrapolationConverter] Output file: " << output_file
+  // Create a TTreeProcessorMT to process the model tree in parallel
+  ROOT::TTreeProcessorMT processor(*model_tree);
+  processor.Process(processFunction);
+
+  std::cout << "[createParamInput] Done. Wrote " << n_entries << " entries."
             << std::endl;
+  std::cout << "[createParamInput] Output file: " << output_file << std::endl;
   return 0;
 }

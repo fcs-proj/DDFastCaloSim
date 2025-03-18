@@ -1,16 +1,48 @@
 #include "FastCaloSimConverter/ExtrapolationConverter.h"
 
 #include <TTree.h>
+#include <TTreeReader.h>
+#include <TTreeReaderValue.h>
 
 #include "FastCaloSim/Core/TFCSExtrapolationState.h"
 #include "FastCaloSim/Geometry/Cell.h"
 
-ExtrapolationConverter::ExtrapolationConverter(int m_n_layer,
-                                               TTree* inTree,
+// MT-compatible constructor using TTreeReader
+ExtrapolationConverter::ExtrapolationConverter(int n_layers,
+                                               TTreeReader* reader,
                                                TTree* outTree)
-    : m_n_layers(m_n_layers)
+    : m_n_layers(n_layers)
+    , m_reader(reader)
 {
-  std::cout << "[ExtrapolationConverter] Initializing..." << std::endl;
+  std::cout << "[ExtrapolationConverter] Initializing converter..."
+            << std::endl;
+
+  // Initialize output data containers
+  initialize_data_containers();
+
+  // Set up TTreeReader value
+  if (m_reader) {
+    m_extrapolations_reader =
+        new TTreeReaderValue<std::vector<TFCSExtrapolationState>>(
+            *m_reader, "extrapolations");
+  } else {
+    std::cerr << "ExtrapolationConverter ERROR: TTreeReader is null!\n";
+  }
+
+  // Set up output branches if tree was provided
+  if (outTree) {
+    create_branches(outTree);
+  } else {
+    std::cerr << "ExtrapolationConverter ERROR: Output tree is null!\n";
+  }
+}
+
+// Helper method to initialize all data containers
+void ExtrapolationConverter::initialize_data_containers()
+{
+  std::cout << "[ExtrapolationConverter] Initializing data containers..."
+            << std::endl;
+
   /// @brief Calorimeter face position for each incident particle
   m_newTTC_IDCaloBoundary_eta = new std::vector<float>;
   m_newTTC_IDCaloBoundary_phi = new std::vector<float>;
@@ -42,14 +74,11 @@ ExtrapolationConverter::ExtrapolationConverter(int m_n_layer,
   m_newTTC_back_z = new std::vector<std::vector<float>>;
   m_newTTC_back_detaBorder = new std::vector<std::vector<float>>;
   m_newTTC_back_OK = new std::vector<std::vector<bool>>;
-
-  create_branches(outTree);
-  set_addresses(inTree);
 }
 
 ExtrapolationConverter::~ExtrapolationConverter()
 {
-  std::cout << "[ExtrapolationConverter] Clean up..." << std::endl;
+  std::cout << "[ExtrapolationConverter] Cleaning up..." << std::endl;
 
   delete m_newTTC_IDCaloBoundary_eta;
   delete m_newTTC_IDCaloBoundary_phi;
@@ -78,6 +107,9 @@ ExtrapolationConverter::~ExtrapolationConverter()
   delete m_newTTC_back_z;
   delete m_newTTC_back_detaBorder;
   delete m_newTTC_back_OK;
+
+  // Clean up TTreeReaderValue
+  delete m_extrapolations_reader;
 }
 
 void ExtrapolationConverter::create_branches(TTree* outTree)
@@ -203,18 +235,15 @@ void ExtrapolationConverter::fill_event(
   }
 }
 
-void ExtrapolationConverter::set_addresses(TTree* inputTree)
+// TTreeReader-based processing
+void ExtrapolationConverter::process_entry()
 {
-  if (!inputTree) {
-    std::cerr << "ExtrapolationConverter::setBranchAddresses ERROR: inputTree "
-                 "is null!\n";
+  if (!m_reader || !m_extrapolations_reader) {
+    std::cerr << "ExtrapolationConverter::process_entry ERROR: "
+                 "TTreeReader not properly set up!\n";
     return;
   }
-  inputTree->SetBranchAddress("extrapolations", &m_extrapolations);
-}
 
-void ExtrapolationConverter::process_entry(Long64_t entry, TTree* inputTree)
-{
-  inputTree->GetEntry(entry);
-  fill_event(*m_extrapolations);
+  // Process the current entry
+  fill_event(**m_extrapolations_reader);
 }

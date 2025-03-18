@@ -5,13 +5,19 @@
 #include <RtypesCore.h>
 
 class TTree;
+class TTreeReader;
+#include <TTreeReaderValue.h>
+
 class TFCSExtrapolationState;
 
 class ExtrapolationConverter
 {
 public:
-  ExtrapolationConverter(int m_n_layers, TTree* inTree, TTree* outTree);
+  ExtrapolationConverter(int n_layers, TTreeReader* reader, TTree* outTree);
   ~ExtrapolationConverter();
+
+  /// @brief Initializes all data containers
+  void initialize_data_containers();
 
   /// @brief Creates branches in the output TTree for extrapolation data
   void create_branches(TTree* outTree);
@@ -19,18 +25,17 @@ public:
   /// @brief Fills event data from extrapolation states vector
   void fill_event(const std::vector<TFCSExtrapolationState>& extrapolations);
 
-  /// @brief Processes a single entry from the input tree
-  void process_entry(Long64_t entry, TTree* input_tree);
-
-  /// @brief Sets branch addresses in the input TTree
-  void set_addresses(TTree* inputTree);
+  /// @brief Processes current entry from a TTreeReader
+  void process_entry();
 
 private:
   // Number of calorimeter layers
   unsigned int m_n_layers;
 
-  // Branches of the input tree
-  std::vector<TFCSExtrapolationState>* m_extrapolations = nullptr;
+  // TTreeReader and branches for the input tree
+  TTreeReader* m_reader = nullptr;
+  TTreeReaderValue<std::vector<TFCSExtrapolationState>>*
+      m_extrapolations_reader = nullptr;
 
   // Branches of the output tree
   std::vector<float>* m_newTTC_IDCaloBoundary_eta = nullptr;
