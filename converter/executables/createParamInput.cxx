@@ -8,7 +8,6 @@
 // ROOT headers
 #include "ROOT/TBufferMerger.hxx"
 #include "ROOT/TTreeProcessorMT.hxx"
-#include "TFile.h"
 #include "TROOT.h"
 #include "TTree.h"
 #include "TTreeReader.h"

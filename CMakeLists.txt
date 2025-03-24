@@ -75,6 +75,7 @@ target_link_libraries(${PROJECT_NAME}
     DD4hep::DDCore
     DD4hep::DDG4
     FastCaloSim::FastCaloSim
+    FastCaloSim::Param
     nlohmann_json::nlohmann_json)
 
 # ----------------------------------------------------------------------------

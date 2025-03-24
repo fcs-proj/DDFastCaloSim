@@ -25,6 +25,8 @@ function(add_tests TEST_SOURCES)
         # Preload the DDFastCaloSim library
         set(ENV_VARS
             "TEST_BASE_DIR=${TEST_BASE_DIR}"
+            "FastCaloSim_LIB=${FastCaloSim_LIB}"
+            "FastCaloSimParam_LIB=${FastCaloSimParam_LIB}"
             "DDFastCaloSim_LIB=${DDFastCaloSim_LIB}"
             "LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$ENV{LD_LIBRARY_PATH}"
             "PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}:$ENV{PYTHONPATH}"

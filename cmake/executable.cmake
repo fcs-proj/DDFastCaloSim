@@ -9,11 +9,11 @@ find_package(DD4hep REQUIRED)
 function(add_exec NAME)
   add_executable("${NAME}" "executables/${NAME}.cxx" ${ARGN})
 
-  target_include_directories("${NAME}" PUBLIC
+  target_include_directories("${NAME}" PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
   )
 
-  target_link_libraries("${NAME}" PUBLIC
+  target_link_libraries("${NAME}" PRIVATE
     FastCaloSim::FastCaloSim
     FastCaloSim::Param
     DD4hep::DDCore # For bitfield decoder
