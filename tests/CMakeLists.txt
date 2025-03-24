@@ -35,9 +35,15 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-# Set the DDFastCaloSim library
+# ---- FastCaloSim Libraries ----
+set(FastCaloSim_LIB "${CMAKE_BINARY_DIR}/_deps/fastcalosim-build/libFastCaloSim.so")
+set(FastCaloSimParam_LIB "${CMAKE_BINARY_DIR}/_deps/fastcalosim-build/param/libFastCaloSim_Param.so")
+
+# ---- DDFastCaloSim Library ----
 set(DDFastCaloSim_LIB "${CMAKE_BINARY_DIR}/libDDFastCaloSim.so")
 
+message(STATUS "Using FastCaloSim_LIB = ${FastCaloSim_LIB}")
+message(STATUS "Using FastCaloSimParam_LIB = ${FastCaloSimParam_LIB}")
 message(STATUS "Using DDFastCaloSim_LIB = ${DDFastCaloSim_LIB}")
 
 # ---- Tests ----

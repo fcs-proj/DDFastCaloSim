@@ -3,11 +3,11 @@
 #include "FastCaloSim/Core/TFCSExtrapolationState.h"
 #include "FastCaloSimConverter/ExtrapolationConverter.h"
 #include "FastCaloSimConverter/InputLoader.h"
+#include "FastCaloSimConverter/HitConverter.h"
 
 // ROOT headers
 #include "ROOT/TBufferMerger.hxx"
 #include "ROOT/TTreeProcessorMT.hxx"
-#include "TFile.h"
 #include "TROOT.h"
 #include "TTree.h"
 #include "TTreeReader.h"
@@ -57,11 +57,14 @@ auto main(int argc, char* argv[]) -> int
         new TTree("FCS_ParametrizationInput", "FCS_ParametrizationInput");
 
     // Create a thread-local ExtrapolationConverter
-    ExtrapolationConverter converter(n_layers, &reader, outTree);
+    ExtrapolationConverter extrap_converter(n_layers, &reader, outTree);
+    HitConverter hit_converter(dd4hep_input, outTree);
 
     // Process entries in this thread's chunk
     while (reader.Next()) {
-      converter.process_entry();
+      Long64_t entryIndex = reader.GetCurrentEntry();
+      extrap_converter.process_entry();
+      hit_converter.process_entry(entryIndex);
       outTree->Fill();
     }
 

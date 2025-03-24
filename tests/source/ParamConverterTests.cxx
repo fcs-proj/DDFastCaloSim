@@ -2,20 +2,33 @@
 #include <filesystem>
 #include <iostream>
 #include <string>
-#include <vector>
 
 #include <TBranch.h>
 #include <TFile.h>
+#include <TInterpreter.h>
+#include <TSystem.h>
 #include <TTree.h>
 #include <gtest/gtest.h>
 
-#include "FastCaloSim/Core/TFCSExtrapolationState.h"
 #include "TestConfig/ParamConverterTestsConfig.h"
 #include "TestHelpers/IOManager.h"
 #include "TestHelpers/LogComparer.h"
 
 TEST(ParamConverterTests, ParamConverterTest)
 {
+  // Let ROOT load the Param dictionary
+  const char* ddFCSLib = std::getenv("FastCaloSimParam_LIB");
+
+  ASSERT_NE(ddFCSLib, nullptr)
+      << "Environment variable FastCaloSimParamLib is not set!";
+
+  // Load the library with ROOT's gSystem
+  int loadStatus = gSystem->Load(ddFCSLib);
+  if (loadStatus != 0) {
+    std::cerr << "gSystem->Load() failed: " << gSystem->GetErrorStr()
+              << std::endl;
+  }
+
   // Create the output directory for the test
   const std::string test_output_dir =
       TestHelpers::IOManager::create_test_output_dir();
