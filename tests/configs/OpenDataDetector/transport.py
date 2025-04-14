@@ -24,8 +24,8 @@ SIM.numberOfEvents = 1
 ######################################################################
 
 # Generate single event with multiple geantinos
-# Eta of geantinos -2.5, -2.4, ..., 2.4, 2.5
-eta_list = np.arange(-2.5, 2.5, 0.1)
+# Eta of geantinos -1.5, -1.4, ..., 1.4, 1.5
+eta_list = np.arange(-1.5, 1.5, 0.1)
 
 gen = ParticleEventGenerator(seed=42)
 gen.generate(

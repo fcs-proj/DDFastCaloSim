@@ -12,7 +12,7 @@
         <vis name="orange" r="0.65" g="0.35" b="0." alpha="1" showDaugthers="true" visible="true" drawingStyle="solid"/>
         <vis name="blue" r="0." g="0." b="0.5" alpha="1" showDaugthers="true" visible="true" drawingStyle="solid"/>
         <vis name="green" r="0." g="0.5" b="0." alpha="1" showDaugthers="true" visible="true" drawingStyle="solid"/>
-        <vis name="gray" r="0.7" g="0.6" b="0.5" alpha="1" showDaugthers="true" visible="true" drawingStyle="solid"/>
+        <vis name="grey" r="0.7" g="0.6" b="0.5" alpha="1" showDaugthers="true" visible="true" drawingStyle="solid"/>
         <vis name="bluetrans" alpha="0.5" r="0.0" g="0.0" b="0.5" showDaughters="true" visible="true"/>
     </display>
 </lccdd>
