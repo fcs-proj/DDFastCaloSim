@@ -88,8 +88,10 @@ protected:
   // Vector of transported tracks
   TestHelpers::TrackContainer m_transportTracks;
 
-  /// @brief Flag to use simplified geometry for transport
-  bool m_use_simplified_geo;
+  /// @brief Path to the simplified geometry file
+  /// @details If set, the transport will use the simplified geometry
+  /// @details otherwise the full geometry will be used
+  std::string m_simplified_geo_path;
   /// @brief Name of the volume the transport is limited to
   std::string m_transport_limit_volume;
   /// @brief Maximum number of transport steps

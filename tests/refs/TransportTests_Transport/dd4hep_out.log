@@ -1,7 +1,7 @@
 Info in <TGeoManager::TGeoManager>: Geometry default, Detector Geometry created
 Info in <TGeoNavigator::BuildCache>: --- Maximum geometry depth set to 100
 PersistencyIO    INFO  +++ Set Streamer to dd4hep::OpaqueDataBlock
-XMLLoader        INFO  +++ Processing XML file: file:/srv/tests/geometry/OpenDataDetector/OpenDataDetector.xml
+XMLLoader        INFO  +++ Processing XML file: file:/srv/tests/data/geo/OpenDataDetector.xml
 TGeoMixture::ComputeDerivedQuantities:0: RuntimeWarning: Mixture PE: sum of weights is: 6
 DD4hep           WARN  ++ STD conditions NOT defined by client. NTP defaults taken.
 Info in <TGeoManager::SetTopVolume>: Top volume is world_volume. Master volume is world_volume
@@ -1956,8 +1956,8 @@ G4PhysListFactory::GetReferencePhysList <FTFP_BERT>  EMoption= 0
 FastPhysicsList  INFO  Enable fast simulation for particle type: geantino
 FastPhysicsList  INFO  Constructed and initialized Geant4 Fast Physics [G4FastSimulationPhysics].
 Myphysics        INFO  Registered Geant4 physics constructor G4StepLimiterPhysics to physics list
-UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xe8ee6d0 Kernel:0xe8625e0 [-1]
-Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.417 seconds]
+UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xee34890 Kernel:0xedf73a0 [-1]
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.375 seconds]
 Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/ConstructGeo/
 
  hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
@@ -2684,7 +2684,27 @@ GenerationInit   INFO  +++ Initializing event 1. Within run:0 event 1.
 HEPMC3FileReader::moveToEvent INFO  Skipping the first 0 events 
 ERROR::ReaderAscii: not enough implicit vertices
 HEPMC3FileReader INFO  Read event from file
-hepmc4           INFO  +++ Particle interaction with 30 generator particles and 30 vertices ++++++++++++++++++++++++
+hepmc4           INFO  +++ Particle interaction with 50 generator particles and 50 vertices ++++++++++++++++++++++++
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
+PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
 PrimaryHandler   INFO  +++++ G4PrimaryVertex at (+0.00e+00,+0.00e+00,+0.00e+00) [mm] +0.00e+00 [ns]
@@ -2723,12 +2743,12 @@ ParticleHandler  INFO  +++ Event 0 Begin event action. Access event related info
       issued by : G4Navigator::ComputeStep()
 Stuck Track: potential geometry or navigation problem.
   Track stuck, not moving for 10 steps.
-  Current  phys volume: 'AV_2891!CableBox_66#66!Cable_16#16'
-   - at position : (1099.999999778308,0,2094.731651174525)
-     in direction: (0.4649219924089806,0,0.8853516482022631)
-    (local position: (-2.216920620412566e-07,-0.7500000000000001,19.73165117452527))
-    (local direction: (0.4649219924089806,0,0.8853516482022631)).
-  Previous phys volume: 'AV_2891!CableBox_66#66!Cable_15#15'
+  Current  phys volume: 'AV_1419!CableBox_48#48!Cable_9#9'
+   - at position : (96.95897835208102,0,529.9999999963355)
+     in direction: (0.1799549230816366,0,0.9836748576936805)
+    (local position: (3.664467840280849e-09,-0.25,3.958978352081019))
+    (local direction: (-0.9836748576936805,0,0.1799549230816367)).
+  Previous phys volume: 'AV_1419!CableBox_48#48!Cable_8#8'
 
   Likely geometry overlap - else navigation problem !
    *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
@@ -2736,11 +2756,143 @@ Stuck Track: potential geometry or navigation problem.
 *** This is just a warning message. ***
 -------- WWWW -------- G4Exception-END --------- WWWW -------
 
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_1531!CableBox_32#32!Cable_17#17'
+   - at position : (187.9999998643238,0,1027.651091429473)
+     in direction: (0.1799549230816366,0,0.9836748576936805)
+    (local position: (-1.356762311388593e-07,-0.2,-22.3489085705271))
+    (local direction: (0.1799549230816366,0,0.9836748576936805)).
+  Previous phys volume: 'AV_1531!CableBox_32#32!Cable_16#16'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_1419!CableBox_48#48!Cable_9#9'
+   - at position : (107.3534738310044,0,529.9999999963488)
+     in direction: (0.1985221751493381,0,0.9800963962661916)
+    (local position: (3.65116648026742e-09,-0.25,14.35347383100444))
+    (local direction: (-0.9800963962661916,0,0.1985221751493382)).
+  Previous phys volume: 'AV_1419!CableBox_48#48!Cable_8#8'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_1523!CableBox_24#24!Cable_13#13'
+   - at position : (187.9999998661267,0,928.1488187817171)
+     in direction: (0.1985221751493381,0,0.9800963962661916)
+    (local position: (-1.33873328422851e-07,-0.2,18.14881878171707))
+    (local direction: (0.1985221751493381,0,0.9800963962661916)).
+  Previous phys volume: 'AV_1523!CableBox_24#24!Cable_12#12'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_1435!CableBox_64#64!Cable_17#17'
+   - at position : (180.1388864490121,0,529.9999999964729)
+     in direction: (0.3218048695065865,0,0.9468060128462688)
+    (local position: (3.527134140313137e-09,-0.25,-3.611113550987938))
+    (local direction: (-0.9468060128462688,0,0.3218048695065866)).
+  Previous phys volume: 'AV_1435!CableBox_64#64!Cable_16#16'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+G4GDML: Reading '/srv/tests/data/simplified_geo.gdml'...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading structure...
+G4GDML: Reading setup...
+G4GDML: Reading '/srv/tests/data/simplified_geo.gdml' done!
+Stripping off GDML names of materials, solids and volumes ...
 Initializing G4PropagatorInField for thread -1
-Using full geometry for particle transport
-Using world volume: world_volume_1
-Transport will be stopped at volume: NotImplementedYet
+Creating simplified world volume for particle transport
+Using world volume: simplifiedWorldPhysVol
+Transport will be stopped at volume: Envelope
 Maximum allowed number of steps in particle transport: 1500
+ParametrizationModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mReceived particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 2969.46
+  |    r      = 1250.00
+  |    eta    = 1.60
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 3.88
+  |    py     = 0.00
+  |    pz     = 9.22
+  |    |p|    = 10.00
+  |    Pt     = 3.88
+  |    eta    = 1.60
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+ParametrizationModel INFO  Number of steps: 262
+ParametrizationModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mReceived particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = 2661.60
+  |    r      = 1250.00
+  |    eta    = 1.50
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 4.25
+  |    py     = 0.00
+  |    pz     = 9.05
+  |    |p|    = 10.00
+  |    Pt     = 4.25
+  |    eta    = 1.50
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+ParametrizationModel INFO  Number of steps: 194
+### Birks coefficients used in run time
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -2764,7 +2916,26 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_2861!CableBox_36#36!Cable_11#11'
+   - at position : (1099.999999939516,0,1868.220680919159)
+     in direction: (0.5073787507406007,0,0.8617231593133072)
+    (local position: (-6.048435352568049e-08,-0.7500000000000001,118.2206809191593))
+    (local direction: (0.5073787507406007,0,0.8617231593133072)).
+  Previous phys volume: 'AV_2861!CableBox_36#36!Cable_10#10'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -2788,7 +2959,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -2812,27 +2983,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
-### Birks coefficients used in run time
-
--------- WWWW ------- G4Exception-START -------- WWWW -------
-*** G4Exception : GeomNav1002
-      issued by : G4Navigator::ComputeStep()
-Stuck Track: potential geometry or navigation problem.
-  Track stuck, not moving for 10 steps.
-  Current  phys volume: 'AV_2831!CableBox_6#6!Cable_6#6'
-   - at position : (1099.999999857108,0,1469.212216945745)
-     in direction: (0.5993340605707919,0,0.8004990217606306)
-    (local position: (-1.428923042112729e-07,-0.7500000000000001,19.21221694574479))
-    (local direction: (0.5993340605707919,0,0.8004990217606306)).
-  Previous phys volume: 'AV_2831!CableBox_6#6!Cable_5#5'
-
-  Likely geometry overlap - else navigation problem !
-   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
-
-*** This is just a warning message. ***
--------- WWWW -------- G4Exception-END --------- WWWW -------
-
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -2856,26 +3007,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
-
--------- WWWW ------- G4Exception-START -------- WWWW -------
-*** G4Exception : GeomNav1002
-      issued by : G4Navigator::ComputeStep()
-Stuck Track: potential geometry or navigation problem.
-  Track stuck, not moving for 10 steps.
-  Current  phys volume: 'AV_2651!CableBox_72#72!Cable_6#6'
-   - at position : (990.4687012587403,0,1163.999999986101)
-     in direction: (0.6480542736638844,0,0.7615941559557659)
-    (local position: (1.389912540616933e-08,-0.7500000000000001,70.46870125874034))
-    (local direction: (-0.7615941559557659,0,0.6480542736638844)).
-  Previous phys volume: 'AV_2651!CableBox_72#72!Cable_5#5'
-
-  Likely geometry overlap - else navigation problem !
-   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
-
-*** This is just a warning message. ***
--------- WWWW -------- G4Exception-END --------- WWWW -------
-
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -2899,7 +3031,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -2923,7 +3055,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -2947,7 +3079,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -2971,7 +3103,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -2995,7 +3127,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3019,7 +3151,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3043,7 +3175,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3067,7 +3199,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3091,7 +3223,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3115,7 +3247,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3139,7 +3271,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3163,7 +3295,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3187,7 +3319,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3211,7 +3343,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3235,7 +3367,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3259,7 +3391,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3283,7 +3415,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3307,7 +3439,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3331,7 +3463,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3355,7 +3487,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3379,7 +3511,26 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_2291!CableBox_6#6!Cable_6#6'
+   - at position : (1099.999999857108,0,-1469.212216945739)
+     in direction: (0.5993340605707935,0,-0.8004990217606294)
+    (local position: (-1.428923042112729e-07,-0.7500000000000001,-19.2122169457391))
+    (local direction: (0.5993340605707935,0,-0.8004990217606294)).
+  Previous phys volume: 'AV_2291!CableBox_6#6!Cable_5#5'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3403,7 +3554,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3427,7 +3578,26 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_2321!CableBox_36#36!Cable_11#11'
+   - at position : (1099.999999879032,0,-1868.220680816425)
+     in direction: (0.5073787507406026,0,-0.8617231593133061)
+    (local position: (-1.209684796776855e-07,-0.7500000000000001,-118.2206808164249))
+    (local direction: (0.5073787507406026,0,-0.8617231593133061)).
+  Previous phys volume: 'AV_2321!CableBox_36#36!Cable_10#10'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3451,26 +3621,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
-
--------- WWWW ------- G4Exception-START -------- WWWW -------
-*** G4Exception : GeomNav1002
-      issued by : G4Navigator::ComputeStep()
-Stuck Track: potential geometry or navigation problem.
-  Track stuck, not moving for 10 steps.
-  Current  phys volume: 'AV_2351!CableBox_66#66!Cable_16#16'
-   - at position : (1099.999999649474,0,-2094.73165092918)
-     in direction: (0.4649219924089817,0,-0.8853516482022625)
-    (local position: (-3.505258518998744e-07,-0.7500000000000001,-19.73165092918043))
-    (local direction: (0.4649219924089817,0,-0.8853516482022625)).
-  Previous phys volume: 'AV_2351!CableBox_66#66!Cable_15#15'
-
-  Likely geometry overlap - else navigation problem !
-   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
-
-*** This is just a warning message. ***
--------- WWWW -------- G4Exception-END --------- WWWW -------
-
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3494,7 +3645,7 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
-ParametrizationModel INFO  Number of steps: 1501
+ParametrizationModel INFO  Number of steps: 194
 ParametrizationModel INFO  
   +------------------------------------------------------------+
   |  [1;36mReceived particle: 0[0m
@@ -3518,18 +3669,43 @@ ParametrizationModel INFO
   |    Ekin   = 10.00
   +------------------------------------------------------------+
 
+ParametrizationModel INFO  Number of steps: 194
+ParametrizationModel INFO  
+  +------------------------------------------------------------+
+  |  [1;36mReceived particle: 0[0m
+  |                                                             
+  |    [1;32mPosition Information[0m  
+  |    x      = 1250.00
+  |    y      = 0.00
+  |    z      = -2969.46
+  |    r      = 1250.00
+  |    eta    = -1.60
+  |    phi    = 0.00
+  |                                                             
+  |    [1;32mMomentum Information[0m  
+  |    px     = 3.88
+  |    py     = 0.00
+  |    pz     = -9.22
+  |    |p|    = 10.00
+  |    Pt     = 3.88
+  |    eta    = -1.60
+  |    phi    = 0.00
+  |    Ekin   = 10.00
+  +------------------------------------------------------------+
+
+ParametrizationModel INFO  Number of steps: 262
 
 -------- WWWW ------- G4Exception-START -------- WWWW -------
 *** G4Exception : GeomNav1002
       issued by : G4Navigator::ComputeStep()
 Stuck Track: potential geometry or navigation problem.
   Track stuck, not moving for 10 steps.
-  Current  phys volume: 'world_volume_1'
-   - at position : (4696.424405952246,-2.842170943040401e-14,-10000)
-     in direction: (0.4250960349422805,0,-0.9051482536448665)
-    (local position: (4696.424405952246,-2.842170943040401e-14,-10000))
-    (local direction: (0.4250960349422805,0,-0.9051482536448665)).
-  Previous phys volume: 'world_volume_1'
+  Current  phys volume: 'AV_2411!CableBox_126#126!Cable_26#26'
+   - at position : (1099.999998988436,0,-2910.195124544727)
+     in direction: (0.3535673495014023,0,-0.935409070603099)
+    (local position: (-1.011564336295123e-06,-0.7500000000000001,-110.1951245447272))
+    (local direction: (0.3535673495014023,0,-0.935409070603099)).
+  Previous phys volume: 'AV_2411!CableBox_126#126!Cable_25#25'
 
   Likely geometry overlap - else navigation problem !
    *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
@@ -3539,21 +3715,121 @@ Stuck Track: potential geometry or navigation problem.
 
 
 -------- WWWW ------- G4Exception-START -------- WWWW -------
-*** G4Exception : LocateGlobalPointAndSetup failed: Particle may be transported outside the world volume.
-      issued by : G4CaloTransportTool::transport
-Transport failure at step 1314/1500
- - Position: (4696.42,-2.84217e-14,-10000)
- - Momentum: (4.25096,0,-9.05148)
-Possible cause: The transport is likely outside the world volume.
-Check if an envelope volume is defined and properly set up.
-This issue should not occur during normal operation.
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_1275!CableBox_16#16!Cable_9#9'
+   - at position : (187.999999871361,0,-756.1090670082112)
+     in direction: (0.2412945062018548,0,-0.9704519366134539)
+    (local position: (-1.286389590404724e-07,-0.2,23.89093299178876))
+    (local direction: (0.2412945062018548,0,-0.9704519366134539)).
+  Previous phys volume: 'AV_1275!CableBox_16#16!Cable_8#8'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
 *** This is just a warning message. ***
 -------- WWWW -------- G4Exception-END --------- WWWW -------
 
-ParametrizationModel INFO  Number of steps: 1316
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_1387!CableBox_16#16!Cable_9#9'
+   - at position : (107.3534738310049,0,-529.9999999963488)
+     in direction: (0.198522175149339,0,-0.9800963962661914)
+    (local position: (-3.65116648026742e-09,-0.25,14.35347383100493))
+    (local direction: (0.9800963962661914,0,0.1985221751493389)).
+  Previous phys volume: 'AV_1387!CableBox_16#16!Cable_8#8'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_1283!CableBox_24#24!Cable_13#13'
+   - at position : (187.9999999083432,0,-928.1488189901343)
+     in direction: (0.198522175149339,0,-0.9800963962661914)
+    (local position: (-9.165680125988729e-08,-0.2,-18.14881899013426))
+    (local direction: (0.198522175149339,0,-0.9800963962661914)).
+  Previous phys volume: 'AV_1283!CableBox_24#24!Cable_12#12'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_1291!CableBox_32#32!Cable_17#17'
+   - at position : (187.9999999169156,0,-1027.651091716948)
+     in direction: (0.1799549230816373,0,-0.9836748576936802)
+    (local position: (-8.308438737003598e-08,-0.2,22.3489082830522))
+    (local direction: (0.1799549230816373,0,-0.9836748576936802)).
+  Previous phys volume: 'AV_1291!CableBox_32#32!Cable_16#16'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_1387!CableBox_16#16!Cable_9#9'
+   - at position : (87.60034502259313,0,-529.9999999963246)
+     in direction: (0.1630712319299778,0,-0.9866142981514303)
+    (local position: (-3.675381776702125e-09,-0.25,-5.399654977406868))
+    (local direction: (0.9866142981514303,0,0.1630712319299777)).
+  Previous phys volume: 'AV_1387!CableBox_16#16!Cable_8#8'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'AV_1299!CableBox_40#40!Cable_21#21'
+   - at position : (187.9999998866486,0,-1137.438441749681)
+     in direction: (0.1630712319299778,0,-0.9866142981514303)
+    (local position: (-1.133514047069184e-07,-0.2,82.56155825031851))
+    (local direction: (0.1630712319299778,0,-0.9866142981514303)).
+  Previous phys volume: 'AV_1299!CableBox_40#40!Cable_20#20'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 0 run -1.
 GenerationInit   WARN  +++ Finished run 0 after 1 events (1 events in total)
 
-DDSim            INFO Total Time:   31.28 s (User), 1.47 s (System)
-DDSim            INFO StartUp Time: 5.53 s, Event Processing: 25.75 s (25.75 s/Event) 
+DDSim            INFO Total Time:   30.64 s (User), 1.22 s (System)
+DDSim            INFO StartUp Time: 5.35 s, Event Processing: 25.29 s (25.29 s/Event) 
 Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.
