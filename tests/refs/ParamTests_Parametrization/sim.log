@@ -1833,7 +1833,7 @@ Geant4UI         INFO  +++ InteractionMerger> Install Geant4 control directory:/
 Geant4UI         INFO  +++ PrimaryHandler> Install Geant4 control directory:/ddg4/PrimaryHandler/
 Geant4UI         INFO  +++ TrackingAction> Install Geant4 control directory:/ddg4/TrackingAction/
 Geant4UI         INFO  +++ SteppingAction> Install Geant4 control directory:/ddg4/SteppingAction/
-DDSim.Helper.Filter INFO ReqFilt {'edep0', 'edep1kev'}
+DDSim.Helper.Filter INFO ReqFilt {'edep1kev', 'edep0'}
 DDSim            INFO getDetectorLists - found active detector ECalBarrel type: calorimeter
 DDSim            INFO getDetectorLists - Identified ECalBarrel as a calorimeter
 DDSim            INFO getDetectorLists - found active detector ECalEndcap type: calorimeter
@@ -1956,8 +1956,8 @@ G4PhysListFactory::GetReferencePhysList <FTFP_BERT>  EMoption= 0
 FastPhysicsList  INFO  Enable fast simulation for particle type: geantino
 FastPhysicsList  INFO  Constructed and initialized Geant4 Fast Physics [G4FastSimulationPhysics].
 Myphysics        INFO  Registered Geant4 physics constructor G4StepLimiterPhysics to physics list
-UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xd35d3a0 Kernel:0xd31ffa0 [-1]
-Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.379 seconds]
+UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0xdaad8a0 Kernel:0xda5fc00 [-1]
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.373 seconds]
 Geant4UI         INFO  +++ ConstructGeo> Install Geant4 control directory:/ddg4/ConstructGeo/
 
  hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
@@ -2860,6 +2860,6 @@ ParametrizationModel INFO  Number of steps: 194
 Geant4Output2EDM4hep INFO  +++ Saving EDM4hep event 4 run -1.
 GenerationInit   WARN  +++ Finished run 0 after 5 events (5 events in total)
 
-DDSim            INFO Total Time:   31.03 s (User), 1.22 s (System)
-DDSim            INFO StartUp Time: 5.43 s, Event Processing: 25.60 s (5.12 s/Event) 
+DDSim            INFO Total Time:   30.66 s (User), 1.26 s (System)
+DDSim            INFO StartUp Time: 5.62 s, Event Processing: 25.04 s (5.01 s/Event) 
 Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.
