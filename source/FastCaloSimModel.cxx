@@ -9,6 +9,7 @@
 #include <G4Event.hh>
 #include <G4EventManager.hh>
 #include <G4FastStep.hh>
+#include <G4GDMLParser.hh>
 #include <G4Geantino.hh>
 
 // -- FastCaloSim includes
@@ -22,7 +23,7 @@ dd4hep::sim::FastCaloSimModel::FastCaloSimModel(
     , m_extrapolationTool()
     , m_transport_init(false)
     , m_transportTracks()
-    , m_use_simplified_geo(false)
+    , m_simplified_geo_path("")
     , m_transport_limit_volume("")
     , m_max_transport_steps(100)
     , m_transport_output("")
@@ -31,7 +32,7 @@ dd4hep::sim::FastCaloSimModel::FastCaloSimModel(
   // If set, the transport tracks will be serialized to this JSON file
   declareProperty("TransportOutputFile", m_transport_output);
   // Boolean flag to use simplified geometry
-  declareProperty("UseSimplifiedGeo", m_use_simplified_geo);
+  declareProperty("SimplifiedGeoPath", m_simplified_geo_path);
   // Maximum number of transport steps
   declareProperty("MaxTransportSteps", m_max_transport_steps);
   // Name of the transport limit volume
@@ -44,11 +45,22 @@ dd4hep::sim::FastCaloSimModel::FastCaloSimModel(
 }
 bool dd4hep::sim::FastCaloSimModel::check_trigger(const G4FastTrack& track)
 {
+  /// @TODO:
   // Ideally this would happen as a begin of run action
   // Needs to be initialized only once, but geometry not available at
-  // construction time. TODO: fix this
+  // construction time
+
   if (!m_transport_init) {
-    m_transportTool.setUseSimplifiedGeo(m_use_simplified_geo);
+    if (!m_simplified_geo_path.empty()) {
+      // Load simplified geometry if set
+      G4GDMLParser parser;
+      parser.Read(m_simplified_geo_path, false);
+      m_transportTool.setUseSimplifiedGeo(true);
+    } else {
+      // Otherwise use the full geometry
+      m_transportTool.setUseSimplifiedGeo(false);
+    }
+
     m_transportTool.setMaxSteps(m_max_transport_steps);
 
     if (m_transport_limit_volume.empty()) {

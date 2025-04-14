@@ -14,7 +14,7 @@ TEST_BASE_DIR = os.getenv("TEST_BASE_DIR")
 TEST_WORKING_DIR = os.getenv("TEST_WORKING_DIR")
 
 # Simulation configuration
-SIM.compactFile = f"{TEST_BASE_DIR}/geometry/OpenDataDetector/OpenDataDetector.xml"
+SIM.compactFile = f"{TEST_BASE_DIR}/data/geo/OpenDataDetector.xml"
 
 # Configure the number of events to simulate
 SIM.numberOfEvents = 1
@@ -49,6 +49,7 @@ SIM.inputFiles = [evnt_path]
 
 def fast_sim_cfg(kernel):
     from steering.cfg.fastsim import FastSimModelConfig
+    import os
 
     # Import the base fast simulation model configuration
     config = FastSimModelConfig(kernel)
@@ -59,11 +60,13 @@ def fast_sim_cfg(kernel):
     # Only geantinos will trigger the fast simulation
     config.active_particles = ["geantino"]
     # Use simplified geometry for calorimeter transport?
-    config.use_simplified_geo = False
+    config.simplified_geo_path = (
+        os.getenv("TEST_BASE_DIR") + "/data/simplified_geo.gdml"
+    )
     # Maximum number of transport steps for calorimeter transport
     config.max_transport_steps = 1500
     # Maximum volume to which transport is performed
-    config.transport_limit_volume = "NotImplementedYet"
+    config.transport_limit_volume = "Envelope"
     # PDG ID of the particle to be transported
     config.parametrization_pdg_id = 22
     # Output file for transport tracks

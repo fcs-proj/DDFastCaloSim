@@ -45,7 +45,8 @@ TEST_F(TransportTests, Transport)
   comparer.setIgnorePatterns({"DDSim.Helper.Filter INFO ReqFilt",
                               "XMLLoader        INFO  +++ Processing XML file:",
                               "HEPMC3FileReader INFO  Created file reader",
-                              "Geant4Output2EDM4hep INFO  Opened"});
+                              "Geant4Output2EDM4hep INFO  Opened",
+                              "G4GDML: Reading"});
 
   ASSERT_TRUE(comparer.compareLogs()) << "Log files differ!";
 

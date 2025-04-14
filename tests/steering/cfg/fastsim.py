@@ -11,7 +11,7 @@ class FastSimModelConfig:
         # Output file for transport data
         self.transport_output_file = ""
         # Use simplified geometry for transport?
-        self.use_simplified_geo = False
+        self.simplified_geo_path = ""
         # Maximum number of transport steps
         self.max_transport_steps = 100
         # Volume until which transport will be performed
@@ -44,7 +44,7 @@ class FastSimModelConfig:
 
         # Custom model properties
         model.TransportOutputFile = self.transport_output_file
-        model.UseSimplifiedGeo = self.use_simplified_geo
+        model.SimplifiedGeoPath = self.simplified_geo_path
         model.MaxTransportSteps = self.max_transport_steps
         model.TransportLimitVolume = self.transport_limit_volume
         model.ParametrizationPDG = self.parametrization_pdg_id
