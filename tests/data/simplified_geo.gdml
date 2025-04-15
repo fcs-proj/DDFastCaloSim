@@ -3,108 +3,212 @@
 	<define/>
 	<solids>
 		<box name="World_Solid" x="40000" y="40000" z="80000" lunit="mm"/>
-		<tube name="Layer_48_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="2.050048828125" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_49_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_50_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_51_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_52_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_53_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_54_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_55_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_56_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_57_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_58_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_59_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_60_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_61_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_62_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_63_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_64_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_65_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_66_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_67_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_68_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_69_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_70_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_71_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_72_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_73_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_74_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_75_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_76_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_77_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_78_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_79_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_80_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_81_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_82_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_83_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_84_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_85_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_86_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_87_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_88_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_89_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_90_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_91_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_92_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_93_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_94_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_95_POS_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_48_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="2.050048828125" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_49_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_50_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_51_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_52_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_53_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_54_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_55_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_56_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_57_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_58_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_59_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_60_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_61_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_62_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_63_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_64_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_65_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_66_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_67_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_68_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_69_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_70_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_71_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_72_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_73_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_74_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_75_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_76_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_77_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_78_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_79_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_80_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_81_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_82_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_83_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_84_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_85_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_86_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_87_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_88_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_89_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_90_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_91_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_92_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_93_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_94_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_95_NEG_Solid" rmin="315.0000145435333" rmax="1499.7190302610397" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_132_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="48.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_133_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="26.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_134_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_135_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_136_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_137_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_138_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_139_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_140_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_141_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_142_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_143_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_144_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_145_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_146_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_147_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_148_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_149_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_150_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="25.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_151_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="26.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_152_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_153_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_154_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_155_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_156_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_157_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_158_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_159_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_160_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_161_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_162_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_163_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_164_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_165_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_166_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_167_POS_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="25.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_48_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="2.050048828125" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_49_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_50_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_51_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_52_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_53_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_54_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_55_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_56_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_57_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_58_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_59_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_60_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_61_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_62_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_63_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_64_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_65_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_66_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_67_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_68_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_69_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_70_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_71_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_72_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_73_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_74_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_75_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_76_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_77_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_78_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_79_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_80_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_81_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_82_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_83_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_84_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_85_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_86_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_87_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_88_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_89_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_90_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_91_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_92_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_93_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_94_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_95_POS_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_132_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="48.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_133_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="26.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_134_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_135_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_136_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_137_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_138_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_139_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_140_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_141_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_142_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_143_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_144_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_145_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_146_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_147_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_148_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_149_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_150_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="25.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_151_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="26.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_152_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_153_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_154_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_155_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_156_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_157_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_158_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_159_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_160_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_161_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_162_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_163_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_164_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_165_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_166_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="50.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_167_NEG_Solid" rmin="315.0000145435333" rmax="3433.312331199646" z="25.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_48_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="2.050048828125" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_49_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_50_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_51_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_52_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_53_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_54_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_55_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_56_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_57_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_58_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_59_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_60_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_61_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_62_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_63_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_64_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_65_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_66_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_67_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_68_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_69_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_70_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_71_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_72_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_73_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="3.0250000953674316" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_74_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_75_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_76_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_77_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_78_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_79_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_80_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_81_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_82_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_83_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_84_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_85_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_86_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_87_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_88_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_89_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_90_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_91_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_92_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_93_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_94_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="4.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_95_NEG_Solid" rmin="315.0000145435333" rmax="1639.043773651123" z="5.050000190734863" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_0_Solid" rmin="1383.3155093193054" rmax="1385.366496682167" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_1_Solid" rmin="1264.1585611104965" rmax="1268.2093132734299" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_10_Solid" rmin="1306.8123841285706" rmax="1314.1607341766357" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_100_Solid" rmin="1753.0" rmax="1837.0407028198242" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_101_Solid" rmin="1838.0407028198242" rmax="1888.0868701934814" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_102_Solid" rmin="1889.0868701934814" rmax="1939.1438465118408" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_103_Solid" rmin="1940.1438465118408" rmax="1992.994239807129" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_104_Solid" rmin="1993.994239807129" rmax="2044.0380725860596" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_105_Solid" rmin="2045.0380725860596" rmax="2095.092212677002" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_106_Solid" rmin="2096.092212677002" rmax="2148.947862625122" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_107_Solid" rmin="2149.947862625122" rmax="2199.989839553833" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_108_Solid" rmin="2200.989839553833" rmax="2251.041482925415" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_109_Solid" rmin="2252.041482925415" rmax="2304.901891708374" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_11_Solid" rmin="1315.1607341766357" rmax="1319.2114828824997" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_110_Solid" rmin="2305.901891708374" rmax="2355.942232131958" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_111_Solid" rmin="2356.942232131958" rmax="2406.9915771484375" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_112_Solid" rmin="2407.9915771484375" rmax="2460.8560523986816" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_113_Solid" rmin="2461.8560523986816" rmax="2511.8948345184326" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_114_Solid" rmin="2512.8948345184326" rmax="2549.746063232422" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_115_Solid" rmin="2552.746063232422" rmax="2616.81032371521" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_116_Solid" rmin="2617.81032371521" rmax="2667.847854614258" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_117_Solid" rmin="2668.847854614258" rmax="2718.8935260772705" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_118_Solid" rmin="2719.8935260772705" rmax="2771.400510787964" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_119_Solid" rmin="2772.400510787964" rmax="2822.422525405884" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_12_Solid" rmin="1320.2114828824997" rmax="1324.262413740158" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_120_Solid" rmin="2823.422525405884" rmax="2874.8450508117676" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_121_Solid" rmin="2875.8450508117676" rmax="2925.8772773742676" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_122_Solid" rmin="2926.8772773742676" rmax="2976.8986139297485" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_123_Solid" rmin="2977.8986139297485" rmax="3029.336812019348" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_124_Solid" rmin="3030.336812019348" rmax="3080.3540954589844" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_125_Solid" rmin="3081.3540954589844" rmax="3131.374771118164" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_126_Solid" rmin="3132.374771118164" rmax="3183.8140907287598" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_127_Solid" rmin="3184.8140907287598" rmax="3234.8309593200684" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_128_Solid" rmin="3235.8309593200684" rmax="3285.8511114120483" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_129_Solid" rmin="3286.8511114120483" rmax="3338.291515350342" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_13_Solid" rmin="1325.262413740158" rmax="1329.313404917717" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_130_Solid" rmin="3339.291515350342" rmax="3389.3078622817993" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_131_Solid" rmin="3390.3078622817993" rmax="3391.3078622817993" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_14_Solid" rmin="1330.313404917717" rmax="1334.6110736131668" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_15_Solid" rmin="1335.6110736131668" rmax="1339.6618214845657" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_16_Solid" rmin="1340.6618214845657" rmax="1344.7125685214996" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
@@ -141,17 +245,165 @@
 		<tube name="Layer_44_Solid" rmin="1483.3197246789932" rmax="1487.3706455230713" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_45_Solid" rmin="1488.3706455230713" rmax="1492.6683529615402" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_46_Solid" rmin="1493.6683529615402" rmax="1497.7190302610397" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_47_Solid" rmin="1498.7190302610397" rmax="1499.7190302610397" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_47_Solid" rmin="1498.7190302610397" rmax="1516.138109445572" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_5_Solid" rmin="1284.6088962554932" rmax="1288.6596474647522" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_6_Solid" rmin="1289.6596474647522" rmax="1293.7103978395462" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_7_Solid" rmin="1294.7103978395462" rmax="1298.7613303661346" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_8_Solid" rmin="1299.7613303661346" rmax="1303.8123841285706" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 		<tube name="Layer_9_Solid" rmin="1304.8123841285706" rmax="1305.8123841285706" z="6402.0498046875" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_BarrelEnvelope_Solid" rmin="1500.7190302610397" rmax="1599.7190302610397" z="6870.64990234375" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_EndcapEnvelopePos_Solid" rmin="0" rmax="1600.7190302610397" z="100.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
-		<tube name="Layer_EndcapEnvelopeNeg_Solid" rmin="0" rmax="1600.7190302610397" z="100.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_96_Solid" rmin="2550.746063232422" rmax="2551.746063232422" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_97_Solid" rmin="1640.043773651123" rmax="1681.087547302246" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_98_Solid" rmin="1682.087547302246" rmax="1732.1363201141357" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_99_Solid" rmin="1733.1363201141357" rmax="1752.0" z="7248.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_BarrelEnvelope_Solid" rmin="3434.312331199646" rmax="3533.312331199646" z="10720.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_EndcapEnvelopePos_Solid" rmin="0" rmax="3534.312331199646" z="100.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
+		<tube name="Layer_EndcapEnvelopeNeg_Solid" rmin="0" rmax="3534.312331199646" z="100.0" startphi="0" deltaphi="6.283185307179586" lunit="mm" aunit="rad"/>
 	</solids>
 	<structure>
+		<volume name="Layer_132_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_132_POS_Solid"/>
+		</volume>
+		<volume name="Layer_133_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_133_POS_Solid"/>
+		</volume>
+		<volume name="Layer_134_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_134_POS_Solid"/>
+		</volume>
+		<volume name="Layer_135_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_135_POS_Solid"/>
+		</volume>
+		<volume name="Layer_136_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_136_POS_Solid"/>
+		</volume>
+		<volume name="Layer_137_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_137_POS_Solid"/>
+		</volume>
+		<volume name="Layer_138_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_138_POS_Solid"/>
+		</volume>
+		<volume name="Layer_139_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_139_POS_Solid"/>
+		</volume>
+		<volume name="Layer_140_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_140_POS_Solid"/>
+		</volume>
+		<volume name="Layer_141_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_141_POS_Solid"/>
+		</volume>
+		<volume name="Layer_142_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_142_POS_Solid"/>
+		</volume>
+		<volume name="Layer_143_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_143_POS_Solid"/>
+		</volume>
+		<volume name="Layer_144_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_144_POS_Solid"/>
+		</volume>
+		<volume name="Layer_145_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_145_POS_Solid"/>
+		</volume>
+		<volume name="Layer_146_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_146_POS_Solid"/>
+		</volume>
+		<volume name="Layer_147_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_147_POS_Solid"/>
+		</volume>
+		<volume name="Layer_148_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_148_POS_Solid"/>
+		</volume>
+		<volume name="Layer_149_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_149_POS_Solid"/>
+		</volume>
+		<volume name="Layer_150_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_150_POS_Solid"/>
+		</volume>
+		<volume name="Layer_151_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_151_POS_Solid"/>
+		</volume>
+		<volume name="Layer_152_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_152_POS_Solid"/>
+		</volume>
+		<volume name="Layer_153_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_153_POS_Solid"/>
+		</volume>
+		<volume name="Layer_154_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_154_POS_Solid"/>
+		</volume>
+		<volume name="Layer_155_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_155_POS_Solid"/>
+		</volume>
+		<volume name="Layer_156_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_156_POS_Solid"/>
+		</volume>
+		<volume name="Layer_157_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_157_POS_Solid"/>
+		</volume>
+		<volume name="Layer_158_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_158_POS_Solid"/>
+		</volume>
+		<volume name="Layer_159_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_159_POS_Solid"/>
+		</volume>
+		<volume name="Layer_160_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_160_POS_Solid"/>
+		</volume>
+		<volume name="Layer_161_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_161_POS_Solid"/>
+		</volume>
+		<volume name="Layer_162_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_162_POS_Solid"/>
+		</volume>
+		<volume name="Layer_163_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_163_POS_Solid"/>
+		</volume>
+		<volume name="Layer_164_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_164_POS_Solid"/>
+		</volume>
+		<volume name="Layer_165_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_165_POS_Solid"/>
+		</volume>
+		<volume name="Layer_166_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_166_POS_Solid"/>
+		</volume>
+		<volume name="Layer_167_POS_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_167_POS_Solid"/>
+		</volume>
 		<volume name="Layer_48_POS_Log">
 			<materialref ref="G4_Galactic"/>
 			<solidref ref="Layer_48_POS_Solid"/>
@@ -343,6 +595,150 @@
 		<volume name="Layer_95_POS_Log">
 			<materialref ref="G4_Galactic"/>
 			<solidref ref="Layer_95_POS_Solid"/>
+		</volume>
+		<volume name="Layer_132_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_132_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_133_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_133_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_134_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_134_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_135_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_135_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_136_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_136_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_137_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_137_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_138_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_138_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_139_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_139_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_140_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_140_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_141_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_141_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_142_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_142_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_143_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_143_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_144_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_144_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_145_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_145_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_146_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_146_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_147_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_147_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_148_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_148_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_149_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_149_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_150_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_150_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_151_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_151_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_152_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_152_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_153_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_153_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_154_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_154_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_155_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_155_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_156_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_156_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_157_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_157_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_158_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_158_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_159_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_159_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_160_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_160_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_161_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_161_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_162_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_162_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_163_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_163_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_164_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_164_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_165_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_165_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_166_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_166_NEG_Solid"/>
+		</volume>
+		<volume name="Layer_167_NEG_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_167_NEG_Solid"/>
 		</volume>
 		<volume name="Layer_48_NEG_Log">
 			<materialref ref="G4_Galactic"/>
@@ -548,17 +944,145 @@
 			<materialref ref="G4_Galactic"/>
 			<solidref ref="Layer_10_Solid"/>
 		</volume>
+		<volume name="Layer_100_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_100_Solid"/>
+		</volume>
+		<volume name="Layer_101_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_101_Solid"/>
+		</volume>
+		<volume name="Layer_102_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_102_Solid"/>
+		</volume>
+		<volume name="Layer_103_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_103_Solid"/>
+		</volume>
+		<volume name="Layer_104_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_104_Solid"/>
+		</volume>
+		<volume name="Layer_105_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_105_Solid"/>
+		</volume>
+		<volume name="Layer_106_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_106_Solid"/>
+		</volume>
+		<volume name="Layer_107_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_107_Solid"/>
+		</volume>
+		<volume name="Layer_108_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_108_Solid"/>
+		</volume>
+		<volume name="Layer_109_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_109_Solid"/>
+		</volume>
 		<volume name="Layer_11_Log">
 			<materialref ref="G4_Galactic"/>
 			<solidref ref="Layer_11_Solid"/>
+		</volume>
+		<volume name="Layer_110_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_110_Solid"/>
+		</volume>
+		<volume name="Layer_111_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_111_Solid"/>
+		</volume>
+		<volume name="Layer_112_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_112_Solid"/>
+		</volume>
+		<volume name="Layer_113_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_113_Solid"/>
+		</volume>
+		<volume name="Layer_114_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_114_Solid"/>
+		</volume>
+		<volume name="Layer_115_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_115_Solid"/>
+		</volume>
+		<volume name="Layer_116_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_116_Solid"/>
+		</volume>
+		<volume name="Layer_117_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_117_Solid"/>
+		</volume>
+		<volume name="Layer_118_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_118_Solid"/>
+		</volume>
+		<volume name="Layer_119_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_119_Solid"/>
 		</volume>
 		<volume name="Layer_12_Log">
 			<materialref ref="G4_Galactic"/>
 			<solidref ref="Layer_12_Solid"/>
 		</volume>
+		<volume name="Layer_120_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_120_Solid"/>
+		</volume>
+		<volume name="Layer_121_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_121_Solid"/>
+		</volume>
+		<volume name="Layer_122_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_122_Solid"/>
+		</volume>
+		<volume name="Layer_123_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_123_Solid"/>
+		</volume>
+		<volume name="Layer_124_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_124_Solid"/>
+		</volume>
+		<volume name="Layer_125_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_125_Solid"/>
+		</volume>
+		<volume name="Layer_126_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_126_Solid"/>
+		</volume>
+		<volume name="Layer_127_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_127_Solid"/>
+		</volume>
+		<volume name="Layer_128_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_128_Solid"/>
+		</volume>
+		<volume name="Layer_129_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_129_Solid"/>
+		</volume>
 		<volume name="Layer_13_Log">
 			<materialref ref="G4_Galactic"/>
 			<solidref ref="Layer_13_Solid"/>
+		</volume>
+		<volume name="Layer_130_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_130_Solid"/>
+		</volume>
+		<volume name="Layer_131_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_131_Solid"/>
 		</volume>
 		<volume name="Layer_14_Log">
 			<materialref ref="G4_Galactic"/>
@@ -728,6 +1252,22 @@
 			<materialref ref="G4_Galactic"/>
 			<solidref ref="Layer_9_Solid"/>
 		</volume>
+		<volume name="Layer_96_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_96_Solid"/>
+		</volume>
+		<volume name="Layer_97_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_97_Solid"/>
+		</volume>
+		<volume name="Layer_98_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_98_Solid"/>
+		</volume>
+		<volume name="Layer_99_Log">
+			<materialref ref="G4_Galactic"/>
+			<solidref ref="Layer_99_Solid"/>
+		</volume>
 		<volume name="Layer_BarrelEnvelope_Log">
 			<materialref ref="G4_Galactic"/>
 			<solidref ref="Layer_BarrelEnvelope_Solid"/>
@@ -743,6 +1283,150 @@
 		<volume name="WorldLog">
 			<materialref ref="G4_Galactic"/>
 			<solidref ref="World_Solid"/>
+			<physvol name="Layer_132_POS_Phys">
+				<volumeref ref="Layer_132_POS_Log"/>
+				<position name="Layer_132_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4518.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_133_POS_Phys">
+				<volumeref ref="Layer_133_POS_Log"/>
+				<position name="Layer_133_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="3638.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_134_POS_Phys">
+				<volumeref ref="Layer_134_POS_Log"/>
+				<position name="Layer_134_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="3677.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_135_POS_Phys">
+				<volumeref ref="Layer_135_POS_Log"/>
+				<position name="Layer_135_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="3728.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_136_POS_Phys">
+				<volumeref ref="Layer_136_POS_Log"/>
+				<position name="Layer_136_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="3779.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_137_POS_Phys">
+				<volumeref ref="Layer_137_POS_Log"/>
+				<position name="Layer_137_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="3830.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_138_POS_Phys">
+				<volumeref ref="Layer_138_POS_Log"/>
+				<position name="Layer_138_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="3881.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_139_POS_Phys">
+				<volumeref ref="Layer_139_POS_Log"/>
+				<position name="Layer_139_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="3932.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_140_POS_Phys">
+				<volumeref ref="Layer_140_POS_Log"/>
+				<position name="Layer_140_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="3983.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_141_POS_Phys">
+				<volumeref ref="Layer_141_POS_Log"/>
+				<position name="Layer_141_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4034.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_142_POS_Phys">
+				<volumeref ref="Layer_142_POS_Log"/>
+				<position name="Layer_142_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4085.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_143_POS_Phys">
+				<volumeref ref="Layer_143_POS_Log"/>
+				<position name="Layer_143_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4136.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_144_POS_Phys">
+				<volumeref ref="Layer_144_POS_Log"/>
+				<position name="Layer_144_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4187.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_145_POS_Phys">
+				<volumeref ref="Layer_145_POS_Log"/>
+				<position name="Layer_145_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4238.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_146_POS_Phys">
+				<volumeref ref="Layer_146_POS_Log"/>
+				<position name="Layer_146_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4289.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_147_POS_Phys">
+				<volumeref ref="Layer_147_POS_Log"/>
+				<position name="Layer_147_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4340.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_148_POS_Phys">
+				<volumeref ref="Layer_148_POS_Log"/>
+				<position name="Layer_148_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4391.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_149_POS_Phys">
+				<volumeref ref="Layer_149_POS_Log"/>
+				<position name="Layer_149_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4442.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_150_POS_Phys">
+				<volumeref ref="Layer_150_POS_Log"/>
+				<position name="Layer_150_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4480.500000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_151_POS_Phys">
+				<volumeref ref="Layer_151_POS_Log"/>
+				<position name="Layer_151_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4556.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_152_POS_Phys">
+				<volumeref ref="Layer_152_POS_Log"/>
+				<position name="Layer_152_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4595.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_153_POS_Phys">
+				<volumeref ref="Layer_153_POS_Log"/>
+				<position name="Layer_153_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4646.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_154_POS_Phys">
+				<volumeref ref="Layer_154_POS_Log"/>
+				<position name="Layer_154_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4697.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_155_POS_Phys">
+				<volumeref ref="Layer_155_POS_Log"/>
+				<position name="Layer_155_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4748.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_156_POS_Phys">
+				<volumeref ref="Layer_156_POS_Log"/>
+				<position name="Layer_156_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4799.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_157_POS_Phys">
+				<volumeref ref="Layer_157_POS_Log"/>
+				<position name="Layer_157_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4850.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_158_POS_Phys">
+				<volumeref ref="Layer_158_POS_Log"/>
+				<position name="Layer_158_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4901.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_159_POS_Phys">
+				<volumeref ref="Layer_159_POS_Log"/>
+				<position name="Layer_159_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="4952.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_160_POS_Phys">
+				<volumeref ref="Layer_160_POS_Log"/>
+				<position name="Layer_160_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="5003.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_161_POS_Phys">
+				<volumeref ref="Layer_161_POS_Log"/>
+				<position name="Layer_161_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="5054.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_162_POS_Phys">
+				<volumeref ref="Layer_162_POS_Log"/>
+				<position name="Layer_162_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="5105.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_163_POS_Phys">
+				<volumeref ref="Layer_163_POS_Log"/>
+				<position name="Layer_163_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="5156.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_164_POS_Phys">
+				<volumeref ref="Layer_164_POS_Log"/>
+				<position name="Layer_164_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="5207.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_165_POS_Phys">
+				<volumeref ref="Layer_165_POS_Log"/>
+				<position name="Layer_165_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="5258.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_166_POS_Phys">
+				<volumeref ref="Layer_166_POS_Log"/>
+				<position name="Layer_166_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="5309.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_167_POS_Phys">
+				<volumeref ref="Layer_167_POS_Log"/>
+				<position name="Layer_167_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="5347.500000000000000" unit="mm"/>
+			</physvol>
 			<physvol name="Layer_48_POS_Phys">
 				<volumeref ref="Layer_48_POS_Log"/>
 				<position name="Layer_48_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="3321.200073242187500" unit="mm"/>
@@ -933,7 +1617,151 @@
 			</physvol>
 			<physvol name="Layer_95_POS_Phys">
 				<volumeref ref="Layer_95_POS_Log"/>
-				<position name="Layer_95_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="3433.812451124191284" unit="mm"/>
+				<position name="Layer_95_POS_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="3434.824951171875000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_132_NEG_Phys">
+				<volumeref ref="Layer_132_NEG_Log"/>
+				<position name="Layer_132_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4518.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_133_NEG_Phys">
+				<volumeref ref="Layer_133_NEG_Log"/>
+				<position name="Layer_133_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-3638.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_134_NEG_Phys">
+				<volumeref ref="Layer_134_NEG_Log"/>
+				<position name="Layer_134_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-3677.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_135_NEG_Phys">
+				<volumeref ref="Layer_135_NEG_Log"/>
+				<position name="Layer_135_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-3728.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_136_NEG_Phys">
+				<volumeref ref="Layer_136_NEG_Log"/>
+				<position name="Layer_136_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-3779.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_137_NEG_Phys">
+				<volumeref ref="Layer_137_NEG_Log"/>
+				<position name="Layer_137_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-3830.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_138_NEG_Phys">
+				<volumeref ref="Layer_138_NEG_Log"/>
+				<position name="Layer_138_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-3881.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_139_NEG_Phys">
+				<volumeref ref="Layer_139_NEG_Log"/>
+				<position name="Layer_139_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-3932.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_140_NEG_Phys">
+				<volumeref ref="Layer_140_NEG_Log"/>
+				<position name="Layer_140_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-3983.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_141_NEG_Phys">
+				<volumeref ref="Layer_141_NEG_Log"/>
+				<position name="Layer_141_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4034.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_142_NEG_Phys">
+				<volumeref ref="Layer_142_NEG_Log"/>
+				<position name="Layer_142_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4085.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_143_NEG_Phys">
+				<volumeref ref="Layer_143_NEG_Log"/>
+				<position name="Layer_143_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4136.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_144_NEG_Phys">
+				<volumeref ref="Layer_144_NEG_Log"/>
+				<position name="Layer_144_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4187.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_145_NEG_Phys">
+				<volumeref ref="Layer_145_NEG_Log"/>
+				<position name="Layer_145_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4238.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_146_NEG_Phys">
+				<volumeref ref="Layer_146_NEG_Log"/>
+				<position name="Layer_146_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4289.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_147_NEG_Phys">
+				<volumeref ref="Layer_147_NEG_Log"/>
+				<position name="Layer_147_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4340.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_148_NEG_Phys">
+				<volumeref ref="Layer_148_NEG_Log"/>
+				<position name="Layer_148_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4391.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_149_NEG_Phys">
+				<volumeref ref="Layer_149_NEG_Log"/>
+				<position name="Layer_149_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4442.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_150_NEG_Phys">
+				<volumeref ref="Layer_150_NEG_Log"/>
+				<position name="Layer_150_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4480.500000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_151_NEG_Phys">
+				<volumeref ref="Layer_151_NEG_Log"/>
+				<position name="Layer_151_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4556.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_152_NEG_Phys">
+				<volumeref ref="Layer_152_NEG_Log"/>
+				<position name="Layer_152_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4595.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_153_NEG_Phys">
+				<volumeref ref="Layer_153_NEG_Log"/>
+				<position name="Layer_153_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4646.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_154_NEG_Phys">
+				<volumeref ref="Layer_154_NEG_Log"/>
+				<position name="Layer_154_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4697.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_155_NEG_Phys">
+				<volumeref ref="Layer_155_NEG_Log"/>
+				<position name="Layer_155_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4748.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_156_NEG_Phys">
+				<volumeref ref="Layer_156_NEG_Log"/>
+				<position name="Layer_156_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4799.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_157_NEG_Phys">
+				<volumeref ref="Layer_157_NEG_Log"/>
+				<position name="Layer_157_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4850.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_158_NEG_Phys">
+				<volumeref ref="Layer_158_NEG_Log"/>
+				<position name="Layer_158_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4901.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_159_NEG_Phys">
+				<volumeref ref="Layer_159_NEG_Log"/>
+				<position name="Layer_159_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-4952.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_160_NEG_Phys">
+				<volumeref ref="Layer_160_NEG_Log"/>
+				<position name="Layer_160_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-5003.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_161_NEG_Phys">
+				<volumeref ref="Layer_161_NEG_Log"/>
+				<position name="Layer_161_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-5054.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_162_NEG_Phys">
+				<volumeref ref="Layer_162_NEG_Log"/>
+				<position name="Layer_162_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-5105.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_163_NEG_Phys">
+				<volumeref ref="Layer_163_NEG_Log"/>
+				<position name="Layer_163_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-5156.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_164_NEG_Phys">
+				<volumeref ref="Layer_164_NEG_Log"/>
+				<position name="Layer_164_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-5207.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_165_NEG_Phys">
+				<volumeref ref="Layer_165_NEG_Log"/>
+				<position name="Layer_165_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-5258.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_166_NEG_Phys">
+				<volumeref ref="Layer_166_NEG_Log"/>
+				<position name="Layer_166_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-5309.000000000000000" unit="mm"/>
+			</physvol>
+			<physvol name="Layer_167_NEG_Phys">
+				<volumeref ref="Layer_167_NEG_Log"/>
+				<position name="Layer_167_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-5347.500000000000000" unit="mm"/>
 			</physvol>
 			<physvol name="Layer_48_NEG_Phys">
 				<volumeref ref="Layer_48_NEG_Log"/>
@@ -1125,7 +1953,7 @@
 			</physvol>
 			<physvol name="Layer_95_NEG_Phys">
 				<volumeref ref="Layer_95_NEG_Log"/>
-				<position name="Layer_95_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-3433.812451124191284" unit="mm"/>
+				<position name="Layer_95_NEG_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-3434.824951171875000" unit="mm"/>
 			</physvol>
 			<physvol name="Layer_0_Phys">
 				<volumeref ref="Layer_0_Log"/>
@@ -1136,14 +1964,110 @@
 			<physvol name="Layer_10_Phys">
 				<volumeref ref="Layer_10_Log"/>
 			</physvol>
+			<physvol name="Layer_100_Phys">
+				<volumeref ref="Layer_100_Log"/>
+			</physvol>
+			<physvol name="Layer_101_Phys">
+				<volumeref ref="Layer_101_Log"/>
+			</physvol>
+			<physvol name="Layer_102_Phys">
+				<volumeref ref="Layer_102_Log"/>
+			</physvol>
+			<physvol name="Layer_103_Phys">
+				<volumeref ref="Layer_103_Log"/>
+			</physvol>
+			<physvol name="Layer_104_Phys">
+				<volumeref ref="Layer_104_Log"/>
+			</physvol>
+			<physvol name="Layer_105_Phys">
+				<volumeref ref="Layer_105_Log"/>
+			</physvol>
+			<physvol name="Layer_106_Phys">
+				<volumeref ref="Layer_106_Log"/>
+			</physvol>
+			<physvol name="Layer_107_Phys">
+				<volumeref ref="Layer_107_Log"/>
+			</physvol>
+			<physvol name="Layer_108_Phys">
+				<volumeref ref="Layer_108_Log"/>
+			</physvol>
+			<physvol name="Layer_109_Phys">
+				<volumeref ref="Layer_109_Log"/>
+			</physvol>
 			<physvol name="Layer_11_Phys">
 				<volumeref ref="Layer_11_Log"/>
+			</physvol>
+			<physvol name="Layer_110_Phys">
+				<volumeref ref="Layer_110_Log"/>
+			</physvol>
+			<physvol name="Layer_111_Phys">
+				<volumeref ref="Layer_111_Log"/>
+			</physvol>
+			<physvol name="Layer_112_Phys">
+				<volumeref ref="Layer_112_Log"/>
+			</physvol>
+			<physvol name="Layer_113_Phys">
+				<volumeref ref="Layer_113_Log"/>
+			</physvol>
+			<physvol name="Layer_114_Phys">
+				<volumeref ref="Layer_114_Log"/>
+			</physvol>
+			<physvol name="Layer_115_Phys">
+				<volumeref ref="Layer_115_Log"/>
+			</physvol>
+			<physvol name="Layer_116_Phys">
+				<volumeref ref="Layer_116_Log"/>
+			</physvol>
+			<physvol name="Layer_117_Phys">
+				<volumeref ref="Layer_117_Log"/>
+			</physvol>
+			<physvol name="Layer_118_Phys">
+				<volumeref ref="Layer_118_Log"/>
+			</physvol>
+			<physvol name="Layer_119_Phys">
+				<volumeref ref="Layer_119_Log"/>
 			</physvol>
 			<physvol name="Layer_12_Phys">
 				<volumeref ref="Layer_12_Log"/>
 			</physvol>
+			<physvol name="Layer_120_Phys">
+				<volumeref ref="Layer_120_Log"/>
+			</physvol>
+			<physvol name="Layer_121_Phys">
+				<volumeref ref="Layer_121_Log"/>
+			</physvol>
+			<physvol name="Layer_122_Phys">
+				<volumeref ref="Layer_122_Log"/>
+			</physvol>
+			<physvol name="Layer_123_Phys">
+				<volumeref ref="Layer_123_Log"/>
+			</physvol>
+			<physvol name="Layer_124_Phys">
+				<volumeref ref="Layer_124_Log"/>
+			</physvol>
+			<physvol name="Layer_125_Phys">
+				<volumeref ref="Layer_125_Log"/>
+			</physvol>
+			<physvol name="Layer_126_Phys">
+				<volumeref ref="Layer_126_Log"/>
+			</physvol>
+			<physvol name="Layer_127_Phys">
+				<volumeref ref="Layer_127_Log"/>
+			</physvol>
+			<physvol name="Layer_128_Phys">
+				<volumeref ref="Layer_128_Log"/>
+			</physvol>
+			<physvol name="Layer_129_Phys">
+				<volumeref ref="Layer_129_Log"/>
+			</physvol>
 			<physvol name="Layer_13_Phys">
 				<volumeref ref="Layer_13_Log"/>
+			</physvol>
+			<physvol name="Layer_130_Phys">
+				<volumeref ref="Layer_130_Log"/>
+			</physvol>
+			<physvol name="Layer_131_Phys">
+				<volumeref ref="Layer_131_Log"/>
 			</physvol>
 			<physvol name="Layer_14_Phys">
 				<volumeref ref="Layer_14_Log"/>
@@ -1271,16 +2195,28 @@
 			<physvol name="Layer_9_Phys">
 				<volumeref ref="Layer_9_Log"/>
 			</physvol>
+			<physvol name="Layer_96_Phys">
+				<volumeref ref="Layer_96_Log"/>
+			</physvol>
+			<physvol name="Layer_97_Phys">
+				<volumeref ref="Layer_97_Log"/>
+			</physvol>
+			<physvol name="Layer_98_Phys">
+				<volumeref ref="Layer_98_Log"/>
+			</physvol>
+			<physvol name="Layer_99_Phys">
+				<volumeref ref="Layer_99_Log"/>
+			</physvol>
 			<physvol name="Layer_BarrelEnvelope_Phys">
 				<volumeref ref="Layer_BarrelEnvelope_Log"/>
 			</physvol>
 			<physvol name="Layer_EndcapEnvelopePos_Phys">
 				<volumeref ref="Layer_EndcapEnvelopePos_Log"/>
-				<position name="Layer_EndcapEnvelopePos_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="3486.324951171875000" unit="mm"/>
+				<position name="Layer_EndcapEnvelopePos_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="5411.000000000000000" unit="mm"/>
 			</physvol>
 			<physvol name="Layer_EndcapEnvelopeNeg_Phys">
 				<volumeref ref="Layer_EndcapEnvelopeNeg_Log"/>
-				<position name="Layer_EndcapEnvelopeNeg_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-3486.324951171875000" unit="mm"/>
+				<position name="Layer_EndcapEnvelopeNeg_Phys_pos" x="0.000000000000000" y="0.000000000000000" z="-5411.000000000000000" unit="mm"/>
 			</physvol>
 		</volume>
 	</structure>
