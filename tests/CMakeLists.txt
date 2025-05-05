@@ -9,7 +9,14 @@ project(DDFastCaloSimTests LANGUAGES CXX)
 option(ENABLE_VALGRIND_TESTS "Enable Valgrind memory profiling test variants" OFF)
 
 if(ENABLE_VALGRIND_TESTS)
-  message(STATUS "Running tests under Valgrind (--tool=massif)")
+  find_program(VALGRIND_EXECUTABLE valgrind)
+
+  if(NOT VALGRIND_EXECUTABLE)
+    message(FATAL_ERROR
+      "Valgrind must be installed or on your PATH when ENABLE_VALGRIND_TESTS=ON")
+  endif()
+
+  message(STATUS "Running tests under Valgrind (--tool=massif). Output files will be saved as *.massif and can be viewed with 'ms_print <file>.massif'")
 endif()
 
 # ---- Test Base Directory ----

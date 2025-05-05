@@ -33,7 +33,7 @@ function(add_tests TEST_SOURCES)
             # Use a single-line shell with env and valgrind
             add_test(NAME ${TEST_NAME}
                 COMMAND /bin/bash -c
-                "${ENV_STRING} valgrind --tool=massif --massif-out-file=${TEST_NAME}.massif $<TARGET_FILE:${TEST_NAME}>"
+                "${ENV_STRING} ${VALGRIND_EXECUTABLE} --tool=massif --pages-as-heap=yes --massif-out-file=${TEST_NAME}.massif $<TARGET_FILE:${TEST_NAME}>"
             )
         else()
             add_test(NAME ${TEST_NAME}
