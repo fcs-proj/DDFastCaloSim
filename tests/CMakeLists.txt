@@ -4,6 +4,14 @@ cmake_minimum_required(VERSION 3.30)
 # Define test project
 project(DDFastCaloSimTests LANGUAGES CXX)
 
+# Builds tests with valgrind memory profiling enabled
+# Run with cmake -DENABLE_VALGRIND_TESTS=ON to enable
+option(ENABLE_VALGRIND_TESTS "Enable Valgrind memory profiling test variants" OFF)
+
+if(ENABLE_VALGRIND_TESTS)
+  message(STATUS "Running tests under Valgrind (--tool=massif)")
+endif()
+
 # ---- Test Base Directory ----
 
 # Python environment variables passed in cmake/tests.cmake
