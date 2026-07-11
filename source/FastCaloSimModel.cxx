@@ -77,7 +77,12 @@ bool dd4hep::sim::FastCaloSimModel::check_trigger(const G4FastTrack& track)
                "Failed to initialize transport geometry. Aborting...");
       abort();
     }
-    m_transportTool.initializePropagator();
+    if (!m_transportTool.initializePropagator()) {
+      printout(ERROR,
+               "FastCaloSimModel",
+               "Failed to initialize transport propagator. Aborting...");
+      abort();
+    }
     m_transport_init = true;
   }
 
