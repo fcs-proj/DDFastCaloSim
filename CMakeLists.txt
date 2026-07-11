@@ -42,7 +42,7 @@ set(FastCaloSim_PARAM_MODE TRUE)
 FetchContent_Declare(
   FastCaloSim
   GIT_REPOSITORY https://github.com/fcs-proj/FastCaloSim.git
-  GIT_TAG v0.23.0-alpha
+  GIT_TAG v0.25.0-alpha
   GIT_PROGRESS TRUE
 )
 
