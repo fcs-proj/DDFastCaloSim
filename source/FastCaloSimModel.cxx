@@ -70,6 +70,13 @@ bool dd4hep::sim::FastCaloSimModel::check_trigger(const G4FastTrack& track)
       abort();
     }
     m_transportTool.setTransportLimitVolume(m_transport_limit_volume);
+
+    if (!m_transportTool.initializeGeometry()) {
+      printout(ERROR,
+               "FastCaloSimModel",
+               "Failed to initialize transport geometry. Aborting...");
+      abort();
+    }
     m_transportTool.initializePropagator();
     m_transport_init = true;
   }
